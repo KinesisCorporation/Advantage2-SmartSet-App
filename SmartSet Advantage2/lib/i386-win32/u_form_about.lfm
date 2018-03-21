@@ -1,0 +1,192 @@
+object FormAbout: TFormAbout
+  Left = 362
+  Height = 245
+  Top = 61
+  Width = 416
+  BorderStyle = bsDialog
+  Caption = 'About'
+  ClientHeight = 245
+  ClientWidth = 416
+  Font.Height = -13
+  Font.Name = 'Segoe UI'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '1.6.0.4'
+  object btnWatchTutorial: THSSpeedButton
+    Left = 293
+    Height = 32
+    Top = 200
+    Width = 107
+    Alignment = taCenter
+    Border = 1
+    Caption = 'Watch Tutorial'
+    Color = 4012079
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    HotTrackColor = 6117455
+    HotTrackFont.CharSet = ANSI_CHARSET
+    HotTrackFont.Color = clWhite
+    HotTrackFont.Height = -12
+    HotTrackFont.Name = 'Tahoma'
+    HotTrackFont.Pitch = fpVariable
+    HotTrackFont.Quality = fqDraft
+    LightColor = 4012079
+    ParentFont = False
+    ShadowColor = 4012079
+    SlowDecease = sdEnterLeave
+    Smooth = 8
+    Style = bsModern
+    Index = -1
+    TransparentColor = clBlack
+    OnClick = btnWatchTutorialClick
+  end
+  object lblTitle: TLabel
+    Left = 43
+    Height = 17
+    Top = 16
+    Width = 331
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = False
+    Caption = 'lblTitle'
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblVersion: TLabel
+    Left = 18
+    Height = 17
+    Top = 32
+    Width = 381
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = False
+    Caption = 'lblVersion'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 19
+    Height = 21
+    Top = 96
+    Width = 136
+    Caption = 'Kinesis Corporation'
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 19
+    Height = 17
+    Top = 134
+    Width = 43
+    Caption = 'Phone :'
+    ParentColor = False
+  end
+  object lblVersion1: TLabel
+    Left = 80
+    Height = 17
+    Top = 134
+    Width = 148
+    Caption = '1-800-454-6374 (US only)'
+    ParentColor = False
+  end
+  object lblVersion2: TLabel
+    Left = 80
+    Height = 17
+    Top = 151
+    Width = 97
+    Caption = 'or 425-402-8100'
+    ParentColor = False
+  end
+  object lblWebsite: TLabel
+    Cursor = crHandPoint
+    Left = 19
+    Height = 17
+    Top = 116
+    Width = 96
+    Caption = 'www.kinesis.com'
+    Font.Color = clHighlight
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsUnderline]
+    ParentColor = False
+    ParentFont = False
+    OnClick = lblWebsiteClick
+  end
+  object lblFirmware: TLabel
+    Left = -1
+    Height = 17
+    Top = 50
+    Width = 417
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = False
+    Caption = 'lblFirmware'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 19
+    Height = 17
+    Top = 168
+    Width = 38
+    Caption = 'Email :'
+    ParentColor = False
+  end
+  object lblEmail: TLabel
+    Cursor = crHandPoint
+    Left = 80
+    Height = 17
+    Top = 168
+    Width = 102
+    Caption = 'tech@kinesis.com'
+    Font.Color = clHighlight
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsUnderline]
+    ParentColor = False
+    ParentFont = False
+    OnClick = lblEmailClick
+  end
+  object btnReadManual: THSSpeedButton
+    Left = 18
+    Height = 32
+    Top = 200
+    Width = 107
+    Alignment = taCenter
+    Border = 1
+    Caption = 'Read Manual'
+    Color = 4012079
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    HotTrackColor = 6117455
+    HotTrackFont.CharSet = ANSI_CHARSET
+    HotTrackFont.Color = clWhite
+    HotTrackFont.Height = -12
+    HotTrackFont.Name = 'Tahoma'
+    HotTrackFont.Pitch = fpVariable
+    HotTrackFont.Quality = fqDraft
+    LightColor = 4012079
+    ParentFont = False
+    ShadowColor = 4012079
+    SlowDecease = sdEnterLeave
+    Smooth = 8
+    Style = bsModern
+    Index = -1
+    TransparentColor = clBlack
+    OnClick = btnReadManualClick
+  end
+end

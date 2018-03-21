@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="eccontrols"><module name="ECGroupCtrls"><element name="TCustomECGroupCtrl"><short>Base abstract class for TECRadioGroup and TECCheckGroup. No published properties.</short>
+      </element><element name="TCustomECRadioGroup"><short>Base class for TECRadioGroup. No abstract methods, no published properties.</short>
+      </element><element name="TCustomECCheckGroup"><short>Base class for TECCheckGroup. No abstract methods, no published properties.</short>
+      </element><element name="TECRadioGroup"><short>Visual component. An alternative to TRadioGroup.</short>
+      <descr><var>TECRadioGroup</var> makes properties <b>published</b> only.<br/><br/><var>TECRadioGroup</var> can have focus and can be reached by Tab key (when <var>TabStop</var> = True, which is not default).<br/><var>TECRadioGroup</var> can be controlled by mouse, by keyboard or by code.<br/><br/>
+Mouse:<br/><br/>
+Left-click on any item (out of knob) changes its <var>Checked</var> property to True (or to False if this item is already checked*).<br/>
+Left-click on the <var>TECRadioGroup</var> out of items sets focus to component only.<br/><br/>
+Keyboard (when radio group is focused):<br/><br/>
+0: deselects all*<br/>
+1-9: selects (or deselects*) item 1-9<br/><br/>
+Keyboard (radio group doesn't have to be focused):<br/><br/>
+Acceleration key (Alt + Key) changes the <var>Checked</var> property to True (or to False*).<br/><br/>
+*) Depends whether egoAllowAllUp is in <var>Options</var>.<br/><br/>
+Code:<br/><br/>
+Simply by assigning any ItemIndex or <var>Items[].Checked</var> property:<br/><var>ItemIndex</var> := 1; //selects the second item<br/><var>Items[1].Checked</var> := False; //deselects the second item, regardless of the egoAllowAllUp in <var>Options</var><br/>
+        </descr>
+      </element><short>Visual components TECRadioGroup and TECCheckGroup.</short><element name="TECItemState"><short>Enumerated type denoting state of items of TECRadioGroup and TECCheckGroup.</short>
+      </element><element name="TGCOption"><short>Enumerated type. Options for TECRadioGroup and TECCheckGroup.</short>
+      </element><element name="TGCOption.egoAllowAllUp"><short>Allow all items to be unchecked. <i>False</i> means that one item of TECRadioGroup and at least one item of TECCheckGroup is always selected.</short>
+      </element><element name="TGCOption.egoCaptionBy"><short>Caption is displayed by the box, i.e. on the left or on the right - depends on the BiDiMode.</short>
+      </element><element name="TGCOption.egoCentered"><short>Glyphs, images and texts of items are horizontally centered.</short>
+      </element><element name="TGCOption.egoColumnThenRow"><short>Determines order of items. Default is left to right, next row and again left to right (assumes horizonal orientation and left-to-right language).</short>
+      </element><element name="TGCOption.egoNativeGlyphs"><short>Items have native glyph, i.e. empty or full small circle (TECRadioGroup) and empty or checked square (TECCheckGroup).</short>
+      </element><element name="TGCOption.egoSplitted"><short>Items are separated with vertical and vertical spliters (beveled lines).</short>
+      </element><element name="TGCOptions"><short>Set of TGCOption.</short>
+      </element>
+    <element name="TGroupCtrlItem"><short>Group Control item. RadioGroup or CheckGroup is collection of these items.</short>
+      </element><element name="TGroupCtrlItems"><short>Collection of items. Subclass for TCustomECGroupCtrl and descendants.</short>
+      </element>
+    <element name="TGroupCtrlItem.Caption"><short>Caption of the item. Display depends on properties Font, (Un)CheckedFontColor and (Un)CheckedFontStyles of TCustomECGroupCtrl.</short>
+      </element><element name="TGroupCtrlItem.Checked"><short>Determines whether the item (radiobutton or checkbox) is checked (selected) or not. Can be set via code to True or False, regardless on egoAllowAllUp option.</short>
+      <seealso><link id="TGroupCtrlItem.ImageIndex"/><link id="TGroupCtrlItem.ImageIndexChecked"/>
+        </seealso>
+      </element><element name="TGroupCtrlItem.ImageIndex"><short>Index of image. Parent (TCustomECGroupCtrl) contains link to ImageList (property Images).</short>
+      <seealso><link id="TGroupCtrlItem.Checked"/><link id="TGroupCtrlItem.ImageIndexChecked"/>
+        </seealso>
+      </element><element name="TGroupCtrlItems.Add"><short>Adds new item to collection.</short>
+      </element><element name="TGroupCtrlItems.Items"><short>Collection of items.</short>
+      </element><element name="TGroupCtrlItems.Reset"><short>Set all items to unchecked (Checked=False), regardless on egoAllowAllUp option.</short>
+      </element><element name="TGroupCtrlItems.Click"><short>This method is called on item click (i.e. mouse click or key-up event). Method respects egoAllowAllUp option.</short>
+      </element><element name="TCustomECGroupCtrl.BlockColor"><short>Color of the component. Applies only when Style = eosPanel.</short>
+      </element><element name="TCustomECGroupCtrl.CheckedFontColor"><short>Font color of checked items.</short>
+      </element><element name="TCustomECGroupCtrl.CheckedFontStyles"><short>Font styles (bold, italic, underline) of checked items.</short>
+      </element><element name="TCustomECGroupCtrl.UncheckedFontStyles"><short>Font styles (bold, italic, underline) of unchecked items.</short>
+      </element><element name="TCustomECGroupCtrl.UncheckedFontColor"><short>Font color of unchecked items.</short>
+      </element><element name="TCustomECGroupCtrl.Images"><short>Item images are taken from this image list.</short>
+      </element><element name="TCustomECGroupCtrl.Indent"><short>Distance between caption and block with items. Applies only when Caption is not empty string.</short>
+      </element><element name="TCustomECGroupCtrl.Items"><short>Subclass containing items.</short>
+      </element><element name="TCustomECGroupCtrl.Spacing"><short>Distance between glyph, image and text of item. Also distance between border and content (when egoCentered is not in Options).</short>
+      </element><element name="TCustomECGroupCtrl.Options"><short>See <link id="TGCOption"/>.</short>
+      </element><element name="TCustomECGroupCtrl.RowCount"><short>Number of rows.</short>
+      </element><element name="TCustomECRadioGroup.ItemIndex"><short>Index of item that is currently selected. -1 or any other negative value means that no items is selected.</short>
+      <seealso><link id="TGroupCtrlItem.Checked"/><link id="TCustomECGroupCtrl.Items"/>
+        </seealso>
+      </element><element name="TCustomECRadioGroup.OnSelectionChange"><short>Triggered when ItemIndex changes. Changes from negative to other negative value are not allowed.</short>
+      <seealso><link id="TCustomECRadioGroup.ItemIndex"/><link id="TCustomECGroupCtrl.Items"/>
+        </seealso>
+      </element><element name="TCustomECCheckGroup.OnItemClick"><short>Triggered when any item changed its state (property Checked). Both True=&gt;False and False=&gt;True are valid.</short>
+      <seealso><link id="TCustomECCheckGroup.Checked"/><link id="TCustomECGroupCtrl.Items"/>
+        </seealso>
+      </element><element name="TCustomECCheckGroup.Checked"><short>Maps property Checked of items. This property was added for compatibility with TCheckGroup.</short><seealso><link id="TGroupCtrlItem.Checked"/><link id="TCustomECGroupCtrl.Items"/>
+        </seealso>
+      </element><element name="TECCheckGroup"><short>Visual component. An alternative to TCheckGroup.</short>
+      <descr><var>TECCheckGroup</var> makes properties <b>published</b> only.<br/><br/><var>TECCheckGroup</var> can have focus and can be reached by Tab key (when <var>TabStop</var> = True, which is not default).<br/><var>TECCheckGroup</var> can be controlled by mouse, by keyboard or by code.<br/><br/>
+Mouse:<br/><br/>
+Left-click on any item (out of knob) changes its <var>Checked</var> property to True (or to False if this item is already checked*).<br/>
+Left-click on the <var>TECCheckGroup</var> out of items sets focus to component only.<br/><br/>
+Keyboard (when check group is focused):<br/><br/>
+0: deselects all*<br/>
+1-9: selects (or deselects*) item 1-9<br/><br/>
+Keyboard (check group doesn't have to be focused):<br/><br/>
+Acceleration key (Alt + Key) changes the <var>Checked</var> property to True (or to False*).<br/><br/>
+*) Depends whether egoAllowAllUp is in <var>Options</var>.<br/><br/>
+Code:<br/><br/>
+Simply by assigning any <var>Checked[]</var> or <var>Items[].Checked</var> property:<br/><var>Checked[1]</var> := True; //selects the second item<br/><var>Items[1].Checked</var> := False; //deselects the second item, regardless of the egoAllowAllUp in <var>Options</var>.<br/>
+        </descr>
+      </element>
+    <element name="TECRadioGroup.Orientation"><short>Denotes orientation of the group control.</short>
+      <example file="examples/tecgroupctrls_ori.txt"/>
+      </element>
+    <element name="TECCheckGroup.Orientation"><short>Denotes orientation of the group control.</short><example file="examples/tecgroupctrls_ori.txt"/>
+      </element>
+    <element name="TGroupCtrlItemsMethod"><short>Method that is triggered when item is clicked or its State is changed.</short>
+      </element><element name="TGroupCtrlItem.ImageIndexChecked"><short>Index of image when item is Checked. Parent (TCustomECGroupCtrl) contains link to ImageList (property Images).</short><seealso><link id="TGroupCtrlItem.Checked"/><link id="TGroupCtrlItem.ImageIndex"/>
+        </seealso>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="12">
+      <Unit0>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="26" Y="10"/>
+        <UsageCount Value="44"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="114"/>
+        <CursorPos X="111" Y="121"/>
+        <UsageCount Value="44"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="../source/sliderbars.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SliderBars"/>
+        <IsVisibleTab Value="True"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="886"/>
+        <CursorPos X="2" Y="918"/>
+        <ExtraEditorCount Value="1"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <TopLine Value="263"/>
+          <CursorPos X="108" Y="272"/>
+        </ExtraEditor1>
+        <UsageCount Value="44"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/include/spinedit.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="206"/>
+        <CursorPos Y="242"/>
+        <UsageCount Value="11"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/include/wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5994"/>
+        <CursorPos Y="6019"/>
+        <UsageCount Value="9"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/include/customedit.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="533"/>
+        <CursorPos Y="550"/>
+        <UsageCount Value="10"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/include/control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1087"/>
+        <CursorPos Y="1110"/>
+        <UsageCount Value="10"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/controls.pp"/>
+        <UnitName Value="Controls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2254"/>
+        <CursorPos X="26" Y="2254"/>
+        <UsageCount Value="16"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/graphics.pp"/>
+        <UnitName Value="Graphics"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2702"/>
+        <CursorPos X="10" Y="2732"/>
+        <UsageCount Value="17"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/include/canvas.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="442"/>
+        <CursorPos X="17" Y="447"/>
+        <UsageCount Value="16"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/lcltype.pp"/>
+        <UnitName Value="LCLType"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1626"/>
+        <CursorPos X="3" Y="1644"/>
+        <UsageCount Value="12"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="/usr/share/fpcsrc/2.6.4/rtl/objpas/math.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="138"/>
+        <CursorPos X="10" Y="156"/>
+        <UsageCount Value="12"/>
+      </Unit11>
+    </Units>
+    <JumpHistory Count="19" HistoryIndex="18">
+      <Position1>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="878" TopLine="860"/>
+      </Position1>
+      <Position2>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="883" TopLine="860"/>
+      </Position2>
+      <Position3>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="884" TopLine="860"/>
+      </Position3>
+      <Position4>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="883" Column="104" TopLine="864"/>
+      </Position4>
+      <Position5>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="891" TopLine="864"/>
+      </Position5>
+      <Position6>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="892" TopLine="864"/>
+      </Position6>
+      <Position7>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="891" TopLine="864"/>
+      </Position7>
+      <Position8>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="895" TopLine="866"/>
+      </Position8>
+      <Position9>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="895" TopLine="866"/>
+      </Position9>
+      <Position10>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="868" Column="22" TopLine="850"/>
+      </Position10>
+      <Position11>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="871" Column="16" TopLine="853"/>
+      </Position11>
+      <Position12>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="1010" TopLine="975"/>
+      </Position12>
+      <Position13>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="899" Column="19" TopLine="882"/>
+      </Position13>
+      <Position14>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="900" Column="19" TopLine="882"/>
+      </Position14>
+      <Position15>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="40" Column="3" TopLine="15"/>
+      </Position15>
+      <Position16>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="48" Column="22" TopLine="38"/>
+      </Position16>
+      <Position17>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="108" Column="87" TopLine="79"/>
+      </Position17>
+      <Position18>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="173" Column="87" TopLine="144"/>
+      </Position18>
+      <Position19>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Column="9"/>
+      </Position19>
+    </JumpHistory>
+  </ProjectSession>
+  <Debugging>
+    <Watches Count="3">
+      <Item1>
+        <Expression Value="self"/>
+      </Item1>
+      <Item2>
+        <Expression Value="FCutChannel"/>
+      </Item2>
+      <Item3>
+        <Expression Value="result"/>
+      </Item3>
+    </Watches>
+  </Debugging>
+</CONFIG>

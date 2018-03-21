@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="eccontrols"><module name="ECRuler"><element name="TECRulerScale"><short>Class is used as a subclass of TECRuler.</short>
+      </element><element name="TPointerStyle"><short>Style of the ruler pointer.</short>
+      </element><element name="TPointerMode"><short>Mode of the pointer on a ruler.</short>
+      </element><element name="TECRuler"><short>Visual component - advanced ruler.</short>
+      <descr><var>TECRuler</var> makes properties <b>published</b> only.<br/><br/><var>TECRuler</var> cannot have focus.<br/><var>TECRuler</var> just displays scale. It can have fixed or movable pointer optionally.</descr>
+      </element><element name="TCustomECRuler"><short>Base class for TECRuler. No abstract methods, no published properties.</short>
+      </element><element name="TCustomECRuler.SetCaptionPos"/><element name="TCustomECRuler.SetCaptionAlign"/><element name="TCustomECRuler.CaptionAlign"><short>Alignment of the Caption.</short>
+      <seealso><link id="TCustomECRuler.CaptionPos"/>
+        </seealso>
+      <descr>Negative values: Alignment to the edge of the component.<br/>
+0: Centered alignment between the edge of the component and the beginning (or to the end) of the scale.<br/>
+Positive values: Alignment to the beginning (or to the end) of the scale.<br/><br/>
+In case of positive or negative values, absolute value <var>abs(CaptionAlign)</var> is indentation.</descr>
+      </element><element name="TCustomECRuler.CaptionPos"><short>Position of the Caption. Left or right for horizontal rulers, top or bottom for vertical rulers.</short>
+      <seealso><link id="TCustomECRuler.CaptionAlign"/>
+        </seealso>
+      </element><element name="TCustomECRuler.IndentBottomRight"><short>Indentation of the scale from the right/bottom side of the border of the ruler.</short>
+      <seealso><link id="TCustomECRuler.IndentTopLeft"/><link id="TCustomECRuler.Max"/><link id="TCustomECRuler.Min"/>
+        </seealso>
+      </element><element name="TCustomECRuler.IndentTopLeft"><short>Indentation of the scale from the left/top side of the border of the ruler.</short>
+      <seealso><link id="TCustomECRuler.IndentBottomRight"/><link id="TCustomECRuler.Max"/><link id="TCustomECRuler.Min"/>
+        </seealso>
+      </element><element name="TCustomECRuler.Max"><short>Maximum.</short>
+      <seealso><link id="TCustomECRuler.IndentBottomRight"/><link id="TCustomECRuler.IndentTopLeft"/><link id="TCustomECRuler.Min"/>
+        </seealso>
+      </element><element name="TCustomECRuler.Min"><short>Minimum.</short>
+      <seealso><link id="TCustomECRuler.IndentBottomRight"/><link id="TCustomECRuler.IndentTopLeft"/><link id="TCustomECRuler.Max"/>
+        </seealso>
+      </element><element name="TCustomECRuler.PointerColor"><short>Color of the pointer.</short>
+      </element><element name="TCustomECRuler.PointerMode"><short>Mode of the pointer. epmMovable moves pointer on mouse hovering.</short>
+      </element><element name="TCustomECRuler.PointerStyle"><short>Style of the pointer (solid, dotted or dashed).</short>
+      </element><element name="TCustomECRuler.PointerWidth"><short>Width of the pointer.</short>
+      </element><element name="TCustomECRuler.Position"><short>Actual position of the pointer on the ruler.</short>
+      <seealso><link id="TCustomECRuler.Max"/><link id="TCustomECRuler.Min"/><link id="TCustomECRuler.MouseCoord"/><link id="TCustomECRuler.OnChangePosition"/>
+        </seealso>
+      </element><element name="TCustomECRuler.PositionToHint"><short>Denotes that current position is displayed as the Hint of the component.</short>
+      <seealso><link id="TCustomECRuler.Position"/>
+        </seealso>
+      </element><element name="TCustomECRuler.Reversed"><short>Reversed slider, i.e. from Max to Min.</short>
+      </element><element name="TCustomECRuler.Scale"><short>Subclass.</short>
+      <seealso><link id="TCustomECRuler.ScalePos"/><link id="TCustomECRuler.ScaleFontOptions"/>
+        </seealso>
+      </element><element name="TCustomECRuler.ScaleFontOptions"><short>Font options of the scale. Determines font-size, color and font-styles (bold, italic) of the values.</short>
+      <seealso><link id="TCustomECRuler.Scale"/><link id="TCustomECRuler.ScalePos"/>
+        </seealso>
+      </element><element name="TCustomECRuler.ScalePos"><short>Position of the scale on the component. Scale can be aligned to the top/bottom (horizontal ruler) or to the left/right (vertical ruler).</short>
+      <seealso><link id="TCustomECRuler.Scale"/><link id="TCustomECRuler.ScaleFontOptions"/>
+        </seealso>
+      </element><element name="TCustomECRuler.OnChangePosition"><short>Triggered when Position is changed.</short>
+      <seealso><link id="TCustomECRuler.Position"/>
+        </seealso>
+      </element><element name="TCustomECRuler.Transparent"><short>Transparent ruler. This does not have to work on all platforms.</short>
+      </element>
+    <short>Visual component TECRuler.</short>
+    <element name="TPointerMode.epmMovable"><short>Pointer moves on mouse hovering. Can be moved by code too.</short>
+      </element><element name="TPointerMode.epmFixed"><short>Pointer is visible but does not move on mouse hovering. Can be moved by code only.</short>
+      </element><element name="TPointerMode.epmNone"><short>No pointer is displayed.</short>
+      </element><element name="TCustomECRuler.MouseCoord"><short>Distance [pixels] of the mouse cursor from the left/top edge of the ruler (depends on Orientation).</short><seealso><link id="TCustomECRuler.Position"/>
+        </seealso>
+      </element>
+    <element name="TOnChangePosition"><short>Event method. Triggered when position of the pointer on the ruler is changed.</short>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>

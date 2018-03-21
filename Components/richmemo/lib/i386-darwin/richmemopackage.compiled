@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="/usr/local/bin/ppc386" Date="1393445779"/>
+  <Params Value=" -MObjFPC -Scgi -O1 -g -gl -vewnhi -Fu/Users/Jeremy/Documents/richmemo/win32 -Fu/Users/Jeremy/Documents/richmemo/carbon -Fu/Users/Jeremy/Documents/richmemo/gtk2 -Fu/Developer/lazarus/packager/units/i386-darwin -Fu/Developer/lazarus/components/lazutils/lib/i386-darwin -Fu/Developer/lazarus/lcl/units/i386-darwin -Fu/Developer/lazarus/lcl/units/i386-darwin/carbon -Fu/Users/Jeremy/Documents/richmemo/ -FU/Users/Jeremy/Documents/richmemo/lib/i386-darwin/ -l -vm4055,5024,5057,5060 -dLCL -dLCLcarbon richmemopackage.pas"/>
+</CONFIG>

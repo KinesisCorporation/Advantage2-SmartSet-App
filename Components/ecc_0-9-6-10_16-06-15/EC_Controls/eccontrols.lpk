@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <Name Value="eccontrols"/>
+    <Type Value="RunAndDesignTime"/>
+    <Author Value="Vojtěch Čihák"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="."/>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Parsing>
+        <SyntaxOptions>
+          <AllowLabel Value="False"/>
+        </SyntaxOptions>
+      </Parsing>
+      <CodeGeneration>
+        <SmartLinkUnit Value="True"/>
+        <VerifyObjMethodCallValidity Value="True"/>
+        <Optimizations>
+          <OptimizationLevel Value="3"/>
+        </Optimizations>
+      </CodeGeneration>
+      <Linking>
+        <Debugging>
+          <GenerateDebugInfo Value="False"/>
+        </Debugging>
+      </Linking>
+    </CompilerOptions>
+    <Description Value="Set of visual components based on Themes. Contains ruler, position-bar, image menu and visually atractive alternatives to TBevel, TTrackBar, TProgressBar, TCheckBox, TRadioGroup,  TCheckGroup, TSpeedButton, TEditButton, TColorEdit, TFloatSpinEdit and TUpDown with some extra options. Visual component for various configurations: TECScheme. CheckListBox with multiple check columns. An alternative to THeaderControl. ECConfCurve for configuration curves and their points. An alternative to TTabControl with multiline and folding capabilities. TECAccordion component. TECTriangle - balance of three values."/>
+    <License Value="Written for fpc/Lazarus.
+See the files COPYING.modifiedLGPL.txt and COPYING.LGPL.txt, included in this distribution, for details about the license."/>
+    <Version Minor="9" Release="6" Build="10"/>
+    <Files Count="20">
+      <Item1>
+        <Filename Value="ectypes.pas"/>
+        <UnitName Value="ECTypes"/>
+      </Item1>
+      <Item2>
+        <Filename Value="ecscale.pas"/>
+        <UnitName Value="ECScale"/>
+      </Item2>
+      <Item3>
+        <Filename Value="ecbevel.pas"/>
+        <UnitName Value="ECBevel"/>
+      </Item3>
+      <Item4>
+        <Filename Value="eclink.pas"/>
+        <UnitName Value="ECLink"/>
+      </Item4>
+      <Item5>
+        <Filename Value="ecimagemenu.pas"/>
+        <UnitName Value="ECImageMenu"/>
+      </Item5>
+      <Item6>
+        <Filename Value="ecspinctrls.pas"/>
+        <UnitName Value="ECSpinCtrls"/>
+      </Item6>
+      <Item7>
+        <Filename Value="ecswitch.pas"/>
+        <UnitName Value="ECSwitch"/>
+      </Item7>
+      <Item8>
+        <Filename Value="eceditbtns.pas"/>
+        <UnitName Value="ECEditBtns"/>
+      </Item8>
+      <Item9>
+        <Filename Value="echeader.pas"/>
+        <UnitName Value="ECHeader"/>
+      </Item9>
+      <Item10>
+        <Filename Value="ecchecklistbox.pas"/>
+        <UnitName Value="ECCheckListBox"/>
+      </Item10>
+      <Item11>
+        <Filename Value="ecslider.pas"/>
+        <UnitName Value="ECSlider"/>
+      </Item11>
+      <Item12>
+        <Filename Value="ecprogressbar.pas"/>
+        <UnitName Value="ECProgressBar"/>
+      </Item12>
+      <Item13>
+        <Filename Value="ecruler.pas"/>
+        <UnitName Value="ECRuler"/>
+      </Item13>
+      <Item14>
+        <Filename Value="ecgroupctrls.pas"/>
+        <UnitName Value="ECGroupCtrls"/>
+      </Item14>
+      <Item15>
+        <Filename Value="ectabctrl.pas"/>
+        <UnitName Value="ECTabCtrl"/>
+      </Item15>
+      <Item16>
+        <Filename Value="ecaccordion.pas"/>
+        <UnitName Value="ECAccordion"/>
+      </Item16>
+      <Item17>
+        <Filename Value="ectriangle.pas"/>
+        <UnitName Value="ECTriangle"/>
+      </Item17>
+      <Item18>
+        <Filename Value="ecconfcurve.pas"/>
+        <UnitName Value="ECConfCurve"/>
+      </Item18>
+      <Item19>
+        <Filename Value="ecscheme.pas"/>
+        <UnitName Value="ECScheme"/>
+      </Item19>
+      <Item20>
+        <Filename Value="ecdesigntime.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="ECDesignTime"/>
+      </Item20>
+    </Files>
+    <LazDoc Paths="docs"/>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="IDEIntf"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCLBase"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <CustomOptions Items="ExternHelp" Version="2">
+      <_ExternHelp Items="Count"/>
+    </CustomOptions>
+  </Package>
+</CONFIG>

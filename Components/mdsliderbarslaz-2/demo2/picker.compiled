@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\3.0.0\bin\i386-win32\fpc.exe" Date="1213094983"/>
+  <Params Value=" -MDelphi -Scghi -O1 -WG -l -vewnhibq &quot;-FiC:\Google Drive\Projects\App\Kinesis\Components\mdsliderbarslaz-2\demo2\Forms&quot; &quot;-FiC:\Google Drive\Projects\App\Kinesis\Components\mdsliderbarslaz-2\variables&quot; &quot;-FuC:\Google Drive\Projects\App\Kinesis\Components\mdsliderbarslaz-2&quot; &quot;-FuC:\Google Drive\Projects\App\Kinesis\Components\mdsliderbarslaz-2\demo2\forms&quot; &quot;-FuC:\Google Drive\Projects\App\Kinesis\Components\mdsliderbarslaz-2\demo2\units&quot; &quot;-FuC:\Google Drive\Projects\App\Kinesis\Components\mdsliderbarslaz-2\package\lib\i386-win32&quot; -FuC:\lazarus\lcl\units\i386-win32\win32 -FuC:\lazarus\lcl\units\i386-win32 -FuC:\lazarus\components\lazutils\lib\i386-win32 -FuC:\lazarus\packager\units\i386-win32 &quot;-FuC:\Google Drive\Projects\App\Kinesis\Components\mdsliderbarslaz-2\demo2\&quot; -dLCL -dLCLwin32 -dBorland -dVer150 -dDelphi7 -dCompiler6_Up -dPUREPASCAL picker.lpr"/>
+</CONFIG>

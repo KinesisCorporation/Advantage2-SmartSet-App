@@ -1,0 +1,479 @@
+2016-06-14 0.9.6.10
+===================
+TECTabCtrl: improved BtnAdd, event OnClick changed to OnMouseDown.
+  Tabs can be quicly added.
+  Protected var DragFolding moved to Flags.
+  Patched Wine bug where TPopupMenu.Close is triggered before TMenuItem.Click.
+
+2016-06-05 0.9.6.8
+===================
+TECTabCtrl: improved Hint, tab displays main Hint if it doesn't have its own.
+
+2016-06-05 0.9.6.6
+===================
+TECSpinPosition: patched bug (deleting component at design- and run-time).
+
+2016-06-04 0.9.6.4
+===================
+TECTabCtrl: added properties Hint and PopupMenu to TECTab.
+  Added options etcoLoopTabSelection.
+  Patched "index (-1) out of bounds" in DropDownMenu.
+
+2016-06-02 0.9.6.2
+===================
+TECTriangle: implemented.
+ECScale: added esvfMarkOctal to TScaleValueFormat.
+ECSpinCtrls: added evfMarkOctal to TValueFormat.
+
+2016-05-24 0.9.6.0
+===================
+TECAccordion: improved OnAdd, OnChange events.
+ImageIndex properties declared as TImageIndex (where possible).
+ECDesignTime: added ImageIndex property editors to TECAccordion,
+  TECSpinBtns, TECSpeddBtn and TBaseECSlider.
+
+2016-05-23 0.9.6.0
+===================
+TECAccordion: initial release.
+ECDesignTime: all Register methods moved here.
+
+2016-05-22 0.9.4.26
+===================
+TECAccordion (beta).
+TECTabCtrl: added event OnCloseQuery(Sender, Index, CanClose);.
+  Improved IsTabVisible (BoundRect -> ClientRect).
+  Added design-time component editor for Add, Insert, Delete and Move tab.
+New Unit: ECDesignTime for Component Editors, Property Editors
+  and Designer Hooks.
+
+2016-05-19 0.9.4.24
+===================
+Added TECAccordion (alpha).
+
+2016-04-23 0.9.4.22
+===================
+TECCheckListBox: added method InsertItem(). Patched hidden bug in DeleteItem().
+  Added event ItemChanged (TStringList(Items).OnChange;). Methods Items.Add,
+  Items.Insert, Items.Clear and Items.Delete now does not crash but they can
+  cause wrong pairing of text and checkboxes (Items and FStates).
+  Implemented property TextAlign: TAlignment. Its meaning is reversed when
+  Alignment is taRightJustify or BiDiMode is bdRightToLeft.
+
+2016-04-15 0.9.4.20
+===================
+Added egdMenu to TGlyphDesign. TECSpeedBtn can be a 'hamburger' button.
+TECCheckListBox: patch to DrawItem() method. Painting item background
+  and Selection in disabled state.
+
+2016-04-10 0.9.4.18
+===================
+TCustomECTabCtrl:Property Highlighted removed from published.
+  Added ClickedTabIndex checking to DragDrop method.
+  Added properties ColorActiveTab and ColorHighlighted.
+  TabStop is set to True by default.
+
+2016-04-09 0.9.4.16
+===================
+TCustomECTabCtrl: ThemeServices.GetTextExtent replaced with Canvas.TextExtent.
+  Patch to DragOver method.
+  (both are probably Windows specific bugs, unable to reproduce under Wine)
+
+2016-04-06 0.9.4.14
+===================
+Added copyright notice to year 2016.
+TCustomECTabCtrl: patched:
+  MouseWheel scrolling disabled while dragging (Middle button).
+  Displaying built-in drop-down menu (reset ClickedTabIndex to -1).
+
+2016-04-03 0.9.4.12
+===================
+TCustomECTabCtrl: Middle click on small buttons scrolls to
+  the leftmost/rightmost position.
+
+2016-03-31 0.9.4.10
+===================
+TCustomECSpeedBtn: Improved painting of pushed/pushed highlighted state
+  of button in toggle mode (in ecdrawglyph.inc).
+
+2016-03-29 0.9.4.10
+===================
+TCustomECTabCtrl: Removed cBaseTextFlags. Some flags (DT_SINGLELINE,
+  DT_ENDELLIPSIS) caused problems in Windows and Wine.
+
+2016-03-20 0.9.4.8
+===================
+TCustomECTabCtrl: Implemented TabMxWidth (only for etcoAutoSizeWidth).
+
+2016-03-05 0.9.4.6
+===================
+TCustomECTabCtrl: Implemented MouseWheel. Implemented Scroll methods.
+  Improved MovePrev/Next and SelectPrev/Next methods. Changed BtnClick to MouseUp.
+  Implemented etcoAutoSizeHeight/Width Options separately.
+
+2016-03-05 0.9.4.4
+===================
+TCustomECTabCtrl: Implemented disabled look for properties TECTab.Color.
+
+2016-03-05 0.9.4.2
+===================
+TCustomECTabCtrl: Implemented properties TECTab.FontOptions and TECTab.Color
+  (the second works only for Style=eosPanel).
+Added method TFontOptions.IsIdentical;.
+
+2016-02-25 0.9.4.0
+===================
+TCustomECTabCtrl: release
+
+2016-01-24 0.9.2.20
+===================
+TCustomImageMenu: patched method DrawItem(); because of wrong background of
+  focused item when component is disabled. (in real Windows).
+
+2016-01-09 0.9.2.20
+===================
+TCustomECTabCtrl: removed DropDownMenu:=TPopupMenu.Create(nil); from
+  'class constructor' because of occaional crash.
+
+2015-11-17 0.9.2.18
+===================
+TCustomECSpeedBtn: Added public property Transparent: Boolean;
+  needed for painting on TECTabCtrl
+
+2015-09-13 0.9.2.18
+===================
+TECTabCtrl (beta): Added early implementation.
+TCustomECTimer: Added properties Repeating and OnRepeating.
+  The event sequences in ebmSpeedBtn Mode are:
+    MouseDown -> Click (quick click)
+    MouseDown -> HoldDown (Click supressed, Repeating = 0)
+    MouseDown -> Repeating -> Rep. -> ... -> Rep. (Click supressed, Repeating > 0)
+
+2015-09-07 0.9.2.18
+===================
+TECTabCtrl (alpha): Added early implementation.
+
+2015-09-01 0.9.2.16
+===================
+TECHeader: Fixed drawing text (it uses correct font now). Removed SelectedFontOptions property.
+
+2015-08-31 0.9.2.16
+===================
+TECHeader: Implemented events OnSectionResize and OnSectionTrack. OnItemClick renamed to OnSectionClick.
+  Reason: THeaderControl compatibility
+TECBevel: Implemented autozise of PointAX/AY in line shape.Setting PointAX/AY to -1 will keep the value
+  to Width-2/Height-2. If and only if Shape is one of bs***Line, setting PointA<>eppNone will override all settings of PointAX/AY.
+  It will paint topleft/ topright/ bottomleft/ bottomright bevel.
+  
+2015-08-30 0.9.2.14
+===================
+TECHeader: Implemented ehoAutosizeBreakHeader.
+
+2015-08-17 0.9.2.14
+===================
+ECScale: correction in Reversed Logarithmic values.
+ECCustomSpeedBtn: DropDownGlyph changed from Boolean to TDropDownGlyph.
+TGlyphDesign: added egdPlayRec
+
+2015-08-08 0.9.2.14
+===================
+ECScale: bug in long-tick calculation (when TickLong=10, Min=172, Max=176).
+TCustomECProgressBar.SetPosition: InvalidateCustomRect and trigger
+  OnChange only when UpdateCount=0.
+
+2015-08-06 0.9.2.14
+===================
+ECCustomSpeedBnt: added properties CheckedFontColor and CheckedFontStyles
+ECSpeedBtnPlus: published property Flat (i.e. TECEditBtn, TECComboBtn and
+  their descendants can have now only a image instead of button)
+
+2015-07-29 0.9.2.12
+===================
+ECScale & ECSlider: improvements, prevent occasional range-check errors.
+  (ECSlider: method PlaceKnob is not called from Position when UpdateCount>0)
+
+2015-07-28 0.9.2.12
+===================
+ECCheckListBox: added method ExchangeItems and MoveItem.
+  Changed behaviour: state of the first checkbox in row is now NOT changed when
+  Caption is clicked. Checkboxes must be pointed.
+  Reason: someone may need to highlight a row without changing any state.
+
+2015-07-25 0.9.2.12
+===================
+ECColorCombo: corrected behaviour with HSB/BSH/HSBA/BSHA/AHSB/ABH color models.
+
+2015-07-24 0.9.2.12
+===================
+ECCheckListBox: property Sorted removed from published.
+
+2015-07-23 0.9.2.12
+===================
+ECTypes: procedure ColorToRGBA - out parameters type changed from Integer to Byte.
+  Added function AHSBToColor(A, H, S, B: Byte): TColor;
+  Added procedure ColorToHSBA(AColor: TColor; out H, S, B, A: Byte);
+  Improved functions ColorToStrLayouted and TryStrToColorLayouted to support
+  all new items in TColorLayout enumeration.
+
+2015-07-20 0.9.2.12
+===================
+ECTypes: Items eclRGBAColor, eclBGRAColor, elcCMYAColor, elcYMCAColor, eclHSBColor,
+  eclBSH, eclHSBAColor and eclBSHAColor added to TColorLayout enumeration.
+  Enumeration reordered.
+
+2015-07-08 0.9.2.10
+===================
+ECScheme: "uses" section: FileUtil replaced with LazFileUtils due to changes in Lazarus.
+
+2015-06-15 0.9.2.10
+===================
+TCustomECSpinBtns is now descendant of TGraphicControl.
+Added new visual component TECSpinPosition (PositionBar with spin buttons).
+  Similar component is used in Krita.
+
+2015-05-15 0.9.2.9
+==================
+TECSpinEdit, TBaseECEditBtn, TBaseECComboBtn (and descendants):
+ Added event OnVisibleChanged.
+
+2015-05-13 0.9.2.9
+==================
+EXPERIMENTAL: TCustomECSpinBtns are now descendant of TGraphicControl.
+
+2015-05-13 0.9.2.8
+==================
+Corrected TCustomECSpinBtns. Range checking at SortButtons ( succ(ebkMax); ).
+
+2015-05-06 0.9.2.8
+==================
+Improved TECEditBtnSpacing, TECComboBtnSpacing and TECSpinEditSpacing.
+Property Indent is now taken into account when TECSpinEdit, TBaseECEditBtn
+or TBaseECComboBtn (and theirs descendants) are anchored.
+
+2015-04-26 0.9.2.6
+==================
+TCustomECSpinBtns: Improved aligning of Caption. It can be aligned to the left
+  or to the right now. Caption is centered when Margin=-1 (default).
+  Margin>=0 aligns to the left or right (it also depends on BiDiMode).
+
+2015-04-16 0.9.2.4
+==================
+TECSlider: Min can be set >Max and Max can be set <Min while Updating (UpdateCount>0).
+TECSpinEdit and TECSpinBtns: Min can be set >Max, Max can be set <Min and
+  Middle can be set <Min or >Max while Updating (UpdateCount>0).
+
+2015-04-13 0.9.2.2
+===================
+TECCheckListBox and TECColorCombo can now change Font.Color (hardcoded
+  clWindowText replaced by GetColorResolvingDefault(Font.Color, clWindowText);)
+
+2015-04-08 0.9.2.0
+===================
+Added new visual component TECHeader
+  It is similar to THeaderControl. It has property BreakIndex, so some
+  sections can be aligned to left and the others to the right.
+Added property Spacing (space between CheckColumns). Indent is now padding of
+  the boundary CheckColumn.
+
+2015-04-06 0.9.1.20
+===================
+TECCheckListBox: event OnItemClick is now NOT triggered when State is changed
+  from code.
+
+2015-03-03 0.9.1.18
+===================
+TCustomECSpinBtns: corrected memleaks when changing Parent.
+  It was creating new bitmaps for buttons whenever CreateWnd was called.
+  Now it run only once.
+
+2015-03-03 0.9.1.18
+===================
+New published property ShowCaption for TECSpeedBtn (because of unwanted Caption
+  when TECSpeedBtn is linked with Action).
+
+2015-03-03 0.9.1.18
+===================
+Published properties OnDragDrop and OnDragOver of TECSpeedBtn.
+
+2015-02-26 0.9.1.18
+===================
+Added property Flat to TECCustomSpeedBtn
+  It can be used only in Mode = ebmSpeedBtn.
+
+2015-02-02 0.9.1.18
+===================
+Added new visual component TECCheckListBox
+  It is similar to TCheckListBox but it can have more chekable boolean columns.
+Improved Alternate color of TECImageMenu.
+
+2015-01-14 0.9.1.16
+===================
+TConfCurve: Added OnClick, OnDblClick and OnContextPopup to published properties.
+Added eosThemedPanel to TObjectStyle. TECSlider, TECProgressBar, TECPositionBar,
+  TECSwitch, TECCheckGroup, TECRadioGroup, TECRuler and (partially) TECBevel
+  can have themed panel (ttPane) background now.
+
+2015-01-02 0.9.1.16
+===================
+New glyphs is TGlyphDesign. egdEmpty, egdFrame, egdGuidelines and themed:
+egdRadioOff, egdRadioOn, egdCheckOff, egdCheckOn.
+
+2015-01-01 0.9.1.16
+===================
+Added boolean property DropDownGlyph to TCustomECSpeedBtn. It gives combo-like
+look to the button.
+
+2014-12-27 0.9.1.16
+===================
+Added new visual component TECConfCurve
+  It allows to configure curve on defined range. It has two bound points
+  and as many points between them necessary. Each point can be dragged by
+  mouse. Points can be fixed to X or Y axis and snapped to grid.
+  Curve can have linear parts or can be continous (Bezier) with defined smoothness.
+
+2014-12-22 0.9.1.14
+===================
+TECLink: default cursor changed to crHandPoint
+TCanvasHelper: added method DrawFocusRectNonThemed
+Modified FocusRect of TECSlider, TECSwitch and TECGroupCtrls.
+(Reason: themed focus rect of Oxygen is underline, it is not
+ suitable for TECKnob an for vertical captions)
+Added AccessibilityRole to constructors.
+
+2014-11-13 0.9.1.14
+===================
+Improved TCustomSpinBtns. Creating bitmaps is moved from constructor to
+  CreateWnd. (There were bug: spinbtns were invisible when they were
+  created on inactive tab of pagecontrol). Bitmaps are created only
+  when TSingleSpinBtn.Visible is true (more efficient when small buttons
+  are loaded from stream with property Visible = False).
+
+2014-11-09 0.9.1.14
+===================
+Added new visual component TECLink
+  It is alternative to TLabel or TStaticText. It can open URL in default
+  browser, e-mail in default client or file in associated application.
+
+2014-10-22 0.9.1.12
+===================
+Added {%MainUnit} directive to ecdrawglyph.inc.
+
+2014-10-17 0.9.1.12
+===================
+Classes with abstract method are now defined as "class abstract".
+  It will trigger compiler hint now - to avoid unwanted instantionation.
+
+Improved changing Parent of grouped controls (TECSpinEdit, TECEditBtn, TECComboBtn,
+  TECColorBtn and TECColorCombo). It does not write bunch of messages
+  (Invalid anchors) to console now.
+
+2014-10-02 0.9.1.12
+===================
+Replaced
+inherited Resize;
+with
+inherited WMSize(Message);
+in method TCustomSpinBtns.WMSize(var Message: TLMSize);
+
+2014-09-24 0.9.1.12
+===================
+TECSpeedBtn: added property Mode, added event OnHoldDown, added entries to docs.
+  Formerly: Delay < 0 .. ToggleBox
+            Delay = 0 .. SpeedBtn
+            Delay > 0 .. DelayBtn
+  Now: use property Mode
+  Note: Delay has no effect for ebmToggleBox.
+        It has effect for ebmDelayBtn (delay before release).
+        It has effect for ebmSpeedBtn (delay for OnHoldDown event).
+
+2014-09-24 0.9.1.12
+===================
+Added new visual component TECBevel
+  It allows to create non-rectangular boxes or frames (lowered or raised) and "zigzag" lines (separators).
+
+2014-09-21 0.9.1.12
+===================
+TECGroupCtrls: Win32 issue - changed default Captions
+  cDefCaption+inttostr(ID); instead of cDefCaption+inttostr(Index);
+
+2014-09-20 0.0.1.11
+===================
+License changet to modified LGPL.
+
+2014-09-19 0.0.1.11
+===================
+TCustomECColorCombo: SetItems(); now calls Validate. That's because
+  Qt changes automatically ItemIndex from -1 to 0 when Items are assigned.
+
+2014-09-18 0.0.1.11
+===================
+TCustomECImageMenu: text of selected item is no painted with clHighlightText
+  when Font.Color = clDefault (Description)
+  or CaptionFontOptions.FontColor = clDefault (Caption)
+
+TCustomECImageMenu: new items Caption is Item.ID instead of Item.Index
+  (method TImageMenuItems.Notify(...); better behavior under Wine)
+
+2014-09-14 0.0.1.11
+===================
+TCustomECColorCombo: added visual feedback. Focused control is now
+  painted highlighted and with focus rectangle around. (Windows)
+
+TCustomECColorCombo: improved behavior in ItemOrder = eioHistory.
+  Moving selected item to Index = 0 is moved from Select to EditingDone.
+
+TCustomECColorCombo: Added method SetColorText(string).
+(Reason: Setting Tet property must be followed by calling Validate;
+  this method performs it itself.)
+
+2014-07-31 0.0.1.11
+===================
+Improved PositionToHelp properties of TECSlider, TECRuler and TECPositionBar.
+(added Forms to uses and modified MouseMove/MouseUp).
+
+Added new visual component TECScheme
+Added abstract class TBaseScrollControl to unit ECTypes,
+this is based on ideas by Theo:
+https://github.com/theo222/lazarus-thumbviewer/blob/master/scrollingcontrol.pas
+
+TECSlider, TECProgressBar and TECPositionBar: removed OnStartDock from published
+
+TECColorCombo: Improved vertical position of items (text).
+
+TCustomSpinBtns code from Resize() moved to WMSize().
+(Reason: Better optimalized code. LCL triggers more Resize(); and less WMSize().
+
+TCustomECSpeedBtn is now derived from TGraphicControl (less is sometimes more)
+TCustomECSpeedBtn now supports multi-line Caption (and uses composite string editor at design-time)
+TCustomECSpeedBtn sets Delay to -1 when Checked is set to True in design time.
+
+2014-05-13 0.0.1.9
+==================
+TECColorCombo now displays correctly items (closed and dropped-down normal/selected) in Win32/Qt4/GTK2.
+(Reason: Canvas.Font.Color and Canvas.Brush.Color wasn't set properly to clWindowText, clHighlightText, clWindow and clHighlight).
+
+Added small abstract class TBaseScrollControl to unit ECTypes. It manages scrollbars only.
+
+Added glyphs egdSizeArrUp, egdSizeArrRight, egdSizeArrDown and egdSizeArrLeft to TGlyphDesign (and implemented in TCanvasHelper class).
+
+Improved calculation of InvalidateRect of TCustomECGrpCtrls when Orientation = eooVertical.
+
+TBaseECSlider (and descendants) are now created with DoubleBuffered = True.
+(Reason: some users experienced flickering.)
+
+Methods Resize(); are replaced with message methods WMSize(); (TCustomECSpeedBtn, TCustomECSwitch, TCustomECRuler, TBaseECSlider, TCustomECGrpCtrls).
+(Reason: Better optimalized code. LCL triggers more Resize(); and less WMSize();.)
+
+In TCustomECImageMenu.DrawItem() is (odSelected in State) replaced with Focused. It repairs calculation of item-background color in GTK2.
+(Reason: (odSelected in State) does not work in GTK2.)
+
+Improved repainting of TCustomECSpeedBtn and TCustomECRuler when these components are resized in GTK2.
+(Reason: GTK2 needs extra Invalidate; on resizing, while Qt4 invalidates automatically.)
+
+2014-05-09 0.0.1.7
+===================
+TCustomECGrpCtrls - controling via keyboard (0 for all up, 1..9 for switch items 0-8) is moved from KeyDown to KeyPress.
+(Reason: GTk2 and Qt4 sends different key codes for 0..9, while KeyPress works properly.)
+
+2014-04-25 0.0.1.7
+===================
+Initial release on Lazarus Mailing List.

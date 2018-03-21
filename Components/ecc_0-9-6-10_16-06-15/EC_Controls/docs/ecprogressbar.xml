@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="eccontrols"><module name="ECProgressBar"><element name="TECProgressBar"><short>Visual component. An advanced alternative to TProgressBar.</short>
+      <descr><var>TECProgressBar</var> makes properties <b>published</b> only.<br/><br/><var>TECProgressBar</var> is based on double precision variables. <var>TECProgressBar</var> cannot have focus. It can be controlled by code only.</descr>
+      </element><element name="TCustomECProgressBar.CaptionInline"><short>Determines whether caption is drawn on the progress bar, together with Position and Units.</short>
+      <seealso><link id="TCustomECProgressBar.ProgressDigits"/><link id="TCustomECProgressBar.ProgressFontOptions"/><link id="TCustomECProgressBar.ProgressTextAlign"/><link id="TCustomECProgressBar.ProgressTextStyle"/><link id="TCustomECProgressBar.Units"/>
+        </seealso>
+      </element><element name="TCustomECProgressBar.ProgressDigits"><short>Number of digits or decimal places (formating). Depends on Scale.ValueFormat.</short>
+      <seealso><link id="TCustomECProgressBar.CaptionInline"/><link id="TCustomECProgressBar.ProgressFontOptions"/><link id="TCustomECProgressBar.ProgressTextAlign"/><link id="TCustomECProgressBar.ProgressTextStyle"/><link id="TCustomECProgressBar.Units"/>
+        </seealso>
+      </element><element name="TCustomECProgressBar.ProgressFontOptions"><short>Font options of the progress text. Determines font-size, color and font-styles (bold, italic) of the text written inside progress bar.</short>
+      <seealso><link id="TCustomECProgressBar.CaptionInline"/><link id="TCustomECProgressBar.ProgressDigits"/><link id="TCustomECProgressBar.ProgressTextAlign"/><link id="TCustomECProgressBar.ProgressTextStyle"/><link id="TCustomECProgressBar.Units"/>
+        </seealso>
+      </element><element name="TCustomECProgressBar.ProgressTextAlign"><short>Aligning of the text inside the progress bar.</short><descr>0: Progress text is centered.<br/> 
+Negative values orientation [pixels]: Progress text is aligned to the left (horizontal orientation) or to the bottom (vertical orientation).<br/> 
+Positive values [pixels]: Progress text is aligned to the right (horizontal orientation) or to the top (vertical orientation).</descr>
+      <seealso><link id="TCustomECProgressBar.CaptionInline"/><link id="TCustomECProgressBar.ProgressDigits"/><link id="TCustomECProgressBar.ProgressFontOptions"/><link id="TCustomECProgressBar.ProgressTextStyle"/><link id="TCustomECProgressBar.Units"/>
+        </seealso>
+      </element><element name="TProgressTextStyle"><short>Enumerated type denoting style of the progress text.</short>
+      </element><element name="TProgressTextStyle.eptNone"><short>No text displayed.</short>
+      </element><element name="TProgressTextStyle.eptSolid"><short>Text is rendered with a solid color.</short>
+      </element><element name="TProgressTextStyle.eptInverted"><short>Text is displayed inverted.</short>
+      </element><element name="TCustomECProgressBar.ProgressTextStyle"><short>Style of the progress text.</short><descr>eptSolid: Text color is ProgressFontOptions.FontColor.
+eptInverted: Text color is ProgressColor (out of progress) or background color (over progress) - usually clBtnFace. </descr>
+      <seealso><link id="TCustomECProgressBar.CaptionInline"/><link id="TCustomECProgressBar.ProgressDigits"/><link id="TCustomECProgressBar.ProgressFontOptions"/><link id="TCustomECProgressBar.ProgressTextAlign"/><link id="TCustomECProgressBar.Units"/>
+        </seealso>
+      </element><element name="TCustomECProgressBar.Units"><short>Units are displayed by the value as a part of the progress text. Usually %.</short>
+      <seealso><link id="TCustomECProgressBar.CaptionInline"/><link id="TCustomECProgressBar.ProgressDigits"/><link id="TCustomECProgressBar.ProgressFontOptions"/><link id="TCustomECProgressBar.ProgressTextAlign"/><link id="TCustomECProgressBar.ProgressTextStyle"/>
+        </seealso>
+      </element><element name="TCustomECProgressBar"><short>Base class for TECProgressBar. No abstract methods, no published properties.</short>
+      </element><element name="TCustomECPositionBar"><short>Base class for TECPositionBar. No abstract methods, no published properties.</short>
+      </element><element name="TCustomECPositionBar.ProgressSign"><short>A sign (mark) showing actual position of the progress.</short>
+      </element><element name="TECPositionBar"><short>Visual component. An alternative to TTrackBar or TScrollBar. Similar components are used in Blender (3D graphics software).</short>
+      <descr><var>TECPositionBar</var> makes properties <b>published</b> only.<br/><br/><var>TECPositionBar</var> cannot have focus.<br/><var>TECPositionBar</var> is based on double precision variables.
+<var>TECPositionBar</var> can be controlled by mouse or by code.<br/><br/>
+Mouse:<br/><br/>
+Left-click will set the position immediately to the mouse cursor (or to the <var>Min/Max</var>, if click is done out of groove and scale area).<br/>
+Middle-click: moves knob to the middle of the groove or to the <var>ProgressMiddlePos</var> in case of <var>ProgressFromMiddle = True</var><br/>
+Left-click on the end of the progress on and holding the left-mouse button down will capture mouse and position can be moved even if the mouse cursor leaves the area of a position bar.<br/>
+Dragging is affected by <var>MouseDragPixels</var> (alone left mouse button) and <var>MouseDragPixelsFine</var> (Ctrl + left mouse button). Deafult values are 1 and 10, i.e. progress will change by one pixel when mouse cursor moves by one pixel (or by 10 pixels in case of dragging with Ctrl key pressed).<br/>
+Mouse wheel moves knob up/down regardless of the <var>Reversed</var> property. In case of horizontal slider rolling up/down moves knob to the left/right, again, regardless of the <var>Reversed</var> property.<br/>
+The increment is:<br/>
+Alone mouse wheel: <var>MouseDragPixels*Mouse.WheelScrollLines</var><br/>
+Ctrl + mouse wheel: <var>(MouseDragPixels/MouseDragPixelsFine)*Mouse.WheelScrollLines</var><br/><br/>
+Code:  <br/><br/>
+Simply by assigning any floating-point value to property <var>Position</var>:  <br/><var>Position</var> := 10.5; <br/>
+If the value is out of range (lesser than <var>Min</var> or greater than <var>Max</var>) then <var>Position</var> will be <var>Min</var> or <var>Max</var>.<br/>
+        </descr>
+      </element><element name="TCustomECPositionBar.MouseDragPixels"><short>Mouse drag parameter. Number of pixels that is needed to drag to increment or decrement progress position by one pixel.</short><descr>Default is 1, i.e. dragging and progress are 1:1.</descr>
+      <seealso><link id="TCustomECPositionBar.MouseDragPixelsFine"/>
+        </seealso>
+      </element><element name="TCustomECPositionBar.MouseDragPixelsFine"><short>Mouse drag parameter. CTRL is pressed. Number of pixels that is needed to drag to increment or decrement progress position by one pixel.</short><descr>Default is 10, i.e. dragging and progress are 10:1. Used for fine adjusting (dragging with Ctrl key pressed).</descr>
+      <seealso><link id="TCustomECPositionBar.MouseDragPixels"/>
+        </seealso>
+      </element>
+    <short>Visual components TECProgressBar and TECPositionBar.</short>
+    </module>
+  </package>
+</fpdoc-descriptions>

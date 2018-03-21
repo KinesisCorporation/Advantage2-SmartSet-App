@@ -1,0 +1,14 @@
+{"version":1,"strings":[
+{"hash":128342578,"name":"ecdesigntime.rsetcadddt","sourcebytes":[65,100,100,32,84,97,98],"value":"Add Tab"},
+{"hash":210984930,"name":"ecdesigntime.rsetcinsertdt","sourcebytes":[73,110,115,101,114,116,32,84,97,98],"value":"Insert Tab"},
+{"hash":212072018,"name":"ecdesigntime.rsetcdeletedt","sourcebytes":[68,101,108,101,116,101,32,84,97,98],"value":"Delete Tab"},
+{"hash":209026996,"name":"ecdesigntime.rsetcmoveleftdt","sourcebytes":[77,111,118,101,32,76,101,102,116],"value":"Move Left"},
+{"hash":123583284,"name":"ecdesigntime.rsetcmoverightdt","sourcebytes":[77,111,118,101,32,82,105,103,104,116],"value":"Move Right"},
+{"hash":174395085,"name":"ecdesigntime.rseaccadd","sourcebytes":[65,100,100,32,73,116,101,109],"value":"Add Item"},
+{"hash":154489725,"name":"ecdesigntime.rseaccinsert","sourcebytes":[73,110,115,101,114,116,32,73,116,101,109],"value":"Insert Item"},
+{"hash":171952253,"name":"ecdesigntime.rseaccdelete","sourcebytes":[68,101,108,101,116,101,32,73,116,101,109],"value":"Delete Item"},
+{"hash":198826637,"name":"ecdesigntime.rseaccprevious","sourcebytes":[80,114,101,118,105,111,117,115,32,73,116,101,109],"value":"Previous Item"},
+{"hash":258301565,"name":"ecdesigntime.rseaccnext","sourcebytes":[78,101,120,116,32,73,116,101,109],"value":"Next Item"},
+{"hash":74216848,"name":"ecdesigntime.rseaccmoveup","sourcebytes":[77,111,118,101,32,85,112],"value":"Move Up"},
+{"hash":208995006,"name":"ecdesigntime.rseaccmovedown","sourcebytes":[77,111,118,101,32,68,111,119,110],"value":"Move Down"}
+]}

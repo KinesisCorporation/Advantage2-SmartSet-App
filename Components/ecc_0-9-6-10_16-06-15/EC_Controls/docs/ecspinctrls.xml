@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="eccontrols"><module name="ECSpinCtrls"><element name="TButtonStyle"><short>Enumerated type denoting style of the spin buttons.</short>
+      </element><element name="TButtonStyle.ebsSeparated"><short>Each glyph is drawn on its own button (using ThemeServices).</short>
+      </element><element name="TButtonStyle.ebsClearBlock"><short>All glyphs are drawn on one big button without any separtor.</short>
+      </element><element name="TButtonStyle.ebsSplittedBlock"><short>All glyphs are drawn on one big button (using ThemeServices). They are separated with 3D lowered bevel.</short>
+      </element><element name="TBtnKind"><short>Enumerated type denoting kind of the button.</short>
+      </element><element name="TBtnKind.ebkMin"><short>Sets minumal value.</short>
+      </element><element name="TBtnKind.ebkBigDec"><short>Big decrement.</short>
+      </element><element name="TBtnKind.ebkDec"><short>Small decrement.</short>
+      </element><element name="TBtnKind.ebkMiddle"><short>Sets middle value.</short>
+      </element><element name="TBtnKind.ebkMax"><short>Sets maximal value.</short>
+      </element><element name="TBtnKind.ebkBigInc"><short>Big increment.</short>
+      </element><element name="TBtnKind.ebkInc"><short>Small increment.</short>
+      </element><element name="TBtnKind.ebkMenu"><short>Menu button. Can invoke menu.</short>
+      </element><element name="TBtnKind.ebkDrag"><short>Sets value by mouse dragging.</short>
+      </element><element name="TDragOrientation"><short>Enumerated type denoting direction of mouse dragging.</short>
+      </element><element name="TDragOrientation.edoBoth"><short>Both directions. Vertical dragging for approximate and horizontal dragging for fine setting (or reversely).</short>
+      </element><element name="TDrawGlyphEvent"><short>Method type. Enables user-defined glyphs of buttons.</short>
+      </element><element name="TSEOption"><short>Enumerated type. Options for TECSpinEdit.</short>
+      </element><element name="TSEOption.esoArrowKeysExceed"><short>Arrow keys, Home/End and PageUp/PageDown can exceed Min and Max values and reach MaxInEdit and MinInEdit.</short>
+      </element><element name="TSEOption.esoEditingChangesValue"><short>Editing immediately changes value, it does not wait for EditingDone.</short>
+      </element><element name="TSEOption.esoGridMode"><short>Key is reseted if used in KeyDown (Key := #0;).</short>
+      </element><element name="TSEOption.esoHomeEndAlt"><short>Alt key is a modifier. Alt + Home/End can reach Max/Min.</short>
+      </element><element name="TSEOption.esoHomeEndCtrl"><short>Ctrl key is a modifier. Ctrl + Home/End can reach Max/Min.</short>
+      </element><element name="TSEOption.esoUpDownAlt"><short>Alt key is a modifier. Alt + arrow keys can reach spin.</short>
+      </element><element name="TSEOption.esoUpDownCtrl"><short>Ctrl key is a modifier. Ctrl + arrow keys can reach spin.</short>
+      </element><element name="TSEOption.esoUpDownShift"><short>Shiftt key is a modifier. Shift + arrow keys can reach spin.</short>
+      </element><element name="TSEOption.esoUpDownOnly"><short>No modifier. Arrow keys can reach spin.</short>
+      </element><element name="TSEOption.esoSpaceClicksMiddle"><short>Modifiers + Space clicks Middle, otherwise it opens Menu.</short>
+      </element><element name="TSEOptions"><short>Set of TESOption.</short>
+      </element><element name="TGlyphStyle"><short>Style of built-in glyphs.</short>
+      </element><element name="TModifierEnter"><short>Enumerated type denoting behaviour of modifier (alt, ctrl, meta, shift) + enter key.</short>
+      </element><element name="TValueFormat"><short>Enumerated type denoting format of values.</short>
+      </element>
+    <element name="TCustomECTimer"><short>Base class for TECTimer. No published properties, no abstract methods.</short>
+      </element><element name="TECTimer"><short>Non visual component - advanced timer.</short>
+      <descr><var>TECTimer</var> makes properties <b>published</b> only.</descr>
+      </element><element name="TCustomECTimer.Delay"><short>The very first interval [miliseconds].</short>
+      <seealso><link id="TCustomECTimer.Repeating"/>
+        </seealso>
+      </element><element name="TCustomECTimer.Repeating"><short>All the next intervals after the very first (2-nd, 3-rd, 4-th ...) [miliseconds].</short>
+      <seealso><link id="TCustomECTimer.Delay"/>
+        </seealso>
+      </element><element name="TCustomECTimer.Count"/><element name="TCustomECTimer.MaxCount"><short>Count of intervals. 0 (default) or negative value means infinite count. After reaching this value is timer automatically disabled and OnTimerStop event is triggered.</short>
+      <seealso><link id="TCustomECTimer.Counter"/>
+        </seealso>
+      </element><element name="TCustomECTimer.Counter"><short>Count of intervals.</short>
+      <seealso><link id="TCustomECTimer.MaxCount"/>
+        </seealso>
+      </element>
+    <element name="TSingleSpinBtn"><short>Subclass. TCustomSpinBtns and descendants contain nine TSingleSpinBtn instances (one for each small button).</short>
+      </element><element name="TECSpinBtns"><short>Visual component. Advanced alternative to TUpDown.</short>
+      <descr><var>TECSpinBtns</var> cannot have focus.<br/><var>TECSpinBtns</var> is based on double precision variables.<br/><var>TECSpinBtns</var> can be controlled by mouse or by code.<br/><br/>
+Mouse:<br/><br/><var>TECSpinBtns</var> consists from 9 small buttons.
+Left-click on <var>BtnMin, BtnBigDec, BtnDec, BtnMiddle, BtnMenu, BtnInc, BtnBigInc</var> and <var>BtnMax</var> sets the <var>Value</var> to <var>Min</var>, decreases <var>Value</var> by <var>PageSize</var>, decreases <var>Value</var> by <var>Increment</var>, sets <var>Value</var> to <var>Middle</var>, triggers <var>OnMenuClick</var> event, increases <var>Value</var> by <var>Increment</var>, increases <var>Value</var> by <var>PageSize</var> and sets <var>Value</var> to <var>Max</var> respectively.<br/>
+Middle-click sets <var>Value</var> to <var>Middle</var> or triggers <var>OnMenuClick</var> - depends on <var>MenuControl</var> property.
+Other mouse buttons can be used for dragging too, depends on <var>DragControl</var> property.
+Dragging mainly depends on properties: <var>DragOrientation, MouseIncrementX, MouseIncrementY, MouseStepPixelsX, MouseStepPixelsY</var> and <var>Reversed</var>.
+  <br/>
+Code:  <br/><br/>
+Simply by assigning any floating-point value to property <var>Value</var>:  <br/><var>Value := 10.5;</var><br/>
+If the value is out of range (lesser than <var>Min</var> or greater than <var>Max</var>) then <var>Value</var> will be <var>Min</var> or <var>Max</var>.<br/><br/>
+Precendence of drawing:<br/><br/>
+1) The highest precedence has the <var>OnDrawGlyph</var> event.<br/>
+2) The second is <var>Caption</var>. It should be short (one or two characters).
+3) The third is image from <var>Images</var>. <var>Images</var> must be assigned and <var>ImageIndex</var> must be greater or equal to zero and lesser than <var>Images.Count</var>
+4) When the <var>OnDrawGlyph</var> is not assigned, Caption is empty string and <var>ImageIndex</var> is -1 then built-in glyph is used. There is five sets of styles, they can be selected with <var>GlyphStyle</var> property.</descr>
+      </element><element name="TECSpinBtnsPlus"><short>Visual component. Subclass designed for TECSpinEdit.</short>
+      </element><element name="TECSpinEdit"><short>Visual component. Alternative to TSpinEdit and TFloatSpinEdit.</short>
+      <descr><var>TECSpinEdit</var> can have focus and can be reached by Tab key (when <var>TabStop = True</var>, which is default).<br/><var>TECSpinEdit</var> can be controlled by mouse, by keyboard or by code.<br/><br/>
+Mouse:<br/><br/>
+See <link id="TECSpinBtns"/>.<br/><br/>
+Keyboard (slider must be focused):<br/><br/>
+Text value can typed in to the line-edit directly. If entered value is lesser than <link id="TECSpinBtnsPlus.MinInEdit"/> or greater than <link id="TECSpinBtnsPlus.MaxInEdit"/> then the value will be changed to fit these bounds. Change is done <var>OnEditingDone</var>.<br/>
+Arrow Up/Down do click on <var>BtnInc/BtnDec</var>*.<br/>
+PgUp/PgDn do click on <var>BtnBigInc/BtnBigDec</var>*.<br/>
+Ctrl + Home/End do click on <var>BtnMax/BtnMin</var>*.<br/>
+Ctrl + Space do click <var>BtnMiddle</var>.<br/>
+Ctrl + Enter do click on <var>BtnMenu</var>.<br/>
+*) valid for <var>Reversed = False</var>. For <var>Reversed = True</var> works oppositely.  <br/><br/>
+Code:  <br/><br/>
+Simply by assigning any floating-point value to property <var>Value</var>:  <br/><var>Value := 10.5;</var><br/>
+If the value is out of range (lesser than <var>Min</var> or greater than <var>Max</var>) then <var>Value</var> will be <var>Min</var> or <var>Max</var>.<br/>
+        </descr>
+      </element><element name="TECSpinController"><short>Non visual component. Designed for controlling properties of multiple TECSpinBtns and TECSpinEdit.</short>
+      </element><element name="TECSpinController.ClientList"><short>Generic list of clients (TECSpinBtns and TECSpinEdits).</short>
+      </element><element name="TECSpinController.ActionAltEnter"><short>Controls ActionAltEnter property of all TECSpinEdit clients.</short>
+      <seealso><link id="TECSpinEdit.ActionAltEnter"/>
+        </seealso>
+      </element><element name="TECSpinController.ActionCtrlEnter"><short>Controls ActionCtrlEnter property of all TECSpinEdit clients.</short>
+      <seealso><link id="TECSpinEdit.ActionCtrlEnter"/>
+        </seealso>
+      </element><element name="TECSpinController.ActionShiftEnter"><short>Controls ActionShiftEnter property of all TECSpinEdit clients.</short>
+      <seealso><link id="TECSpinEdit.ActionShiftEnter"/>
+        </seealso>
+      </element><element name="TECSpinController.BtnBigDecWidth"><short>Controls BtnBigDecWidth property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomSpinBtns.BtnBigDec"/><link id="TSingleSpinBtn.Width"/>
+        </seealso>
+      </element><element name="TECSpinController.BtnBigIncWidth"><short>Controls BtnBigIncWidth property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomSpinBtns.BtnBigInc"/><link id="TSingleSpinBtn.Width"/>
+        </seealso>
+      </element><element name="TECSpinController.BtnDecWidth"><short>Controls BtnDecWidth property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomSpinBtns.BtnDec"/><link id="TSingleSpinBtn.Width"/>
+        </seealso>
+      </element><element name="TECSpinController.BtnDragWidth"><short>Controls BtnDragWidth property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomSpinBtns.BtnDrag"/><link id="TSingleSpinBtn.Width"/>
+        </seealso>
+      </element><element name="TECSpinController.BtnIncWidth"><short>Controls BtnIncWidth property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomSpinBtns.BtnInc"/><link id="TSingleSpinBtn.Width"/>
+        </seealso>
+      </element><element name="TECSpinController.BtnMaxWidth"><short>Controls BtnMaxWidth property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomSpinBtns.BtnMax"/><link id="TSingleSpinBtn.Width"/>
+        </seealso>
+      </element><element name="TECSpinController.BtnMenuWidth"><short>Controls BtnMenuWidth property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomSpinBtns.BtnMenu"/><link id="TSingleSpinBtn.Width"/>
+        </seealso>
+      </element><element name="TECSpinController.BtnMiddleWidth"><short>Controls BtnMiddleWidth property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomSpinBtns.BtnMiddle"/><link id="TSingleSpinBtn.Width"/>
+        </seealso>
+      </element><element name="TECSpinController.BtnMinWidth"><short>Controls BtnMinWidth property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomSpinBtns.BtnMin"/><link id="TSingleSpinBtn.Width"/>
+        </seealso>
+      </element><element name="TECSpinController.GlyphStyle"><short>Controls GlyphStyle property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomSpinBtns.GlyphStyle"/>
+        </seealso>
+      </element><element name="TECSpinController.Indent"><short>Controls Indent property of all TECSpinEdit clients.</short>
+      <seealso><link id="TECSpinEdit.Indent"/>
+        </seealso>
+      </element><element name="TECSpinController.Reversed"><short>Controls Reversed property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomSpinBtns.Reversed"/>
+        </seealso>
+      </element><element name="TECSpinController.Spacing"><short>Controls Spacing property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomSpinBtns.Spacing"/>
+        </seealso>
+      </element><element name="TECSpinController.Style"><short>Controls Style property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomSpinBtns.Style"/>
+        </seealso>
+      </element><element name="TECSpinController.TimerDelay"><short>Controls TimerDelay property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomECTimer.Delay"/><link id="TCustomSpinBtns.ControlTimer"/>
+        </seealso>
+      </element><element name="TECSpinController.TimerRepeating"><short>Controls TimerRepeating property of all TECSpinBtns and TECSpinEdit clients.</short>
+      <seealso><link id="TCustomECTimer.Repeating"/><link id="TCustomSpinBtns.ControlTimer"/>
+        </seealso>
+      </element><element name="TECSpinController.Options"><short>Controls Options property of all TECSpinEdit clients.</short>
+      <seealso><link id="TECSpinEdit.Options"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns"><short>Base class for TECSpinBtns and TECSpinBtnsPlus. No published properties, no abstract methods.</short>
+      </element><element name="TSingleSpinBtn.BtnOrder"><short>Order for button. Buttons can be arranged to any order.</short>
+      <seealso><link id="TCustomSpinBtns.BtnsSorted"/>
+        </seealso>
+      </element><element name="TSingleSpinBtn.Caption"><short>Caption. Only short captions (one or two letters) are recommended.</short>
+      <seealso><link id="TSingleSpinBtn.GlyphColor"/><link id="TCustomSpinBtns.GlyphStyle"/><link id="TSingleSpinBtn.ImageIndex"/><link id="TCustomSpinBtns.Images"/><link id="TCustomSpinBtns.OnDrawGlyph"/>
+        </seealso>
+      </element><element name="TSingleSpinBtn.GlyphColor"><short>Glyph color. Also font color of Caption.</short>
+      <seealso><link id="TSingleSpinBtn.Caption"/><link id="TCustomSpinBtns.GlyphStyle"/><link id="TSingleSpinBtn.ImageIndex"/><link id="TCustomSpinBtns.Images"/><link id="TCustomSpinBtns.OnDrawGlyph"/>
+        </seealso>
+      </element><element name="TSingleSpinBtn.ImageIndex"><short>Image index. Image is taken from Parent's ImageList (property Images).</short>
+      <seealso><link id="TSingleSpinBtn.Caption"/><link id="TSingleSpinBtn.GlyphColor"/><link id="TCustomSpinBtns.GlyphStyle"/><link id="TCustomSpinBtns.Images"/><link id="TCustomSpinBtns.OnDrawGlyph"/>
+        </seealso>
+      </element><element name="TSingleSpinBtn.Left"><short>Position of the button (0 is the most left etc.).</short>
+      </element><element name="TSingleSpinBtn.Visible"><short>Visibility. Usually nine buttons are not needed. <link id="TCustomSpinBtns">TCustomSpinBtns</link> (or descendants) can consist from 1-9 buttons.</short>
+      <seealso><link id="TCustomSpinBtns.BtnsSorted"/>
+        </seealso>
+      </element><element name="TSingleSpinBtn.Width"><short>Width of button. Each of buttons can have different width.</short>
+      </element><element name="TSingleSpinBtn.Parent"><short>Determines Parent which this button belongs to.</short>
+      </element><element name="TSingleSpinBtn.FEnabled"/><element name="TSingleSpinBtn.Enabled"><short>Buttons ebkMin, ebkMax, ebkDec, ebkInc, ebkBigDec and ebkBigInc are disabled when TECSpinBtns reaches minimum (Min) or maximum (Max).</short>
+      </element><element name="TSingleSpinBtn.Kind"><short>Kind of button.</short>
+      </element><element name="TCustomSpinBtns.BtnBigDec"><short>Subclass. Button designed for big decrease.</short>
+      </element><element name="TCustomSpinBtns.BtnBigInc"><short>Subclass. Button designed for big increase.</short>
+      </element><element name="TCustomSpinBtns.BtnDec"><short>Subclass. Button designed for small decrease.</short>
+      </element><element name="TCustomSpinBtns.BtnInc"><short>Subclass. Button designed for small increase.</short>
+      </element><element name="TCustomSpinBtns.BtnDrag"><short>Subclass. Button designed for mouse dragging, i.e. changing value by mouse move while left mouse button is held.</short>
+      </element><element name="TCustomSpinBtns.BtnMax"><short>Subclass. Button designed for setting maximal possible value.</short>
+      </element><element name="TCustomSpinBtns.BtnMin"><short>Subclass. Button designed for setting minimal possible value.</short>
+      </element><element name="TCustomSpinBtns.BtnMiddle"><short>Subclass. Button designed for setting middle value. It can be 0 or any other user-defined value.</short>
+      </element><element name="TCustomSpinBtns.BtnMenu"><short>Subclass. Button designed for executing menu or other user-defined action.</short>
+      </element><element name="TCustomSpinBtns.OnMenuClick"><short>Event triggered on BtnMenu click.</short>
+      <seealso><link id="TCustomSpinBtns.MenuControl"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.OnDrawGlyph"><short>Event triggered before glyph is painted to internal image (bitmap) of button. This enables to draw user-defined glyph.</short><descr>The OnDrawGlyph has the highest precedence. The second is TSingleSpinBtn.Caption. The third is image from Images. The last is built-in glyph.</descr>
+      <seealso><link id="TSingleSpinBtn.Caption"/><link id="TSingleSpinBtn.GlyphColor"/><link id="TCustomSpinBtns.GlyphStyle"/><link id="TSingleSpinBtn.ImageIndex"/><link id="TCustomSpinBtns.Images"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.OnChange"><short>Event triggered on change of Value property.</short>
+      <seealso><link id="TCustomSpinBtns.Value"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.Value"><short>Actual value. TECSpinBtns is designed in floating point arithmetic. If you need integer value, use trunc() or round() functions.</short>
+      <seealso><link id="TCustomSpinBtns.Max"/><link id="TCustomSpinBtns.Middle"/><link id="TCustomSpinBtns.Min"/><link id="TCustomSpinBtns.OnChange"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.TimerRepeating"><short>The next Intervals [miliseconds], i.e. 2-nd, 3-rd, 4-th and all following intervals. </short>
+      <seealso><link id="TCustomSpinBtns.TimerDelay"/><link id="TCustomSpinBtns.ControlTimer"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.TimerDelay"><short>The very fisrt interval [miliseconds].</short>
+      <seealso><link id="TCustomSpinBtns.TimerRepeating"/><link id="TCustomSpinBtns.ControlTimer"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.Style"><short>Style of button glyphs.</short>
+      </element><element name="TCustomSpinBtns.Spacing"><short>Spacing [pixels]. Distance between buttons.</short>
+      <seealso><link id="TECSpinEdit.Indent"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.Reversed"><short>Determines whether button spinning is reversed.</short><descr>Reversed = False: UP - increases value; DOWN - decrases value (default)<br/>
+ 
+Reversed = True: UP - decreases value; DOWN - increases value</descr>
+      <seealso><link id="TCustomSpinBtns.DragOrientation"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.PageSize"><short>Big increment or decrement. Used by BtnBigInc and BtnBigDec.</short>
+      <seealso><link id="TCustomSpinBtns.Increment"/><link id="TCustomSpinBtns.MouseIncrementX"/><link id="TCustomSpinBtns.MouseIncrementY"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.DragControl"><short>Determines which mouse buttons can be used for dragging besides the drag button (BtnDrag). User can always use BtnDrag and left mouse button.</short><descr>This enables mouse dragging even if BtnDrag is not visible.<br/> 
+Example: DragControl = [mbMiddle] captures mouse and enables dragging when any button of TECSpinBtns (including disabled ones and BtnDrag) is clicked by middle mouse button.</descr>
+      <seealso><link id="TCustomSpinBtns.DragOrientation"/><link id="TCustomSpinBtns.MouseIncrementX"/><link id="TCustomSpinBtns.MouseIncrementY"/><link id="TCustomSpinBtns.MouseStepPixelsX"/><link id="TCustomSpinBtns.MouseStepPixelsY"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.MenuControl"><short>Determines which mouse buttons can be used for executing menu besides the menu button (BtnMenu). User can always use BtnMenu and left mouse button.</short><descr>This enables executing of menu or user defined action even if BtnMenu is not visible.<br/>
+ 
+Example: MenuControl = [mbMiddle] executes menu or user defined action when any button of TECSpinBtns (including disabled ones and BtnMenu) is clicked by middle mouse button.</descr>
+      <seealso><link id="TCustomSpinBtns.OnMenuClick"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.Min"><short>Minimal possible value.</short>
+      <seealso><link id="TCustomSpinBtns.Max"/><link id="TCustomSpinBtns.Middle"/><link id="TCustomSpinBtns.Value"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.Max"><short>Maximal possible value.</short>
+      <seealso><link id="TCustomSpinBtns.Middle"/><link id="TCustomSpinBtns.Min"/><link id="TCustomSpinBtns.Value"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.Increment"><short>Small increment or decrement. Used by BtnInc and BtnDec.</short>
+      <seealso><link id="TCustomSpinBtns.MouseIncrementX"/><link id="TCustomSpinBtns.MouseIncrementY"/><link id="TCustomSpinBtns.PageSize"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.DragOrientation"><short>Orientation of mouse dragging. Possible directions: vertical (edoVertical, default), horizontal (edoHorizontal) and both (edoBoth).</short>
+      <seealso><link id="TCustomSpinBtns.DragControl"/><link id="TCustomSpinBtns.MouseIncrementX"/><link id="TCustomSpinBtns.MouseIncrementY"/><link id="TCustomSpinBtns.MouseStepPixelsX"/><link id="TCustomSpinBtns.MouseStepPixelsY"/><link id="TCustomSpinBtns.Reversed"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.GlyphStyle"><short>Style of glyphs.</short>
+      <seealso><link id="TSingleSpinBtn.Caption"/><link id="TSingleSpinBtn.GlyphColor"/><link id="TSingleSpinBtn.ImageIndex"/><link id="TCustomSpinBtns.Images"/><link id="TCustomSpinBtns.OnDrawGlyph"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.Images"><short>Image list. Single buttons can take images from here. They have ImageIndex property for this purpose.</short>
+      <seealso><link id="TSingleSpinBtn.Caption"/><link id="TSingleSpinBtn.GlyphColor"/><link id="TCustomSpinBtns.GlyphStyle"/><link id="TSingleSpinBtn.ImageIndex"/><link id="TCustomSpinBtns.OnDrawGlyph"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.Middle"><short>Middle (0) or any other user-defined value.</short>
+      <seealso><link id="TCustomSpinBtns.Max"/><link id="TCustomSpinBtns.Min"/><link id="TCustomSpinBtns.Value"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.MouseFromMiddle"><short>Determines whether mouse dragging starts at actual value (False, default) or at Middle value (True).</short>
+      </element><element name="TCustomSpinBtns.Mode"><short>Denoting whether the spin control is in eimContinuous (normal, default) or eimDiscrete mode. In discrete mode. <link id="TCustomSpinBtns.Value">Value</link> of the spin control can be integer multiple of the DiscreteChange only.</short>
+      <seealso><link id="TCustomSpinBtns.DiscreteChange"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.DiscreteChange"><short>Applies only when <var>Mode = eimDiscrete</var>. <var>Value</var>can hold only integer multiples of DiscreteChange.</short>
+      <seealso><link id="TCustomSpinBtns.Mode"/><link id="TCustomSpinBtns.Value"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.MouseStepPixelsX"><short>Mouse sensitivity in horizontal direction.</short>
+      <seealso><link id="TCustomSpinBtns.DragControl"/><link id="TCustomSpinBtns.DragOrientation"/><link id="TCustomSpinBtns.MouseIncrementX"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.MouseStepPixelsY"><short>Mouse sensitivity in vertical direction.</short>
+      <seealso><link id="TCustomSpinBtns.DragControl"/><link id="TCustomSpinBtns.DragOrientation"/><link id="TCustomSpinBtns.MouseIncrementY"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.MouseIncrementX"><short>Increment for horizontal mouse dragging.</short>
+      <seealso><link id="TCustomSpinBtns.DragControl"/><link id="TCustomSpinBtns.DragOrientation"/><link id="TCustomSpinBtns.Increment"/><link id="TCustomSpinBtns.MouseIncrementY"/><link id="TCustomSpinBtns.MouseStepPixelsX"/><link id="TCustomSpinBtns.PageSize"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.MouseIncrementY"><short>Increment for vertical mouse dragging.</short>
+      <seealso><link id="TCustomSpinBtns.DragControl"/><link id="TCustomSpinBtns.DragOrientation"/><link id="TCustomSpinBtns.Increment"/><link id="TCustomSpinBtns.MouseIncrementX"/><link id="TCustomSpinBtns.MouseStepPixelsY"/><link id="TCustomSpinBtns.PageSize"/>
+        </seealso>
+      </element><element name="TECSpinBtnsPlus.MaxInEdit"><short>Designed specially for TECSpinEdit. Value edited by keyboard can exceed Max.</short><descr>Feature for experienced users. Usually, Max = MaxInEdit.</descr>
+      </element><element name="TECSpinBtnsPlus.MinInEdit"><short>Designed specially for TECSpinEdit. Value edited by keyboard can exceed Min.</short><descr>Feature for experienced users. Usually, Min = MinInEdit.</descr>
+      </element><element name="TECSpinEdit.ActionAltEnter"><short>Determines what action will happen when user presses Alt+Enter.</short><descr>Possibilities: No action (default), menu button click, middle button click.</descr>
+      <seealso><link id="TECSpinEdit.ActionCtrlEnter"/><link id="TECSpinEdit.ActionShiftEnter"/><link id="TECSpinEdit.Options"/>
+        </seealso>
+      </element><element name="TECSpinEdit.ActionCtrlEnter"><short>Determines what action will happen when user presses Ctrl+Enter.</short><descr>Possibilities: No action, menu button click (default), middle button click.</descr>
+      <seealso><link id="TECSpinEdit.ActionAltEnter"/><link id="TECSpinEdit.ActionShiftEnter"/><link id="TECSpinEdit.Options"/>
+        </seealso>
+      </element><element name="TECSpinEdit.ActionShiftEnter"><short>Determines what action will happen when user presses Shift+Enter.</short><descr>Possibilities: No action (default), menu button click, middle button click.</descr>
+      <seealso><link id="TECSpinEdit.ActionAltEnter"/><link id="TECSpinEdit.ActionCtrlEnter"/><link id="TECSpinEdit.Options"/>
+        </seealso>
+      </element><element name="TECSpinEdit.Buttons"><short>Subclass. Spin-buttons associated to line-edit.</short>
+      <seealso><link id="TECSpinEdit.WidthInclBtns"/>
+        </seealso>
+      </element><element name="TECSpinEdit.Indent"><short>Indent [pixels] of buttons. Distance between line-edit and buttons.</short>
+      <seealso><link id="TCustomSpinBtns.Spacing"/>
+        </seealso>
+      </element><element name="TECSpinEdit.BiDiMode"><short>Bi-directional mode. Inherited property.</short><descr>Buttons are sticked to the right for left-to-right  languages and to the left for right-to-left languages.</descr>
+      </element><element name="TECSpinBtns.Controller"><short>Link to <link id="TECSpinController">TECSpinController</link>. Controller will control set selected properties.</short>
+      </element><element name="TECSpinEdit.Controller"><short>Link to <link id="TECSpinController">TECSpinController</link>. Controller will control selected set of properties.</short>
+      </element><element name="TECSpinEdit.WidthInclBtns"><short>Width including button width. Common property "Width" gives width of edit only. WidthInclBtns gives width including Buttons and Indent.</short>
+      <seealso><link id="TECSpinEdit.Buttons"/><link id="TECSpinEdit.Indent"/>
+        </seealso>
+      </element><element name="TECSpinEdit.Value"><short>Actual value. This property reads and writes value from Buttons.Value.</short>
+      <seealso><link id="TECSpinEdit.ValueFormat"/>
+        </seealso>
+      </element><element name="TECSpinEdit.ValueFormat"><short>Format of value in line-edit.</short>
+      <seealso><link id="TECSpinEdit.DateTimeFormat"/><link id="TECSpinEdit.Digits"/><link id="TECSpinEdit.Items"/><link id="TECSpinEdit.MantissaExp"/><link id="TECSpinEdit.Value"/>
+        </seealso>
+      </element><element name="TECSpinEdit.Items"><short>Applies only for ValueFormat = evfText or evfCombined. Value is index of this string list.</short>
+      <seealso><link id="TECSpinEdit.ValueFormat"/>
+        </seealso>
+      </element><element name="TECSpinEdit.MantissaExp"><short>Applies only for ValueFormat = evfExponent or evfMantissa.</short><descr>evfExponent: Value is exponent, MantissaExp is mantissa.<br/>
+ 
+evfMantissa: Value is mantissa, MantissaExp is exponent.<br/><br/>
+ 
+Example:<br/>
+ 
+MantissaExp = 2<br/>
+ 
+evfExponent: 1, 2, 4, 8, 16, 32, 64, ...<br/> 
+evfMantissa: 1, 4, 9, 16, 25, 36, 49, 64, ...</descr>
+      <seealso><link id="TECSpinEdit.ValueFormat"/>
+        </seealso>
+      </element><element name="TECSpinEdit.DateTimeFormat"><short>Applies only for ValueFormat = evfDate or evfTime.</short>
+      <seealso><link id="TECSpinEdit.ValueFormat"/>
+        </seealso>
+      </element><element name="TECSpinEdit.Options"><short>See <link id="TSEOption"/>.</short>
+      <seealso><link id="TECSpinEdit.ActionAltEnter"/><link id="TECSpinEdit.ActionCtrlEnter"/><link id="TECSpinEdit.ActionShiftEnter"/>
+        </seealso>
+      </element><element name="TECSpinEdit.Digits"><short>Number of digits. Applies to several ValueFormats.</short><descr>evfRound: number of decimal places.<br/> 
+evfExponent: number of decimal places.<br/> 
+evfExponential: number of decimal places and digits of exponent.<br/> 
+evfMantissa: number of decimal places.<br/> 
+evfHexadecimal: number of digits.<br/> 
+evfMarkHexadec: number of digits after $.<br/> 
+evfOctal: number of digits.<br/> 
+evfBinary: number of digits.<br/>
+        </descr>
+      <seealso><link id="TECSpinEdit.ValueFormat"/>
+        </seealso>
+      </element>
+    <short>Visual components TECSpinBtns and TECSpinEdit. Non visual components TECTimer and TECSpinController.</short>
+    <element name="TOnDrawGlyph"><short>Event method. Enables user-defined glyphs on the small buttons.</short>
+      </element><element name="TCustomSpinBtns.UpdateCount"><short>Counter of updates. UpdateCount &gt; 0 means that component is being updated.</short><seealso><link id="TCustomSpinBtns.BeginUpdate"/><link id="TCustomSpinBtns.EndUpdate"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.EndUpdate"><short>Decreases <var>UpdateCount</var>.</short><seealso><link id="TCustomSpinBtns.BeginUpdate"/><link id="TCustomSpinBtns.UpdateCount"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.BeginUpdate"><short>Increases <var>UpdateCount</var>. It reduces number of internal redraws when more than one visual property (color, glyph ...) is changed at a time.</short><seealso><link id="TCustomSpinBtns.EndUpdate"/><link id="TCustomSpinBtns.UpdateCount"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.BtnsUnsorted"><short>Array of all unsorted small buttons.</short><seealso><link id="TCustomSpinBtns.BtnsSorted"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.BtnsSorted"><short>Array of all sorted small buttons.</short><seealso><link id="TSingleSpinBtn.BtnOrder"/><link id="TCustomSpinBtns.BtnsUnsorted"/>
+        </seealso>
+      </element><element name="TCustomSpinBtns.HoveredBtn"><short>Index of hovered button. -1 means that no button is currently hovered.</short><descr>This index does not include invisible buttons. If only 3 buttons are visible, it can have value -1..2.</descr>
+      </element><element name="TCustomSpinBtns.HoveredBtnReal"><short>Index of hovered button. -1 means that no button is currently hovered.</short><descr>This index includes invisible buttons. Even if only 3 buttons are visible, it can have value -1..8.</descr>
+      </element><element name="TCustomSpinBtns.BtnPositions"><short>Dynamic array holding left positions of small buttons.</short><descr>Necessary for correct highlighting on mouse-hovering, especially when each button can have other width.</descr>
+      </element><element name="TCustomSpinBtns.BtnBigDecClick"><short>Method triggered when small button with glyph "big decrement" is clicked.</short>
+      </element><element name="TCustomSpinBtns.BtnBigIncClick"><short>Method triggered when small button with glyph "big increment" is clicked.</short>
+      </element><element name="TCustomSpinBtns.BtnDecClick"><short>Method triggered when small button with glyph "small decrement" is clicked.</short>
+      </element><element name="TCustomSpinBtns.BtnIncClick"><short>Method triggered when small button with glyph "small increment" is clicked.</short>
+      </element><element name="TCustomSpinBtns.BtnMaxClick"><short>Method triggered when small button with glyph "maximum" is clicked.</short>
+      </element><element name="TCustomSpinBtns.BtnMinClick"><short>Method triggered when small button with glyph "minimum" is clicked.</short>
+      </element><element name="TCustomSpinBtns.BtnMiddleClick"><short>Method triggered when small button with glyph "middle" is clicked.</short>
+      </element><element name="TCustomSpinBtns.BtnMenuClick"><short>Method triggered when small button with glyph "menu" is clicked.</short>
+      </element><element name="TCustomSpinBtns.ControlTimer"><short>Common timer for all <var>TCustomSpinBtns</var> and descendants.</short><descr>It is a class variable. Timer is shared, therefore two <var>TCustomSpinBtns</var> instances cannot spin at a time.</descr><seealso><link id="TCustomSpinBtns.TimerDelay"/><link id="TCustomSpinBtns.TimerRepeating"/>
+        </seealso>
+      </element>
+    <element name="TExtraMouseButtons"><short>Subset of TMouseButtons excluding mbLeft.</short>
+      </element><element name="TSEOption.esoSmartDate"><short>Smart spinning of moths and years. Increment or PageSize 30 is always interpreted as 1 month and 365 is always 1 year.</short>
+      </element><element name="TCustomECTimer.Control"><short>Control which currently uses timer.</short><descr>Added for the case when multiple controls share one timer. May be left <b>nil</b>.</descr>
+      </element><element name="TECSpinEditSpacing"><short>Class modifying border spacing, so TECSpinEdit can be correctly aligned to the right.</short>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>

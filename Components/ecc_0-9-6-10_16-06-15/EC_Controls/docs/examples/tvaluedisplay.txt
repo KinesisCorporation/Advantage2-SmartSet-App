@@ -1,0 +1,122 @@
+Horizontal Scales:
+
+evdNormal:
+| | | | | | | | | | |
+|         |         |
+          |
+
+         125
+
+evdTopLeft:
+| | | | | | | | | | |
+|         |         |
+          |
+
+       125
+
+evdBottomRight:
+| | | | | | | | | | |
+|         |         |
+          |
+
+           125
+
+evdTopLeftInside, evdCompactTopLeft:
+| | | | | | | | | | |
+|         |         |
+       125|
+
+
+evdBttmRightInside, evdCompactBttmRight:
+| | | | | | | | | | |
+|         |         |
+          |125
+
+
+
+Vertical Scales:
+
+evdNormal:
+       --
+       --
+125 -----
+       --
+       --
+
+evdTopLeft:
+      ___
+       __
+       __
+       __
+125    __
+     _____
+       __
+       __
+       __
+       __
+      ___
+
+evdBottomRight:
+      ___
+       __
+       __
+       __
+       __
+    _____
+125    __
+       __
+       __
+       __
+      ___
+
+evdTopLeftInside:
+    ___
+     __
+     __
+     __
+125  __
+  _____
+     __
+     __
+     __
+     __
+    ___
+
+evdBttmRightInside:
+    ___
+     __
+     __
+     __
+     __
+  _____
+125  __
+     __
+     __
+     __
+    ___
+
+evdCompactTopLeft:
+_____ (130)
+   __
+   __
+   __
+   __
+  ___
+   __
+1  __
+2  __
+5  __
+_____ (125)
+
+evdCompactBttmRight:
+_____ (125)
+1  __
+2  __
+5  __
+   __
+  ___
+   __
+   __
+   __
+   __
+_____ (120)

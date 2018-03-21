@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Package Version="3">
+    <PathDelim Value="\"/>
+    <Name Value="richmemopackage"/>
+    <Author Value="Dmitry 'skalogryz' Boyarintsev"/>
+    <CompilerOptions>
+      <Version Value="8"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="win32\;carbon\;gtk2\"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Other>
+        <CompilerMessages>
+          <IgnoredMessages idx4055="True" idx5024="True" idx5057="True" idx5060="True"/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Description Value="RichMemo control. Implements cross-platfrom RichEdit control.
+"/>
+    <License Value="LGPL"/>
+    <Version Major="1"/>
+    <Files Count="12">
+      <Item1>
+        <Filename Value="wsrichmemo.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="WSRichMemo"/>
+      </Item1>
+      <Item2>
+        <Filename Value="win32\win32richmemo.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="Win32RichMemo"/>
+      </Item2>
+      <Item3>
+        <Filename Value="win32\win32richmemoproc.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="Win32RichMemoProc"/>
+      </Item3>
+      <Item4>
+        <Filename Value="richmemofactory.pas"/>
+        <UnitName Value="RichMemoFactory"/>
+      </Item4>
+      <Item5>
+        <Filename Value="richmemoregister.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="richmemoregister"/>
+      </Item5>
+      <Item6>
+        <Filename Value="richmemopackage.lrs"/>
+        <Type Value="LRS"/>
+      </Item6>
+      <Item7>
+        <Filename Value="carbon\carbonrichmemo.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="CarbonRichMemo"/>
+      </Item7>
+      <Item8>
+        <Filename Value="richmemo.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="RichMemo"/>
+      </Item8>
+      <Item9>
+        <Filename Value="gtk2\gtk2richmemo.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="gtk2richmemo"/>
+      </Item9>
+      <Item10>
+        <Filename Value="rtfparspre211.pp"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="RTFParsPre211"/>
+      </Item10>
+      <Item11>
+        <Filename Value="richmemortf.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="RichMemoRTF"/>
+      </Item11>
+      <Item12>
+        <Filename Value="rtfdata.inc"/>
+        <Type Value="Include"/>
+      </Item12>
+    </Files>
+    <Type Value="RunAndDesignTime"/>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="FCL"/>
+        <MinVersion Major="1" Valid="True"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)\"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IgnoreBinaries Value="False"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

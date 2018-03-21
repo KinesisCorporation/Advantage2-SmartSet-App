@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <Name Value="MdSliderbarsLaz"/>
+    <Type Value="RunAndDesignTime"/>
+    <Author Value="Michel Deslierres"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="../source;."/>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Description Value="Sliderbars contains two components: 
+  TColorBar: TCustomControl descendant which displays a color gradiant 
+  TSliderBar: which is user drawn.
+  TColorPlane: which displays a cut in the RGB cube (two colour gradient)
+  TSliderPlane: a user drawn x-y version of TSliderBar
+"/>
+    <License Value="See Licence.txt in source directory"/>
+    <Version Minor="2" Release="4"/>
+    <Files Count="2">
+      <Item1>
+        <Filename Value="mdsliderbarpalettteimages.pas"/>
+        <UnitName Value="mdsliderbarpalettteimages"/>
+      </Item1>
+      <Item2>
+        <Filename Value="../source/sliderbars.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="SliderBars"/>
+      </Item2>
+    </Files>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="LCLBase"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="FCL"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <CustomOptions Items="ExternHelp" Version="2">
+      <_ExternHelp Items="Count"/>
+    </CustomOptions>
+  </Package>
+</CONFIG>

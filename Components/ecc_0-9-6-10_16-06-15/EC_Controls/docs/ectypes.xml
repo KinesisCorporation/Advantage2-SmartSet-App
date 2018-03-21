@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="eccontrols"><module name="ECTypes">
+      <element name="TItemState"><short>Enumerated type denoting state of TECSpeedBtn, TECSpinBtns or TECGroupCtrls.</short>
+      </element><element name="TItemState.eisPushedDisabled"><short>Item or Button is pushed but not enabled.</short>
+      </element><element name="TColorLayout"><short>Enumerated type denoting format of color string.</short>
+      </element><element name="TColorLayout.eclRGBColor"><short>Displays color channels in this order: Red, Green, Blue.</short>
+      </element><element name="TColorLayout.eclBGRColor"><short>Displays color channels in this order: Blue, Green, Red.</short>
+      </element><element name="TColorLayout.eclARGBColor"><short>Displays color channels in this order: Alpha, Red, Green, Blue.</short>
+      </element><element name="TColorLayout.eclABGRColor"><short>Displays color channels in this order: Alpha, Blue, Green, Red.</short>
+      </element><element name="TColorLayout.eclSystemBGR"><short>Displays names of known colors, like clBlue, clRed etc. Unknown colors displays in this order: Blue, Green, Red.</short>
+      </element><element name="TGlyphDesign"><short>Enumerated type selecting the built-in glyph of canvas helper class.</short>
+      </element><element name="TGlyphDesign.egdNone"><short>No built-in glyph selected.</short>
+      </element><element name="TGlyphDesign.egdRectBeveled"><short>Color rectangle, frame is 3D lowered.</short>
+      </element><element name="TGlyphDesign.egdRectFramed"><short>Color rectangle, frame is drawn with clBtnText.</short>
+      </element><element name="TIncrementalMode"><short>Enumerated type denoting mode of TECSlider or TECSpinBtns.</short>
+      <descr>Control in mode eimContinuous can hold any floating point value between Min and Max.
+
+Control in mode eimDiscret can hold only integer multipliers of DiscreteChange (i.e. 0.1, 0.2, 0.3 ... for DiscreteChange = 0.1; it can never be 0.03, 0.15, 0.27).</descr>
+      </element><element name="TIncrementalMode.eimContinuous"><short>TECSlider or TECSpinBtns can hold any floating-point value between Min and Max.</short>
+      </element><element name="TIncrementalMode.eimDiscrete"><short>TECSlider or TECSpinBtns can only hold integer multiples of DiscreteChange.</short>
+      </element><element name="TObjectOrientation"><short>Enumerated type denoting horizontal or vertical orientation of a visual component.</short>
+      </element><element name="TObjectPos"><short>Enumerated type denoting position of the element (Caption, Image) inside the visual component.</short>
+      <seealso><link id="TBasicPos"/>
+        </seealso>
+      </element><element name="TObjectStyle"><short>Enumerated type denoting the style of a visual component.</short>
+      </element><element name="TObjectStyle.eosButton"><short>Component is drawn as a PushButton using ThemeServices.</short>
+      </element><element name="TObjectStyle.eosPanel"><short>Component is drawn as a panel using 3D-lowered or 3D-raised frames.</short>
+      </element><element name="TRedrawMode"><short>Enumerated type designed for efficient repainting of complex visual components.</short><descr>For higher efficiency, TBaseECSlider derived components are drawn to bitmaps and these bitmaps (or their parts) are copied to component's Canvas on Paint method.</descr>
+      </element><element name="TRedrawMode.ermHoverKnob"><short>Only Knob of ECSlider is repainted.</short>
+      </element><element name="TRedrawMode.ermMoveKnob"><short>Knob is moved from A to B. Rectangle determined by A, B and space between them is repainted.</short>
+      </element><element name="TRedrawMode.ermFreeRedraw"><short>The most common value. Whole component is repainted. Value can fall to lower state (ermHoverKnob or ermMoveKnob).</short>
+      </element><element name="TRedrawMode.ermRedrawBkgnd"><short>Internal bitmaps are repainted. Whole component is repainted. Value cannot fall to lower states.</short>
+      </element><element name="TRedrawMode.ermRecalcRedraw"><short>Component is recalculated. Internal bitmaps are repainted. Whole component is repainted. Value cannot fall to lower states.</short>
+      </element><element name="TTickDesign"><short>Enumerated type denoting design of ticks (ticks of TECScale or ticks on Knob of TECSlider or TECSwitch).</short>
+      </element><element name="TBasicPos"><short>Enumerated type denoting position of the element (Caption, Scale) inside a visual component.</short>
+      <descr>This type is simpilfied. Depends on orientation of object.</descr>
+      <seealso><link id="TObjectOrientation"/><link id="TObjectPos"/>
+        </seealso>
+      </element><element name="TBasicPos.etpTopLeft"><short>Position is Top (in case of horizontal component) or Left (in case of vertical component).</short>
+      </element><element name="TBasicPos.etpBottomRight"><short>Position is Bottom (in case of horizontal component) or Right (in case of vertical component).</short>
+      </element><element name="TTickStyle"><short>Enumerated type denoting style of ticks on the Knob of TECSlider or TECSwitch.</short>
+      </element><element name="TValuesVisibility"><short>Enumerated type denoting visibility of values (numbers) of TECScale.</short>
+      </element><element name="TValuesVisibility.evvNone"><short>No values are displayed.</short>
+      </element><element name="TValuesVisibility.evvBounds"><short>Only bound values are displayed.</short>
+      </element><element name="TValuesVisibility.evvValues"><short>Only regular values are displayed.</short>
+      </element><element name="TValuesVisibility.evvAll"><short>Regular and bound values are displayed (useful when bound values are not regular).</short>
+      </element><element name="TCanvasHelper"><short>Helper class; it can paint built-in glyphs of TECpeedBtn or backgrounds for many EC-Controls.</short>
+      </element><element name="TCanvasHelper.DrawButtonBackground"><short>Draws button-like background on the canvas. Uses Themes (ThemeServices).</short>
+      </element><element name="TCanvasHelper.DrawGlyph"><short>Draws built-in glyphs on the canvas.</short>
+      </element><element name="TCanvasHelper.DrawPanelBackground"><short>Draws panel-like background on the canvas.</short>
+      </element><element name="TCanvasHelper.GlyphExtent"><short>Returns size of glyph.</short>
+      </element><element name="TCanvasHelper.SetRealGlyphColor"><short>Set glyph color. clDefault is clBtnText for Enabled = True. For Enabled = False is color merged: 67% glyph color and 33% background.</short>
+      </element><element name="TFontOptions"><short>Class is used as a subclass for visual components.</short><descr>Visual component has sometimes more text elements which need to have different font parameters. Implementing new TFont instance is exaggerating (memory consuming). TFontOptions is used instead.</descr>
+      </element><element name="TFontOptions.FontColor"><short>Alternative color of parent's font.</short>
+      </element><element name="TFontOptions.FontSize"><short>Alternative font-size of parent's font.</short>
+      </element><element name="TFontOptions.FontStyles"><short>Alternative font-styles of parent's font.</short>
+      </element><element name="TECBaseControl"><short>Base abstract class for TBaseECSlider, TCustomECRuler, TCustomECSwitch and TCustomECGroupCtrl.</short><descr>This class contains abstract methods. Do not instantiate.</descr>
+      </element><element name="TECBaseControl.BeginUpdate"><short>Increases UpdateCount. It reduces number of internal redraws when more than one visual property (color, bevel ...) is changed at a time.</short>
+      <seealso><link id="TECBaseControl.EndUpdate"/><link id="TECBaseControl.UpdateCount"/>
+        </seealso>
+      </element><element name="TECBaseControl.EndUpdate"><short>Decreases UpdateCount.</short><descr>When <var>UpdateCount</var> is decreased to 0 then depends on Recalculate:<br/>
+ 
+True: calls <link id="TECBaseControl.RecalcRedraw"/><br/>
+ 
+False: calls <link id="TECBaseControl.Redraw"/>
+        </descr>
+      <seealso><link id="TECBaseControl.BeginUpdate"/><link id="TECBaseControl.UpdateCount"/>
+        </seealso>
+      </element><element name="TECBaseControl.RecalcRedraw"><short>Recalculates and redraws internal bitmaps. Abstract method.</short>
+      </element><element name="TECBaseControl.Redraw"><short>Redraws internal bitmaps. Abstract method.</short>
+      </element><element name="TECBaseControl.Redraw_Invalidate"><short>Only calls Invalidate (if UpdateCount = 0). This method does not Redraw internal bitmaps.</short>
+      </element><element name="TECBaseControl.BevelInner"><short>Style of inner bevel. Applies only when Style = eosPanel.</short>
+      <seealso><link id="TECBaseControl.BevelOuter"/><link id="TECBaseControl.BevelSpace"/><link id="TECBaseControl.BevelWidth"/><link id="TECBaseControl.Color3DDark"/><link id="TECBaseControl.Color3DLight"/><link id="TECBaseControl.GetBorderWidth"/><link id="TECBaseControl.Redraw3DColorAreas"/>
+        </seealso>
+      </element><element name="TECBaseControl.BevelOuter"><short>Style of outer bevel. Applies only when Style = eosPanel.</short>
+      <seealso><link id="TECBaseControl.BevelInner"/><link id="TECBaseControl.BevelSpace"/><link id="TECBaseControl.BevelWidth"/><link id="TECBaseControl.Color3DDark"/><link id="TECBaseControl.Color3DLight"/><link id="TECBaseControl.GetBorderWidth"/><link id="TECBaseControl.Redraw3DColorAreas"/>
+        </seealso>
+      </element><element name="TECBaseControl.BevelSpace"><short>Space between inner and outer bevel.</short>
+      <seealso><link id="TECBaseControl.BevelInner"/><link id="TECBaseControl.BevelOuter"/><link id="TECBaseControl.BevelWidth"/><link id="TECBaseControl.Color3DDark"/><link id="TECBaseControl.Color3DLight"/><link id="TECBaseControl.GetBorderWidth"/><link id="TECBaseControl.Redraw3DColorAreas"/>
+        </seealso>
+      <descr><var>BevelWidth</var> is taken into account even if <var>Style = eosButton</var>.</descr>
+      </element><element name="TECBaseControl.BevelWidth"><short>Width of inner and outer bevel. Inner and outer bevel cannot have different width.</short>
+      <seealso><link id="TECBaseControl.BevelInner"/><link id="TECBaseControl.BevelOuter"/><link id="TECBaseControl.BevelSpace"/><link id="TECBaseControl.Color3DDark"/><link id="TECBaseControl.Color3DLight"/><link id="TECBaseControl.GetBorderWidth"/><link id="TECBaseControl.Redraw3DColorAreas"/>
+        </seealso>
+      <descr><var>BevelWidth</var> is taken into account even if <var>Style = eosButton</var>.</descr>
+      </element><element name="TECBaseControl.Color3DDark"><short>Color of shadowed patrs of the bevel. Applies only when Style = eosPanel.</short>
+      <seealso><link id="TECBaseControl.BevelInner"/><link id="TECBaseControl.BevelOuter"/><link id="TECBaseControl.BevelSpace"/><link id="TECBaseControl.BevelWidth"/><link id="TECBaseControl.Color3DLight"/><link id="TECBaseControl.Redraw3DColorAreas"/>
+        </seealso>
+      </element><element name="TECBaseControl.Color3DLight"><short>Color of enlighted parts of the bevel. Applies only when Style = eosPanel.</short>
+      <seealso><link id="TECBaseControl.BevelInner"/><link id="TECBaseControl.BevelOuter"/><link id="TECBaseControl.BevelSpace"/><link id="TECBaseControl.BevelWidth"/><link id="TECBaseControl.Color3DDark"/><link id="TECBaseControl.Redraw3DColorAreas"/>
+        </seealso>
+      </element><element name="TECBaseControl.Orientation"><short>Denotes whether the visual component is oriented vertically or horizontally.</short>
+      <seealso><link id="TECBaseControl.OrientationChanged"/>
+        </seealso>
+      </element><element name="TECBaseControl.Style"><short>Denotes the style (button-like, panel-like) of the visual component.</short>
+      <seealso><link id="TECBaseControl.StyleChanged"/>
+        </seealso>
+      </element><element name="TECBaseControl.UpdateCount"><short>Counter of updates. UpdateCount &gt; 0 means that component is being updated.</short>
+      <seealso><link id="TECBaseControl.BeginUpdate"/><link id="TECBaseControl.EndUpdate"/>
+        </seealso>
+      </element><element name="TECBaseControl.Redraw3DColorAreas"><short>Redraws those parts of internal bitmaps, which are drawn by Color3DDark or Color3DLight. Abstract method.</short>
+      <seealso><link id="TECBaseControl.BevelInner"/><link id="TECBaseControl.BevelOuter"/><link id="TECBaseControl.BevelSpace"/><link id="TECBaseControl.BevelWidth"/><link id="TECBaseControl.Color3DDark"/><link id="TECBaseControl.Color3DLight"/>
+        </seealso>
+      </element><element name="TECBaseControl.HasCaption"><short>Returns True when visual component has any caption.</short>
+      </element><element name="TECBaseControl.GetBorderWidth"><short>Returns width of border, i.e. inner bevel width + bevel space + outer bevel width.</short>
+      <seealso><link id="TECBaseControl.BevelInner"/><link id="TECBaseControl.BevelOuter"/><link id="TECBaseControl.BevelSpace"/><link id="TECBaseControl.BevelWidth"/>
+        </seealso>
+      </element><element name="TECBaseControl.OrientationChanged"><short>Triggered when <link id="TECBaseControl.Orientation">Orientation</link> changed.</short>
+      <seealso><link id="TECBaseControl.Orientation"/>
+        </seealso>
+      </element><element name="TECBaseControl.StyleChanged"><short>Triggered when <link id="TECBaseControl.Style">Style</link> changed.</short>
+      <seealso><link id="TECBaseControl.Style"/>
+        </seealso>
+      </element><element name="TECBaseControl.SetAutoSize"/>
+      <element name="TECCustomKnob"><short>Base class for TECSliderKnob and TECSwitchKnob. No abstract methods, no published properties.</short>
+      </element><element name="TECCustomKnob.BevelWidth"><short>Bevel width.</short>
+      <seealso><link id="TECCustomKnob.TickMarkSpacing"/>
+        </seealso><descr>Bevel is drawn only when <var>Style = eosPanel</var> but its size is taken into account also when <var>Style = eosButton</var>.</descr>
+      </element><element name="TECCustomKnob.Color"><short>Color of the knob. </short><descr>clDefault is:<br/>
+ 
+clBtnFace when <var>Style = eosButton</var>.<br/>
+ 
+Parent's color when <var>Style = eosPanel</var>.</descr>
+      </element><element name="TECCustomKnob.Style"><short>Denotes the style (button-like, panel-like) of the knob.</short>
+      </element><element name="TECCustomKnob.Height"><short>Height of the knob.</short>
+      <seealso><link id="TECCustomKnob.Width"/><link id="TECCustomKnob.SetSize"/>
+        </seealso>
+      </element><element name="TECCustomKnob.Width"><short>Width of the knob.</short>
+      <seealso><link id="TECCustomKnob.Height"/><link id="TECCustomKnob.SetSize"/>
+        </seealso>
+      </element><element name="TECCustomKnob.Cursor"><short>TECSlider changes cursor (crHandPoint is default) when knob is hovered. TECSwitch doesn't.</short>
+      </element><element name="TECCustomKnob.TickMarkCount"><short>Number of ticks on the knob.</short>
+      <seealso><link id="TECCustomKnob.TickMarkDesign"/><link id="TECCustomKnob.TickMarkSpacing"/><link id="TECCustomKnob.TickMarkStyle"/>
+        </seealso>
+      </element><element name="TECCustomKnob.TickMarkDesign"><short>Design of the ticks (etdSimple, etdThick, etd3DLowered or etd3DRaised).</short>
+      <seealso><link id="TECCustomKnob.TickMarkCount"/><link id="TECCustomKnob.TickMarkSpacing"/><link id="TECCustomKnob.TickMarkStyle"/>
+        </seealso>
+      </element><element name="TECCustomKnob.TickMarkStyle"><short>Style of the ticks (solid or dotted lines).</short>
+      <seealso><link id="TECCustomKnob.TickMarkCount"/><link id="TECCustomKnob.TickMarkDesign"/><link id="TECCustomKnob.TickMarkSpacing"/>
+        </seealso>
+      </element><element name="TECCustomKnob.TickMarkSpacing"><short>Spacing (number of  pixels) around ticks.</short>
+      <seealso><link id="TECCustomKnob.BevelWidth"/><link id="TECCustomKnob.TickMarkCount"/><link id="TECCustomKnob.TickMarkDesign"/><link id="TECCustomKnob.TickMarkStyle"/>
+        </seealso>
+      <descr>The realspacing around ticks is <var>TickMarkSpacing + BevelWidth</var> even if <var>Style = eosButton</var>.</descr>
+      </element><element name="TECCustomKnob.BackgroundColor"><short>Stores color of background (Parent) and sets unique transparent color for internal bitmaps.</short>
+      </element><element name="TECCustomKnob.DrawKnobs"><short>Draws normal, disabled and highlighted knobs to internal bitmaps.</short>
+      </element><element name="TECCustomKnob.SetSize"><short>Changes size of internal bitmaps and redraws them.</short>
+      <seealso><link id="TECCustomKnob.Height"/><link id="TECCustomKnob.Width"/>
+        </seealso>
+      </element><element name="TECCustomKnob.RecalcRedraw"><short>Triggers parent's <link id="TECBaseControl.RecalcRedraw">RecalcRedraw</link> method.</short>
+      </element><element name="ARGBToColor"><short>Converts separate 8-bit alpha, red, green and blue values to 32-bit TColor.</short>
+      </element><element name="ColorToRGBA"><short>Splits 32-bit TColor to separate 8-bit alpha, red, green and blue values.</short>
+      </element><element name="GetColorResolvingDefault"><short>Returns color but avoids clDefault because it is a system constant.</short><descr>Returns ASourceColor if it is not <i>clDefault</i>. If yes, returns ADefColor.</descr>
+      </element><element name="GetColorResolvingDefAndEnabled"><short>Returns color but avoids clDefault because it is a system constant. Color is monochromatic when AEnabled = False.</short><descr>Returns ASourceColor if it is not <i>clDefault</i>. If yes, returns ADefColor.
+If AEnabled = <i>False</i>, returned color is monochromatic.</descr>
+      </element><element name="GetMonochromaticColor"><short>Returns monochromatic color with the same intensity as AColor.</short>
+      </element><element name="GetMergedColor"><short>Merges two colors with defined proportion.</short><descr>AProportion should be between 0 and 1.<br/> 
+Proportion 1 returns AColor.<br/> 
+Proportion 0 returns BColor.</descr>
+      </element><element name="IsInRange"><short>Returns True if AValue is in interval (including endpoint).</short><descr>Regardless the order of endpoints, i.e IsInRange(2, 1, 3) and IsInRange (2, 3, 1) gives the same result (<i>True</i>).</descr>
+      </element><element name="LinearToLogarithmic"><short>Converts linear position on the logarithmic scale to the logarithmic value.</short>
+      <example file="examples/lineartologarithmic.txt"/><descr>Note: Negative bounds are set to 0.</descr>
+      </element>
+    <element name="TObjectMethod"><short>Alias for the simpliest method without any parmeters.</short>
+      </element>
+    <element name="TItemState.eisDisabled"><short>Item or Button is not enabled and not pushed.</short>
+      </element><element name="TItemState.eisHighlighted"><short>Item or Button is enabled and is hovered by mouse.</short>
+      </element><element name="TItemState.eisEnabled"><short>Item or Button is enabled and not hovered by mouse.</short>
+      </element><element name="TItemState.eisPushed"><short>Item or Button is enabled, pushed and not hovered by mouse.</short>
+      </element><element name="TItemState.eisPushedHihlighted"><short>Item or Button is enabled, pushed and hovered by mouse.</short>
+      </element><element name="TItemStates"><short>Set of TItemState.</short><descr>Images of TECSpeedBtn and TECGroupCtrls are stored in internal bitmaps. This type denotes which states are actually needed (i.e. [eisHighlighted, eisEnabled, eisPushed, eisPushedHihlighted] when Enabled = True and [eisDisabled, eisPushedDisabled] when Enabled = False). This type was introduced for optimalization. It reduces overhead of these controls since they store 4 or 2 bitmaps instead of 6.</descr>
+      </element>
+    <element name="TTickDesign.etdSimple"><short>Simple line 1 pixel wide.</short>
+      </element><element name="TTickDesign.etdThick"><short>Simple line 2 pixels wide.</short>
+      </element><element name="TTickDesign.etd3DLowered"><short>Two lines with different colors simulate lowered bevel.</short>
+      </element><element name="TTickDesign.etd3DRaised"><short>Two lines with different colors simulate raised bevel.</short>
+      </element><element name="TMouseMethod"><short>Method used in grouped controls. Parameters are mouse-button and shift-state.</short>
+      </element><element name="TOnPrepareValue"><short>Event method. Can be used for modify values of TECScale for custom-drawn scales.</short>
+      </element><element name="TBitmapHelper"><short>Helper class; for EC-Controls.</short> 
+      </element><element name="TBitmapHelper.TransparentClear"><short>Fills bitmap with transparent color.</short>
+      </element><element name="TBitmapHelper.SetProperties"><short>Sets basic properties for bitmaps used in many EC-Controls.</short>
+      </element><element name="TFontOptions.Parent"><short>Parent of the class. Is responsible for freeing.</short>
+      </element><element name="TFontOptions.OnRecalcRedraw"><short>Method that is called when parent component needs to be recalculated (when font-size is changed).</short>
+      </element><element name="TFontOptions.OnRedraw"><short>Method that is called when parent component needs to be redrawn (when font-color is changed).</short>
+      </element>
+    <element name="TECBaseControl.InvalidateNonUpdated"><short>Invalidates component only when UpdateCount = 0.</short>
+      </element><element name="TECBaseControl.InvalidateCustomRect"><short>Invalidates custom rectangle, i.e. when knob of slider is moved.</short>
+      </element><element name="TECBaseControl.WMPaint"><short>This message method resolves difference between Paints invoked by InvalidateRect and by system. It prevents controls from unwanted vanishing.</short>
+      </element><element name="TECBaseControl.RedrawMode"><short>Redraw mode of TECBaseControl.</short>
+      </element>
+      <short>Base types and classes for Eye Candy Controls (EC-C).</short>
+    <element name="TECCustomKnob.BeginUpdate"><short>Increases UpdateCount. It reduces number of internal redraws when more than one visual property (color, bevel ...) is changed at a time.</short><seealso><link id="TECCustomKnob.EndUpdate"/><link id="TECCustomKnob.UpdateCount"/>
+        </seealso>
+      </element><element name="TECCustomKnob.EndUpdate"><short>Decreases UpdateCount.</short><descr>When UpdateCount is decreased to 0 then <link id="TECCustomKnob.DrawKnobs"/> is called.</descr><seealso><link id="TECCustomKnob.BeginUpdate"/><link id="TECCustomKnob.UpdateCount"/>
+        </seealso>
+      </element><element name="TECCustomKnob.UpdateCount"><short>Counter of updates. UpdateCount &gt; 0 means that knob is being updated.</short><seealso><link id="TECCustomKnob.BeginUpdate"/><link id="TECCustomKnob.EndUpdate"/>
+        </seealso>
+      </element><element name="TECCustomKnob.KnobDisabled"><short>Image of disabled knob.</short>
+      </element><element name="TECCustomKnob.KnobNormal"><short>Image of enabled knob.</short>
+      </element><element name="TECCustomKnob.KnobHighlighted"><short>Image of highlighted knob.</short>
+      </element><element name="TECCustomKnob.MouseEntered"><short>Denotes whether knob is hovered by mouse.</short><descr>This field is managed by Parent, since <var>TECCustomKnob</var> and descendants are derived from <var>TPersistent</var> and have no <var>MouseEnter and MouseLeave</var> methods therefore.</descr>
+      </element><element name="TECCustomKnob.Left"><short>Distance in pixels from the left edge of the Parent.</short><seealso><link id="TECCustomKnob.Top"/>
+        </seealso>
+      </element><element name="TECCustomKnob.Top"><short>Distance in pixels from the top edge of the Parent.</short><seealso><link id="TECCustomKnob.Left"/>
+        </seealso>
+      </element>
+    <element name="TrimColorString"><short>Trims invalid characters, spaces and prefixes ($, #) from string.</short><descr>Valid characters are 0..9, a..f and A..F. These characters are valid for hexadecimal numbers. After trim can be string converted to <var>TColor</var> (<var>Integer</var>).</descr>
+      </element>
+    <element name="TColorLayout.eclCMYColor"><short>Displays color channels in this order: Cyan, Magenta, Yellow.</short>
+      </element><element name="TColorLayout.eclACMYColor"><short>Displays color channels in this order: Alpha, Cyan, Magenta, Yellow.</short>
+      </element><element name="TColorLayout.eclAYMCColor"><short>Displays color channels in this order: Alpha, Yellow, Magenta, Cyan.</short>
+      </element><element name="TColorLayout.eclYMCColor"><short>Displays color channels in this order: Yellow, Magenta, Cyan.</short>
+      </element><element name="TGlyphDesign.egdWinRectClr"><short>Glyph for Color Dialog.</short>
+      </element><element name="TGlyphDesign.egdWinRoundClr"><short>Glyph for Color Dialog with rounded corners.</short>
+      </element>
+    <element name="TCanvasHelper.SetFontParams"><short>Sets size, orientation and style of the font.</short>
+      </element><element name="ColorToStrLayouted"><short>Converts TColor to string with defined channel layout (i.e. RGB, BRG, CMY, YMC etc.).</short>
+      </element><element name="IncludeRectangle"><short>Returns the largest rectangular area circumscribed by two rectangles. Result is set to the AResultRect (parameter passed by reference).</short><example file="examples/includerect.txt"/>
+      </element><element name="TryStrToColorLayouted"><short>Attempts to convert given string to TColor with defined layout.</short><descr>Returns True if attempt is successful.<br/>
+Function trims spaces and prefixes itself.</descr>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>

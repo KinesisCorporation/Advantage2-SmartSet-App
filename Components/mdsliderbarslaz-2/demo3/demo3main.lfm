@@ -1,0 +1,62 @@
+object Form1: TForm1
+  Left = 249
+  Height = 191
+  Top = 274
+  Width = 506
+  Caption = 'Demo 3'
+  ClientHeight = 191
+  ClientWidth = 506
+  OnCreate = FormCreate
+  LCLVersion = '1.4.4.0'
+  object TrackBar1: TTrackBar
+    Left = 30
+    Height = 46
+    Top = 24
+    Width = 220
+    OnChange = TrackBar1Change
+    Position = 0
+    TickMarks = tmTopLeft
+    TabOrder = 0
+  end
+  object ProgressBar1: TProgressBar
+    Left = 267
+    Height = 20
+    Top = 107
+    Width = 220
+    Max = 10
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 10
+    Height = 17
+    Top = 6
+    Width = 86
+    Caption = 'LCL Trackbar'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 10
+    Height = 17
+    Top = 82
+    Width = 70
+    Caption = 'TSliderBar'
+    ParentColor = False
+  end
+  object ProgressBar2: TProgressBar
+    Left = 267
+    Height = 20
+    Top = 44
+    Width = 220
+    Max = 10
+    TabOrder = 3
+  end
+  object Button1: TButton
+    Left = 408
+    Height = 34
+    Top = 144
+    Width = 75
+    Caption = 'Close'
+    OnClick = Button1Click
+    TabOrder = 2
+  end
+end

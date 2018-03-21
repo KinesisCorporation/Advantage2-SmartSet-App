@@ -1,0 +1,43 @@
+object DemoMainForm: TDemoMainForm
+  Left = 513
+  Height = 224
+  Top = 154
+  Width = 219
+  Caption = 'Example '
+  ClientHeight = 224
+  ClientWidth = 219
+  LCLVersion = '1.4.4.0'
+  object ColorBar2: TColorBar
+    Left = 64
+    Height = 95
+    Top = 64
+    Width = 95
+    MarkerStyle = msNone
+    StartColor = clOlive
+    StopColor = clOlive
+    TabOrder = 1
+    TabStop = False
+    OnClick = ColorBar1Click
+  end
+  object ColorBar1: TColorBar
+    Left = 16
+    Height = 95
+    Top = 16
+    Width = 95
+    MarkerStyle = msNone
+    StartColor = clGreen
+    StopColor = clGreen
+    TabOrder = 0
+    TabStop = False
+    OnClick = ColorBar1Click
+  end
+  object Button1: TButton
+    Left = 128
+    Height = 35
+    Top = 176
+    Width = 75
+    Caption = 'Close'
+    OnClick = Button1Click
+    TabOrder = 2
+  end
+end

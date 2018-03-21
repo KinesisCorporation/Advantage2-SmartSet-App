@@ -1,0 +1,18 @@
+{"version":1,"strings":[
+{"hash":57620834,"name":"ectabctrl.rsetcadd","sourcebytes":[65,100,100,32,97,32,78,101,119,32,84,97,98],"value":"Add a New Tab"},
+{"hash":191410196,"name":"ectabctrl.rsetcbottmomost","sourcebytes":[66,111,116,116,111,109,109,111,115,116],"value":"Bottommost"},
+{"hash":4863637,"name":"ectabctrl.rsetcclose","sourcebytes":[67,108,111,115,101],"value":"Close"},
+{"hash":110562844,"name":"ectabctrl.rsetccloseall","sourcebytes":[67,108,111,115,101,32,65,108,108],"value":"Close All"},
+{"hash":110563394,"name":"ectabctrl.rsetcclosetab","sourcebytes":[67,108,111,115,101,32,84,97,98],"value":"Close Tab"},
+{"hash":308958,"name":"ectabctrl.rsetcdown","sourcebytes":[68,111,119,110],"value":"Down"},
+{"hash":224552943,"name":"ectabctrl.rsetcfoldto","sourcebytes":[70,111,108,100,32,116,111],"value":"Fold to"},
+{"hash":338900,"name":"ectabctrl.rsetcleft","sourcebytes":[76,101,102,116],"value":"Left"},
+{"hash":198919044,"name":"ectabctrl.rsetcleftmost","sourcebytes":[76,101,102,116,109,111,115,116],"value":"Leftmost"},
+{"hash":113729330,"name":"ectabctrl.rsetcmovetab","sourcebytes":[77,111,118,101,32,84,97,98],"value":"Move Tab"},
+{"hash":5832180,"name":"ectabctrl.rsetcright","sourcebytes":[82,105,103,104,116],"value":"Right"},
+{"hash":234585684,"name":"ectabctrl.rsetcrightmost","sourcebytes":[82,105,103,104,116,109,111,115,116],"value":"Rightmost"},
+{"hash":191317748,"name":"ectabctrl.rsetctopmost","sourcebytes":[84,111,112,109,111,115,116],"value":"Topmost"},
+{"hash":102997666,"name":"ectabctrl.rsetcunfold","sourcebytes":[85,110,102,111,108,100,32,84,97,98],"value":"Unfold Tab"},
+{"hash":102991100,"name":"ectabctrl.rsetcunfoldall","sourcebytes":[85,110,102,111,108,100,32,65,108,108],"value":"Unfold All"},
+{"hash":1472,"name":"ectabctrl.rsetcup","sourcebytes":[85,112],"value":"Up"}
+]}

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="eccontrols"><module name="ECSlider"><element name="TProgressStyle"><short>Enumerated type denoting style of the progress.</short>
+      </element><element name="TBaseECSlider"><short>Base class for TCustomECSlider, TCustomECProgressBar and TCustomECPositionBar.</short>
+      <descr>This class contains abstract methods. Do not instantiate.</descr>
+      </element><element name="TECSlider"><short>Visual component. An advanced alternative to TTrackBar.</short>
+      <descr><var>TECSlider</var> makes properties <b>published</b> only.<br/><br/><var>TECSlider</var> can have focus and can be reached by Tab key (when <var>TabStop</var> = True, which is default).<br/><var>TECSlider</var> is based on double precision variables. <var>TECSlider</var> can be controlled by mouse, by keyboard or by code.<br/><br/>
+Mouse:<br/><br/>
+Left-click on Slider area (out of Knob) will move the knob by PageSize (or less, if mouse cursor is nearer).<br/>
+Double-click or Middle-click will move the knob immediately to the mouse cursor (or to the Min/Max, if click is done out of groove and scale area).<br/>
+Left-click on the knob and holding the left-mouse button down will capture mouse and knob can be moved even if the mouse-cursor leaves the area of the slider.<br/>
+Mouse wheel moves knob up/down regardless of the <var>Reversed</var> property. In case of horizontal slider rolling up/down moves knob to the left/right, again, regardless of the <var>Reversed</var> property.<br/>
+The increment is:<br/>
+Alone mouse wheel: <var>Increment*Mouse.WheelScrollLines</var><br/>
+Ctrl + mouse wheel: <var>Increment</var>.<br/><br/>
+Keyboard (slider must be focused):<br/><br/>
+Space: moves knob to the middle of the groove or to the <var>ProgressMiddlePos</var> in case of <var>ProgressFromMiddle</var> = True<br/>
+0-9: moves the knob to position which is the integer multiplier of the <var>PageSize</var> (i.e. 0, 10, ..., 90 for <var>PageSize</var> = 10).<br/>
+PgUp: decreases <var>Position</var> by <var>PageSize</var><br/>
+PgUp: increases <var>Position</var> by <var>PageSize</var><br/>
+Home: moves the Knob to <var>Min</var><br/>
+End: moves the Knob to <var>Max</var><br/>
++: increases <var>Position</var> by <var>Increment</var><br/>
+-: decreases <var>Position</var> by <var>Increment</var><br/>
+Ctrl + ArrowUp: decreases* <var>Position</var> by <var>Increment</var><br/>
+Ctrl + ArrowLeft: decreases* <var>Position</var> by <var>Increment</var><br/>
+Ctrl + ArrowDown: increases* <var>Position</var> by <var>Increment</var><br/>
+Ctrl + ArrowRight: increases* <var>Position</var> by <var>Increment</var><br/>
+*) valid for <var>Reversed</var> = False. When <var>Reversed</var> = True works oppositely.  <br/><br/>
+Code:  <br/><br/>
+Simply by assigning any floating-point value to property <var>Position</var>:  <br/><var>Position</var> := 10.5; <br/>
+If the value is out of range (lesser than <var>Min</var> or greater than <var>Max</var>) then Position will be <var>Min</var> or <var>Max</var>.<br/>
+        </descr>
+      </element>
+    <element name="TBaseECSlider.CaptionPos"><short>Position of the Caption.</short>
+      </element><element name="TBaseECSlider.GrooveBevelWidth"><short>Width of the groove bevel. Applies only when GrooveStyle = eosPanel.</short>
+      <seealso><link id="TBaseECSlider.GrooveColor"/><link id="TBaseECSlider.GrooveStyle"/><link id="TBaseECSlider.GrooveTransparent"/><link id="TBaseECSlider.GrooveWidth"/>
+        </seealso>
+      </element><element name="TBaseECSlider.GrooveColor"><short>Groove color. Applies only when <link id="TBaseECSlider.GrooveTransparent">GrooveTransparent</link> = False. clDefault is clBtnText.</short>
+      <seealso><link id="TBaseECSlider.GrooveBevelWidth"/><link id="TBaseECSlider.GrooveStyle"/><link id="TBaseECSlider.GrooveTransparent"/><link id="TBaseECSlider.GrooveWidth"/>
+        </seealso>
+      </element><element name="TBaseECSlider.GrooveStyle"><short>Denotes the style (button-like, panel-like) of the groove.</short>
+      <seealso><link id="TBaseECSlider.GrooveBevelWidth"/><link id="TBaseECSlider.GrooveColor"/><link id="TBaseECSlider.GrooveTransparent"/><link id="TBaseECSlider.GrooveWidth"/>
+        </seealso>
+      </element><element name="TBaseECSlider.GrooveTransparent"><short>Denotes whether the groove is transparent or opaque (filled with <link id="TBaseECSlider.GrooveColor">GrooveColor</link>).</short>
+      <seealso><link id="TBaseECSlider.GrooveBevelWidth"/><link id="TBaseECSlider.GrooveColor"/><link id="TBaseECSlider.GrooveStyle"/><link id="TBaseECSlider.GrooveWidth"/>
+        </seealso>
+      </element><element name="TBaseECSlider.GrooveWidth"><short>Width of the groove.</short>
+      <seealso><link id="TBaseECSlider.GrooveBevelWidth"/><link id="TBaseECSlider.GrooveColor"/><link id="TBaseECSlider.GrooveStyle"/><link id="TBaseECSlider.GrooveTransparent"/>
+        </seealso>
+      </element><element name="TBaseECSlider.ImageIndex"><short>Index of the image in ImageList.</short>
+      <seealso><link id="TBaseECSlider.ImagePos"/><link id="TBaseECSlider.Images"/>
+        </seealso>
+      </element><element name="TBaseECSlider.ImagePos"><short>Position of the image.</short><descr>May depend on <link id="TBaseECSlider.CaptionPos">CaptionPos</link> and Orientation.</descr>
+      <seealso><link id="TBaseECSlider.ImageIndex"/><link id="TBaseECSlider.Images"/>
+        </seealso>
+      </element><element name="TBaseECSlider.Images"><short>Link to associated TImageList.</short>
+      <seealso><link id="TBaseECSlider.ImageIndex"/><link id="TBaseECSlider.ImagePos"/>
+        </seealso>
+      </element><element name="TBaseECSlider.LogarithmicPosition"><short>Logarithmic position. Useful when Scale.ScaleType is estLogarithmic.</short>
+      </element><element name="TBaseECSlider.Indent"><short>Indent of Caption, Scale, Groove, Image etc.</short>
+      </element><element name="TBaseECSlider.Max"><short>Maximal value of the Slider/ProgressBar/PositionBar.</short>
+      <seealso><link id="TBaseECSlider.Min"/><link id="TBaseECSlider.Position"/>
+        </seealso>
+      </element><element name="TBaseECSlider.Min"><short>Minimal value of the Slider/ProgressBar/PositionBar.</short>
+      <seealso><link id="TBaseECSlider.Max"/><link id="TBaseECSlider.Position"/>
+        </seealso>
+      </element><element name="TBaseECSlider.Position"><short>Current position.</short>
+      <seealso><link id="TBaseECSlider.Max"/><link id="TBaseECSlider.Min"/><link id="TBaseECSlider.OnChange"/>
+        </seealso>
+      </element><element name="TBaseECSlider.PositionToHint"><short>Denotes that current position is displayed as the Hint (tooltip) of the component.</short>
+      </element><element name="TBaseECSlider.ProgressColor"><short>Color of the progress.</short>
+      <seealso><link id="TBaseECSlider.ProgressColor2"/><link id="TBaseECSlider.ProgressFromMiddle"/><link id="TBaseECSlider.ProgressMark"/><link id="TBaseECSlider.ProgressMarkSize"/><link id="TBaseECSlider.ProgressMiddlePos"/><link id="TBaseECSlider.ProgressParameter"/><link id="TBaseECSlider.ProgressStyle"/><link id="TBaseECSlider.ProgressVisible"/>
+        </seealso>
+      </element><element name="TProgressMark"><short>Enumerated type denoting position of progress mark(s) by the groove.</short><descr>Progress mark(s) can be visible only when GrooveFromMiddle = True.</descr>
+      </element><element name="TProgressVisibility"><short>Enumerated type denoting visibility of the progress.</short>
+      </element><element name="TTickMarks"><short>Enumerated type denoting position of the scale (ticks and values) by the groove.</short>
+      </element><element name="TBaseECSlider.ProgressColor2"><short>The second color of the progress.</short>
+      <seealso><link id="TBaseECSlider.ProgressColor"/><link id="TBaseECSlider.ProgressFromMiddle"/><link id="TBaseECSlider.ProgressMark"/><link id="TBaseECSlider.ProgressMarkSize"/><link id="TBaseECSlider.ProgressMiddlePos"/><link id="TBaseECSlider.ProgressParameter"/><link id="TBaseECSlider.ProgressStyle"/><link id="TBaseECSlider.ProgressVisible"/>
+        </seealso>
+      </element><element name="TBaseECSlider.ProgressFromMiddle"><short>Determines the behaviour of the slider.</short><descr>False: Common slider. Progress is painted from Min to Position.<br/>
+ 
+True: Slider has defined ProgressMiddlePos. Progress is painted from ProgressMiddlePos to Position.</descr>
+      <seealso><link id="TBaseECSlider.ProgressColor"/><link id="TBaseECSlider.ProgressColor2"/><link id="TBaseECSlider.ProgressMark"/><link id="TBaseECSlider.ProgressMarkSize"/><link id="TBaseECSlider.ProgressMiddlePos"/><link id="TBaseECSlider.ProgressParameter"/><link id="TBaseECSlider.ProgressStyle"/><link id="TBaseECSlider.ProgressVisible"/>
+        </seealso>
+      </element><element name="TBaseECSlider.ProgressMark"><short>Small marks denoting the middle position. Applies only when ProgressFromMiddle = True.</short>
+      <seealso><link id="TBaseECSlider.ProgressColor"/><link id="TBaseECSlider.ProgressColor2"/><link id="TBaseECSlider.ProgressFromMiddle"/><link id="TBaseECSlider.ProgressMarkSize"/><link id="TBaseECSlider.ProgressMiddlePos"/><link id="TBaseECSlider.ProgressParameter"/><link id="TBaseECSlider.ProgressStyle"/><link id="TBaseECSlider.ProgressVisible"/>
+        </seealso>
+      </element><element name="TBaseECSlider.ProgressMarkSize"><short>Size of the small marks denoting the middle position. Applies only when ProgressFromMiddle = True.</short>
+      <seealso><link id="TBaseECSlider.ProgressColor"/><link id="TBaseECSlider.ProgressColor2"/><link id="TBaseECSlider.ProgressFromMiddle"/><link id="TBaseECSlider.ProgressMark"/><link id="TBaseECSlider.ProgressMiddlePos"/><link id="TBaseECSlider.ProgressParameter"/><link id="TBaseECSlider.ProgressStyle"/><link id="TBaseECSlider.ProgressVisible"/>
+        </seealso>
+      </element><element name="TBaseECSlider.ProgressMiddlePos"><short>The middle position. Should be between Min and Max. Applies only when ProgressFromMiddle = True.</short>
+      <seealso><link id="TBaseECSlider.ProgressColor"/><link id="TBaseECSlider.ProgressColor2"/><link id="TBaseECSlider.ProgressFromMiddle"/><link id="TBaseECSlider.ProgressMark"/><link id="TBaseECSlider.ProgressMarkSize"/><link id="TBaseECSlider.ProgressParameter"/><link id="TBaseECSlider.ProgressStyle"/><link id="TBaseECSlider.ProgressVisible"/>
+        </seealso>
+      </element><element name="TBaseECSlider.ProgressParameter"><short>Design parameter. Applies only when progress is visible and ProgressStyle = epsAesthetic.</short>
+      <seealso><link id="TBaseECSlider.ProgressColor"/><link id="TBaseECSlider.ProgressColor2"/><link id="TBaseECSlider.ProgressFromMiddle"/><link id="TBaseECSlider.ProgressMark"/><link id="TBaseECSlider.ProgressMarkSize"/><link id="TBaseECSlider.ProgressMiddlePos"/><link id="TBaseECSlider.ProgressStyle"/><link id="TBaseECSlider.ProgressVisible"/>
+        </seealso>
+      </element><element name="TBaseECSlider.ProgressVisible"><short>Visibility of the progress.</short><descr>Default is epvProgress. Progress can be also invisible or always fully visible. The second is useful in combination with OnDrawProgressBMP where user can define own progress (for example rainbow gradient for selecting color).</descr>
+      <seealso><link id="TBaseECSlider.ProgressColor"/><link id="TBaseECSlider.ProgressColor2"/><link id="TBaseECSlider.ProgressFromMiddle"/><link id="TBaseECSlider.ProgressMark"/><link id="TBaseECSlider.ProgressMarkSize"/><link id="TBaseECSlider.ProgressMiddlePos"/><link id="TBaseECSlider.ProgressParameter"/><link id="TBaseECSlider.ProgressStyle"/>
+        </seealso>
+      </element><element name="TBaseECSlider.Reversed"><short>Reversed slider, i.e. from Max to Min.</short>
+      </element><element name="TBaseECSlider.Scale"><short>Subclass.</short>
+      <seealso><link id="TBaseECSlider.ScaleFontOptions"/><link id="TBaseECSlider.ScaleTickPos"/><link id="TBaseECSlider.ScaleValuePos"/>
+        </seealso>
+      </element><element name="TBaseECSlider.ScaleFontOptions"><short>Font options of the scale. Determines font-size, color and font-styles (bold, italic) of the values.</short>
+      <seealso><link id="TBaseECSlider.Scale"/><link id="TBaseECSlider.ScaleTickPos"/><link id="TBaseECSlider.ScaleValuePos"/>
+        </seealso>
+      </element><element name="TBaseECSlider.ScaleTickPos"><short>Determines whether the ticks of the scale will be on the left, on the right or on both sides of the groove (in case of vertical slider).</short>
+      <seealso><link id="TBaseECSlider.Scale"/><link id="TBaseECSlider.ScaleFontOptions"/><link id="TBaseECSlider.ScaleValuePos"/>
+        </seealso>
+      </element><element name="TBaseECSlider.ScaleValuePos"><short>Determines whether the values of the scale will be on the left, on the right or on both sides of the groove (in case of vertical slider).</short>
+      <seealso><link id="TBaseECSlider.Scale"/><link id="TBaseECSlider.ScaleFontOptions"/><link id="TBaseECSlider.ScaleTickPos"/>
+        </seealso>
+      </element><element name="TBaseECSlider.OnChange"><short>Triggered when <link id="TBaseECSlider.Position">Position</link> is changed.</short>
+      <seealso><link id="TBaseECSlider.Position"/>
+        </seealso>
+      </element><element name="TBaseECSlider.OnDrawProgressBMP"><short>Triggered when internal bitmap of the progress is painted. This enables to draw user-defined progress.</short>
+      <seealso><link id="TBaseECSlider.ProgressVisible"/>
+        </seealso>
+      </element><element name="TCustomECSlider"><short>Base class for TECSlider. No abstract methods, no published properties.</short>
+      </element><element name="TCustomECSlider.Knob"><short>Subclass.</short>
+      </element><element name="TCustomECSlider.PageSize"><short>The value that is added to Position when user presses PageUp/PageDown or single clicks the left-mouse button on the groove.</short>
+      <seealso><link id="TCustomECSlider.Increment"/>
+        </seealso>
+      </element><element name="TCustomECSlider.Increment"><short>The value that is added to Position when user presses arrow keys, [+] or [-].</short><descr>Note: Some widgetsets (like GTK2) uses arrow keys for changing focus of visual components. You can try  CTRL+Arrow keys or [+] and [-] key instead.</descr>
+      <seealso><link id="TCustomECSlider.PageSize"/>
+        </seealso>
+      </element><element name="TCustomECSlider.DiscreteChange"><short>Applies when Mode = eimDiscrete. In that case, Position of the slider can be integer multiple of the DiscreteChange only.</short>
+      <seealso><link id="TCustomECSlider.Mode"/>
+        </seealso>
+      </element><element name="TCustomECSlider.Mode"><short>Denoting whether the slider is in eimContinuous (normal, default) or eimDiscrete mode.</short>
+      <seealso><link id="TCustomECSlider.DiscreteChange"/>
+        </seealso>
+      <descr>In discrete mode, Position of the slider can be integer multiples of the DiscreteChange only.</descr>
+      </element><element name="TCustomECSlider.RelativeScaleLength"><short>Relative length of the scale. Applies only when Orientation = eooHorizontal and CaptionPos = eopLeft or eopRight.</short><descr>Negative value (default) fits the scale and caption within the component.<br/> 
+Positive value (percents) is the relative scale length.<br/>
+Useful when more sliders with different captions (like Red, Green, Blue) need to be aligned.</descr>
+      </element><element name="TECSliderKnob"><short>Visual subclass. Knob of the TECSlider.</short>
+      </element>
+    <short>Visual component TECSlider and base classes for TECProgressBar and TECPositionBar.</short>
+    <element name="TOnDrawProgressBMP"><short>Event method. Designed for custom drawn progress of Sliders, ProgressBars and PositionBars.</short>
+      </element>
+    <element name="TBaseECSlider.ProgressStyle"><short>Determines style of the progress.</short><seealso><link id="TBaseECSlider.ProgressColor"/><link id="TBaseECSlider.ProgressColor2"/><link id="TBaseECSlider.ProgressFromMiddle"/><link id="TBaseECSlider.ProgressMark"/><link id="TBaseECSlider.ProgressMarkSize"/><link id="TBaseECSlider.ProgressMiddlePos"/><link id="TBaseECSlider.ProgressParameter"/><link id="TBaseECSlider.ProgressVisible"/>
+        </seealso>
+      </element><element name="TBaseECSlider.DrawBackground"><short>Draw image of the slider to a bitmap.</short><descr>This bitmap is copied to Canvas of component in Paint method.</descr>
+      </element><element name="TBaseECSlider.DrawGrooveBMP"><short>Draw image of the progress to a bitmap.</short><descr>Relevant part of this bitmap is copied to Canvas of component in Paint method.</descr>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>

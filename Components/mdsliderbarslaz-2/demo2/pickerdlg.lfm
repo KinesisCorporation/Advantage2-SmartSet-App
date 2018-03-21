@@ -1,0 +1,367 @@
+object pickerform: Tpickerform
+  Left = 530
+  Height = 378
+  Top = 161
+  Width = 334
+  Caption = 'Select color'
+  ClientHeight = 378
+  ClientWidth = 334
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '1.4.4.0'
+  object PageControl1: TPageControl
+    Left = 6
+    Height = 209
+    Top = 6
+    Width = 322
+    ActivePage = TabSheet1
+    Align = alTop
+    BorderSpacing.Around = 6
+    TabIndex = 0
+    TabOrder = 0
+    OnChange = PageControl1Change
+    object TabSheet1: TTabSheet
+      Caption = 'R G B'
+      ClientHeight = 178
+      ClientWidth = 318
+      object Label1: TLabel
+        AnchorSideLeft.Control = Owner
+        AnchorSideTop.Control = RedBar
+        AnchorSideTop.Side = asrCenter
+        Left = 6
+        Height = 17
+        Top = 22
+        Width = 9
+        BorderSpacing.Left = 6
+        Caption = 'R'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        AnchorSideLeft.Control = Label1
+        AnchorSideTop.Control = GreenBar
+        AnchorSideTop.Side = asrCenter
+        Left = 6
+        Height = 17
+        Top = 60
+        Width = 10
+        Caption = 'G'
+        ParentColor = False
+      end
+      object Label3: TLabel
+        AnchorSideLeft.Control = Label2
+        AnchorSideTop.Control = BlueBar
+        AnchorSideTop.Side = asrCenter
+        Left = 6
+        Height = 17
+        Top = 98
+        Width = 9
+        Caption = 'B'
+        ParentColor = False
+      end
+      object SpinEdit1: TSpinEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = RedBar
+        AnchorSideRight.Control = TabSheet1
+        AnchorSideRight.Side = asrBottom
+        Left = 255
+        Height = 27
+        Top = 16
+        Width = 57
+        Anchors = [akTop, akRight]
+        BorderSpacing.Right = 6
+        MaxValue = 255
+        TabOrder = 0
+      end
+      object SpinEdit2: TSpinEdit
+        AnchorSideLeft.Control = SpinEdit1
+        AnchorSideTop.Control = GreenBar
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = SpinEdit1
+        AnchorSideRight.Side = asrBottom
+        Left = 255
+        Height = 27
+        Top = 55
+        Width = 57
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 5
+        MaxValue = 255
+        TabOrder = 1
+      end
+      object SpinEdit3: TSpinEdit
+        AnchorSideLeft.Control = SpinEdit2
+        AnchorSideTop.Control = BlueBar
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = SpinEdit2
+        AnchorSideRight.Side = asrBottom
+        Left = 255
+        Height = 27
+        Top = 93
+        Width = 57
+        Anchors = [akTop, akLeft, akRight]
+        MaxValue = 255
+        TabOrder = 2
+      end
+      object RedBar: TColorBar
+        AnchorSideRight.Control = SpinEdit1
+        Left = 25
+        Top = 16
+        Width = 224
+        OnChange = ColorBarChange
+        Anchors = [akTop, akLeft, akRight]
+        Associate = SpinEdit1
+        BorderSpacing.Right = 6
+        MaxValue = 255
+        TabOrder = 3
+        StartColor = clBlack
+        StopColor = clBlack
+      end
+      object GreenBar: TColorBar
+        AnchorSideLeft.Control = RedBar
+        AnchorSideTop.Control = RedBar
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = RedBar
+        AnchorSideRight.Side = asrBottom
+        Left = 25
+        Top = 54
+        Width = 224
+        OnChange = ColorBarChange
+        Anchors = [akTop, akLeft, akRight]
+        Associate = SpinEdit2
+        BorderSpacing.Top = 10
+        MaxValue = 255
+        TabOrder = 4
+        StartColor = clBlack
+        StopColor = clBlack
+      end
+      object BlueBar: TColorBar
+        AnchorSideLeft.Control = GreenBar
+        AnchorSideTop.Control = GreenBar
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = GreenBar
+        AnchorSideRight.Side = asrBottom
+        Left = 25
+        Top = 92
+        Width = 224
+        OnChange = ColorBarChange
+        Anchors = [akTop, akLeft, akRight]
+        Associate = SpinEdit3
+        BorderSpacing.Top = 10
+        MaxValue = 255
+        TabOrder = 5
+        StartColor = clBlack
+        StopColor = clBlack
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'RGB Cube'
+      ClientHeight = 178
+      ClientWidth = 318
+      object RedEdit: TSpinEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = TabSheet2
+        AnchorSideRight.Control = TabSheet2
+        AnchorSideRight.Side = asrBottom
+        Left = 255
+        Height = 27
+        Top = 10
+        Width = 57
+        Anchors = [akTop, akRight]
+        BorderSpacing.Top = 10
+        BorderSpacing.Right = 6
+        MaxValue = 255
+        TabOrder = 0
+      end
+      object GreenEdit: TSpinEdit
+        AnchorSideLeft.Control = RedEdit
+        AnchorSideTop.Control = RedEdit
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = RedEdit
+        AnchorSideRight.Side = asrBottom
+        Left = 255
+        Height = 27
+        Top = 42
+        Width = 57
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 5
+        MaxValue = 255
+        TabOrder = 1
+      end
+      object BlueEdit: TSpinEdit
+        AnchorSideLeft.Control = GreenEdit
+        AnchorSideTop.Control = GreenEdit
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = GreenEdit
+        AnchorSideRight.Side = asrBottom
+        Left = 255
+        Height = 27
+        Top = 75
+        Width = 57
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 6
+        MaxValue = 255
+        TabOrder = 2
+      end
+      object ColorPlane: TColorPlane
+        AnchorSideLeft.Control = TabSheet2
+        AnchorSideTop.Control = TabSheet2
+        AnchorSideRight.Control = CutBar
+        AnchorSideBottom.Control = TabSheet2
+        AnchorSideBottom.Side = asrBottom
+        Left = 6
+        Height = 166
+        Top = 6
+        Width = 166
+        MarkerStyle = msBeam
+        OnChange = ColorPlaneChange
+        BlueEdit = BlueEdit
+        BorderSpacing.Left = 6
+        BorderSpacing.Top = 6
+        Color = clBlack
+        CutChannel = ccRed
+        CutValue = 0
+        AssociateBar = CutBar
+        GreenEdit = GreenEdit
+        RedEdit = RedEdit
+        TabOrder = 3
+      end
+      object RadioButton1: TRadioButton
+        AnchorSideLeft.Control = RedEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = RedEdit
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = RedEdit
+        Left = 212
+        Height = 24
+        Top = 11
+        Width = 35
+        Anchors = [akTop, akRight]
+        BorderSpacing.Right = 8
+        Caption = 'R'
+        Checked = True
+        OnChange = SlicerChange
+        TabOrder = 4
+        TabStop = True
+      end
+      object RadioButton2: TRadioButton
+        Tag = 1
+        AnchorSideLeft.Control = RadioButton1
+        AnchorSideTop.Control = GreenEdit
+        AnchorSideTop.Side = asrCenter
+        Left = 212
+        Height = 24
+        Top = 43
+        Width = 36
+        Caption = 'G'
+        OnChange = SlicerChange
+        TabOrder = 5
+      end
+      object RadioButton3: TRadioButton
+        Tag = 2
+        AnchorSideLeft.Control = RadioButton2
+        AnchorSideTop.Control = BlueEdit
+        AnchorSideTop.Side = asrCenter
+        Left = 212
+        Height = 24
+        Top = 76
+        Width = 35
+        Caption = 'B'
+        OnChange = SlicerChange
+        TabOrder = 6
+      end
+      object CutBar: TColorBar
+        AnchorSideTop.Control = TabSheet2
+        AnchorSideRight.Control = RadioButton1
+        AnchorSideBottom.Control = TabSheet2
+        AnchorSideBottom.Side = asrBottom
+        Left = 178
+        Height = 166
+        Top = 6
+        Width = 28
+        Anchors = [akTop, akRight, akBottom]
+        Associate = RedEdit
+        BorderSpacing.Top = 6
+        BorderSpacing.Right = 6
+        BorderSpacing.Bottom = 6
+        MaxValue = 255
+        Orientation = sboVertical
+        TabOrder = 7
+        StartColor = clBlack
+        StopColor = clRed
+      end
+    end
+  end
+  object Label4: TLabel
+    AnchorSideTop.Control = Label5
+    AnchorSideRight.Control = colorBar
+    AnchorSideRight.Side = asrBottom
+    Left = 241
+    Height = 17
+    Top = 226
+    Width = 45
+    Alignment = taRightJustify
+    Anchors = [akTop, akRight]
+    Caption = 'Label4'
+    ParentColor = False
+  end
+  object colorBar: TSliderBar
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Label4
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Side = asrBottom
+    Left = 49
+    Top = 246
+    Width = 237
+    MarkerStyle = msNone
+    TabStop = False
+    BorderSpacing.Top = 3
+    TabOrder = 2
+    OnPaint = colorBarPaint
+  end
+  object Label5: TLabel
+    AnchorSideLeft.Control = colorBar
+    AnchorSideRight.Side = asrBottom
+    Left = 49
+    Height = 17
+    Top = 226
+    Width = 38
+    Caption = 'Initial'
+    ParentColor = False
+  end
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 29
+    Top = 343
+    Width = 322
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    TabOrder = 1
+    ShowButtons = [pbOK, pbCancel, pbHelp]
+    ShowGlyphs = [pbHelp]
+    ShowBevel = False
+  end
+  object CheckBox2: TCheckBox
+    Left = 6
+    Height = 24
+    Top = 288
+    Width = 264
+    Caption = 'Use 0-100 colour range on RGB page'
+    OnChange = CheckBox2Change
+    TabOrder = 3
+  end
+  object CheckBox1: TCheckBox
+    Left = 6
+    Height = 24
+    Top = 312
+    Width = 270
+    Caption = 'Use 0-100 colour range on Cube page'
+    OnChange = CheckBox1Change
+    TabOrder = 4
+  end
+end

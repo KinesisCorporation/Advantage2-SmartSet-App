@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="project1"><module name="ECScheme"><short>Visual component TECScheme.</short><element name="TBlockStyle"><short>Enumerated type denoting style of blocks (devices).</short>
+      </element><element name="TConnectionOption"><short>Enumerated type denoting parameters of connection.</short>
+      </element><element name="TConnectionOptions"><short>Set of TConnectionOption.</short><seealso>TConnectionOption</seealso>
+      </element><element name="TAddConnectionResult"><short>Enumerated type denoting result of attempt of creating a new connection.</short>
+      </element><element name="TDeviceOption"><short>Enumerated type denoting parameters of blocks (devices).</short>
+      </element><element name="TDeviceOptions"><short>Set of TDeviceOption.</short><seealso>TDeviceOption</seealso>
+      </element><element name="TSchemeFlag"><short>Enumerated type denoting state of TECScheme.</short>
+      </element><element name="TSchemeFlags"><short>Set of TSchemeFlag.</short><seealso>TSchemeFlag</seealso>
+      </element><element name="TSchemeAction"><short>Enumerated type denoting action, used for changing the cursor.</short>
+      </element><element name="TSchemeOption"><short>Enumerated type denoting parameters of TECScheme.</short>
+      </element><element name="TSchemeOptions"><short>Set of TSchemeOption.</short><seealso>TSchemeOption</seealso>
+      </element><element name="TXMLFlag"><short>Enumerated type denoting which parts of Scheme are stored to XML.</short>
+      </element><element name="TXMLFlags"><short>Set of TXLFlag.</short><seealso>TXMLFlag</seealso>
+      </element><element name="TOnBlockClick"><short>Event method. Triggered when block (device) is clicked.</short>
+      </element><element name="TOnDrawBlock"><short>Event method. Triggered when internal bitmap image of block is drawn.</short>
+      </element><element name="TOnPaintBlock"><short>Event method. Triggered when block (device) is painted on the canvas.</short>
+      </element><element name="TOnPaintConnection"><short>Event method. Triggered when connection is painted on the canvas.</short>
+      </element><element name="TOnPaintContent"><short>Event method. Triggered when content (image, caption, description) of block (device) is painted.</short>
+      </element><element name="cXMLFlagsAll"><short>All flags of TXMLFlags.</short><seealso>TXMLFlags</seealso>
+      </element><element name="PTECConnection"><short>Pointer to TECConnection.</short><seealso>TECConnection</seealso>
+      </element><element name="TECConnection"><short>Record type. Connection between two blocks (devices).</short>
+      </element><element name="TECConnection.Input"><short>Input, i.e. where the connection is plugged in.</short>
+      </element><element name="TECConnection.Color"><short>Color of the connection.</short>
+      </element><element name="TECConnection.Options"><short>Parameter of the connection.</short><seealso>TConnectionOptions</seealso>
+      </element><element name="TECConnections"><short>Array of TECConnection (outputs). Each block (device) holds one instance of this array.</short><seealso>TECConnection</seealso>
+      </element><element name="TECDevice"><short>Class representing Device (block). Scheme is collection of devices.</short>
+      </element><element name="TECDevice.Width"><short>Width of the block (device).</short>
+      </element><element name="TECDevice.Height"><short>Height of the device.</short>
+      </element><element name="TECDevice.Left"><short>Distance of the block (device) from the left edge of the scheme.</short>
+      </element><element name="TECDevice.Top"><short>Distance of the block (device) from the top edge of the scheme.</short>
+      </element><element name="TECDevice.Right"><short>Distance of the right edge of the block (device) from the left edge of the scheme.</short>
+      </element><element name="TECDevice.Bottom"><short>Distance of the bottom edge of the block (device) from the top edge of the scheme.</short>
+      </element><element name="TECDevice.HorCenter"><short>Distance of the horizontal center of the block (device) from the left edge of the scheme.</short>
+      </element><element name="TECDevice.VertCenter"><short>Distance of the vertical center of the block (device) from the top edge of the scheme.</short>
+      </element><element name="TECDevice.ImageIndex"><short>Index of the image. Images are defined in TECScheme,</short>
+      </element><element name="TECDevice.BoundsRect"><short>Bounds of the block (device).</short>
+      </element><element name="TECDevice.Style"><short>Style of the block (device).</short><descr>This property is overriden by BlockStyle when option esoIdenticalBlocks is set in TECScheme.Options.</descr>
+      </element><element name="TECDevice.Selected"><short>Denotes whether block (device) is selected.</short>
+      </element><element name="TECDevice.Outputs"><short>Array of outputs (connections to other blocks).</short>
+      </element><element name="TECDevice.Options"><short>Parameters of the block (device).</short>
+      </element><element name="TECDevice.MaxOutputs"><short>Maximum of outputs. (Maxial length of the Outputs array).</short>
+      </element><element name="TECDevice.MaxInputs"><short>Maximum of inputs. The sum of connections of the other blocks pointing to this block cannot excedd this value.</short>
+      </element><element name="TECDevice.FontColor"><short>Color of the caption and description.</short>
+      </element><element name="TECDevice.Caption"><short>Tet displayed on the block. (Only when edoNoText is not in Options).</short>
+      </element><element name="TECDevice.Color"><short>Color of the block device. (Only when esoIdenticalBlocks is not in TECScheme.Options).</short>
+      </element><element name="TECDevice.Description"><short>Additional text diplayed on the block. Only when esoDescriptionOnBlock is in TECScheme.Options.</short>
+      </element><element name="TECDevice.ClearOutputs"><short>Clears all outputs and returns their count.</short>
+      </element><element name="TECDevice.DeleteConnIndex"><short>Deletes connection (output) by index of Outputs. Returns True if deletion was successful.</short><seealso>Outputs</seealso>
+      </element><element name="TECDevice.DeleteConnInput"><short>Deletes connection (output) by Input. Returns True if deletion was successful.</short>
+      </element><element name="TECDevices"><short>Generic list of devices (TECDevice).</short>
+      </element><element name="TECDevices.AddConnection"><short>Adds new connection between AOutput and AInput. Returns TAddConnectionResult.</short><seealso>TAddConnectionResult</seealso>
+      </element><element name="TECDevices.AddConnectionSafe"><short>Adds new connection between AOutput and AInput with checking of parameters. Returns TAddConnectionResult.</short><seealso>TAddConnectionResult</seealso>
+      </element><element name="TECDevices.AddDevice"><short>Adds a new device. Overloaded method. Returns index of added device.</short><descr>One method creates a new device itself while the other requries created device as a parameter - AItem.</descr>
+      </element><element name="TECDevices.CalculateInputs"><short>Returns number of inputs of the device AIndex.</short>
+      </element><element name="TECDevices.CalculateOutputs"><short>Returns number of outputs of the device AIndex.</short>
+      </element><element name="TECDevices.CaptionToIndex"><short>Returns index of device with caption ACaption. Returns -1 in such device does not exist.</short>
+      </element><element name="TECDevices.ClearAllConnections"><short>Clears all connections (outputs) of all devices. Returns number of removed connections.</short>
+      </element><element name="TECDevices.ClearAll"><short>Clears all devices (and outputs).</short>
+      </element><element name="TECDevices.ClearInputs"><short>Clears all inputs of device AIndex/ACaption. Overloaded method. Returns number of removed connections.</short>
+      </element><element name="TECDevices.ClearOutputs"><short>Clears all outputs of device AIndex/ACaption. Overloaded method. Returns number of removed connections.</short>
+      </element><element name="TECDevices.DeleteConnection"><short>Deletes connection between AInput and AOutput. Returns True if deletion was successful.</short>
+      </element><element name="TECDevices.DeleteConnectionSafe"><short>Deletes connection between AInput and AOutput with checking of parameters. Returns True if deletion was successful.</short>
+      </element><element name="TECDevices.DeleteDevice"><short>Deletes device with ACaption/AIndex. Overloaded method. Returns True if deletion was successful.</short>
+      </element><element name="TECDevices.GetInputs"><short>Returns array with all inputs of device AIndex.</short>
+      </element><element name="TECDevices.GetOutputs"><short>Returns array with all outputs of device AIndex.</short>
+      </element><element name="TECDevices.HasDirectOutput"><short>Returns True if device AOutput has direct output to device AInput.</short><seealso>HasIndirectOutput
+IsConnectedDirectly
+IsConnectedIndirectly</seealso>
+      </element><element name="TECDevices.HasIndirectOutput"><short>Returns True if device AOutput has output to device AInput. Returns extra parameter APath: array of devices between AOutput and AInput.</short><seealso>HasDirectOutput
+IsConnectedDirectly
+IsConnectedIndirectly</seealso>
+      </element><element name="TECDevices.IsConnectedDirectly"><short>Returns True if devices AIndex and BIndex are connected directly.</short><seealso>HasDirectOutput
+HasIndirectOutput
+IsConnectedIndirectly</seealso>
+      </element><element name="TECDevices.IsConnectedIndirectly"><short>Returns True if devices AIndex and BIndex are connected. Returns extra parameter APath: array of devices between AIndex and BIndex.</short><seealso>HasDirectOutput
+HasIndirectOutput
+IsConnectedDirectly</seealso>
+      </element><element name="TECDevices.ReverseConnection"><short>Attempts to reverse connection between ADevice and AInput. Returns True is attempt was successful.</short>
+      </element><element name="TCustomECScheme"><short>Base class for TECScheme. No abstract methods, no published properties.</short>
+      </element><element name="TCustomECScheme.GetAllSelected"><short>Returns number of selected devices (ACount) and array of selected devices (ASelected).</short><seealso>GetFirstSelected</seealso>
+      </element><element name="TCustomECScheme.GetFirstSelected"><short>Returns index of the first selected device. -1 if no device is selected.</short><seealso>GetAllSelected</seealso>
+      </element><element name="TCustomECScheme.GetNewDevicePos"><short>Returns coordinates (TPoint) for the new device (on the right by the most-right device).</short>
+      </element><element name="TCustomECScheme.LoadSchemeFromXML"><short>Loads scheme from a XML file/node. Overloaded method. Loads only data defined by AXMLFlags.</short>
+      </element><element name="TCustomECScheme.SaveSchemeToXML"><short>Saves scheme to a XML file/node. Overloaded method. Saves only data defined by AXMLFlags.</short>
+      </element><element name="TCustomECScheme.Select"><short>Selects device AIndex. Does not care if other device is already selected.</short>
+      </element><element name="TCustomECScheme.SelectAll"><short>Selects all devices.</short>
+      </element><element name="TCustomECScheme.ShowDevice"><short>Makes device AIndex/ACaption visible. Overloaded method.</short>
+      </element><element name="TCustomECScheme.StopConnecting"><short>Stops connecting. If connection is being created by mouse, this method cancels creation.</short>
+      </element><element name="TECScheme"><short>Visual component.</short>
+      </element><element name="TCustomECScheme.DeselectAll"><short>Deselects all devices.</short>
+      </element><element name="TCustomECScheme.Deselect"><short>Deselects device AIndex. Does not care if other devices remain selected.</short>
+      </element><element name="TCustomECScheme.BlockColor"><short>Color of blocks.</short><descr>Has effect only when esoIdenticalBlocks is in Options.
+Has no effect for BlockStyle = ebsButton.</descr>
+      </element><element name="TCustomECScheme.BlockFontSize"><short>Font size of the text on the blocks.</short><descr>All blocks have the same font-size, even if esoIdenticalBlocks is not in Options.
+</descr>
+      </element><element name="TCustomECScheme.BlockHeight"><short>Height of the blocks.</short><descr>Has effect only when esoIdenticalBlocks is in Options.</descr>
+      </element><element name="TCustomECScheme.BlockWidth"><short>Width of the blocks.</short><descr>Has effect only when esoIdenticalBlocks is in Options.
+</descr>
+      </element><element name="TCustomECScheme.BlockStyle"><short>Style of the blocks.</short><descr>Has effect only when esoIdenticalBlocks is in Options.
+</descr>
+      </element><element name="TCustomECScheme.ConnectorColor"><short>Default color for connections.</short><descr>If TECConnection.Color = clDefault then this color is used.
+clDefault for this color is clBtnText.</descr>
+      </element><element name="TCustomECScheme.ConnectorWidth"><short>Width of connections.</short>
+      </element><element name="TCustomECScheme.Grid"><short>Grid size. Minimum (and default) is 8.</short>
+      </element><element name="TCustomECScheme.Hovering"><short>Index of currently hovered device (block). -1 = no device is currently hovered.</short>
+      </element><element name="TCustomECScheme.Images"><short>Image list for devices.</short><descr>When TECDevice.ItemIndex is &gt; -1, image s taken from this list.</descr>
+      </element><element name="TCustomECScheme.Indent"><short>Indent (inner spacing) of Scheme. Devices cannot be closer to the edge of Scheme.</short>
+      </element><element name="TCustomECScheme.Layout"><short>Layout of the images on the devices.</short>
+      </element><element name="TCustomECScheme.Options"><short>Options of the Scheme.</short>
+      </element><element name="TCustomECScheme.OnBlockClick"><short>Triggered when block (device) is clicked.</short>
+      </element><element name="TCustomECScheme.OnSelectionChange"><short>Triggered when selection is changed.</short>
+      </element><element name="TCustomECScheme.OnSchemeChange"><short>Triggered when Scheme changed.</short><descr>Triggered when:
+- connection is added.
+- connection is deleted.
+- connection is reverted
+- connections are cleared
+- device is addeded
+- device is deleted</descr>
+      </element><element name="TCustomECScheme.OnPaintConnection"><short>Triggered before connection is painted.</short>
+      </element><element name="TCustomECScheme.OnPaintContent"><short>Triggered before content (image and text) of the device is painted.</short>
+      </element><element name="TCustomECScheme.OnPaintBlock"><short>Triggered before block (device) is painted.</short>
+      </element><element name="TCustomECScheme.OnDrawBlock"><short>Triggered when internal image of the block is drawn.</short><descr>Only when esoIdenticalBlocks is in Options.</descr>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>

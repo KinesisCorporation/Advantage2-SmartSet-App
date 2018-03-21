@@ -1,0 +1,7 @@
+status_play_speed=3
+startup_file=layout4.txt
+macro_speed=0
+v_drive=auto
+game_mode=ON
+program_key_lock=abc
+led_mode=2

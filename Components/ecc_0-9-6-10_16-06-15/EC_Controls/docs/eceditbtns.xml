@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="eccontrols"><module name="ECEditBtns"><element name="TBaseECComboBtn"><short>Base class for TECComboBtn and TECColorCombo. No published properties, no abstract methods.</short>
+      </element><element name="TECColorBtn"><short>Visual component for selecting color. Line edit displays color code in various formats and associated button triggers color dialog.</short>
+      <descr><var>TECColorBtn</var> makes properties <b>published</b> and instantiates button (<var>TECSpeedBtnColor</var>).<br/>
+Color of the glyph on the button corresponds with the color in the line-edit.<br/>
+Property <var>Text</var> is not published. If <var>Text</var> is changed via code <var>EditingDone</var> must be called to validate the change.</descr>
+      </element><element name="TECEditBtn"><short>Visual component. An alternative to TEditButton.</short>
+      <descr><var>TECEditBtn</var> makes properties <b>published</b> and instantiates associated button.</descr>
+      </element><element name="TBaseECEditBtn"><short>Base class for TECColorBtn and TECEditBtn. No published properties, no abstract methods.</short>
+      </element><element name="TECSpeedBtnPlus"><short>Visual component. A button designed to be associated to line-edit or combobox.</short>
+      <descr><var>TECSpeedBtnPlus</var> makes properties <b>published</b> only.</descr>
+      </element><element name="TCustomECSpeedBtn"><short>Base class for TECSpeedBtn and TECSpeedBtnPlus. No published properties, no abstract methods.</short>
+      </element><element name="TECSpeedBtn"><short>Visual component - stand alone button with some advanced features and built-in glyphs. An alternative to TSpeedButton and TToggleBox.</short>
+      <descr><var>TECSpeedBtn</var> properties <b>published</b> only.<br/><br/><var>TECSpeedBtn</var> cannot have focus.<br/><br/>
+Features and differences from <var>TSpeedButton</var>:<br/><br/><var>TSpeedButton</var> has property <var>Glyph: TBitmap</var>. <var>TECSpeedBtn</var> has properties <var>ImageIndex: Integer</var> and <var>Images: TImageList</var> instead.<br/><br/>
+TECSpeedBtn has property Delay and built-in timer. Therefore it can work as a delay-button (<var>Delay</var>&gt;0) or toggle-box (<var>Delay</var>&lt;0).<br/><br/><var>TECSpeedBtn</var> has more than 80 built-in glyph (painted via <var>TCanvas</var> helper). Glyphs can be various for checked and unchecked state.<br/><br/>
+Similarly to <var>TSpeedButton</var>, <var>TECSpeedBtn</var> has properties <var>GroupIndex</var>, <var>Checked</var> and <var>AllowAllUp</var> so buttons can be grouped to radio-group.<br/><br/><var>TECSpeedBtn</var> cannot obtain focus but can be pressed by acceleration key (Alt+ [underlined key]).<br/><br/><var>TECSpeedBtn</var> can be linked with <var>TAction</var> too.<br/><br/>
+Precendence of drawing:<br/><br/>
+1) The highest precedence has the <var>OnDrawGlyph</var> event.<br/>
+2) The second is <var>Caption</var> and image from <var>Images</var>. <var>Images</var> must be assigned and at least on of <var>ImageIndex</var> and <var>ImageIndexChecked</var> must be greater or equal to zero and lesser than <var>Images.Count</var>.
+3) When the <var>OnDrawGlyph</var> is not assigned and both <var>ImageIndex</var> and <var>ImageIndexChecked</var> are -1 then built-in glyph is used (properties <var>GlyphDesign</var> and <var>GlyphDesignChecked</var>).
+When <var>ImageIndex</var> is valid Image and <var>ImageIndexChecked</var> is -1 or only <var>GlyphDesign</var> is some glyph and <var>GlyphDesignChecked</var> then <var>ImageIndex</var> or <var>GlyphDesign</var> is used for checked state too (and vice versa).</descr><seealso><link id="TCustomECSpeedBtn.Delay"/><link id="TCustomECSpeedBtn.OnRelease"/>
+        </seealso>
+      </element><element name="TECSpeedBtnActionLink"><short>Class needed for linking with TAction.</short>
+      </element><element name="TEBOption"><short>Enumerated type. Options for TBaseECEditBtn (or descendants) and TBaseECComboBtn.</short>
+      </element><element name="TEBOptions"><short>Set of TEBOption.</short>
+      </element><element name="TEBOption.eboClickAltEnter"><short>Alt+Enter executes click on associated button.</short>
+      </element><element name="TEBOption.eboClickCtrlEnter"><short>Ctrl+Enter executes click on associated button.</short>
+      </element><element name="TEBOption.eboClickShiftEnter"><short>Shift+Enter executes click on associated button.</short>
+      </element><element name="TCustomECSpeedBtn.Checked"><short>Denotes whether TECSpeedBtn is checked. This component has no State property and no state cbGrayed.</short><descr>Checked can be True only when Delay &lt; 0 (button behaves like a TToggleBox) or Delay &gt; 0 (button works with Delay).</descr>
+      <seealso><link id="TCustomECSpeedBtn.Delay"/><link id="TCustomECSpeedBtn.OnChange"/><link id="TCustomECSpeedBtn.OnRelease"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.Delay"><short>Delay for ebmDelayBtn and for OnHoldDown event of ebmSpeedBtn.</short><descr>Delay is value in [miliseconds].<br/><br/>
+When Mode = ebmDelayBtn and Delay &gt; 0, button stays pushed. After this delay, it gets back to normal state and triggers OnRelease.<br/><br/>
+When Mode = ebmSpeedBtn, Delay &gt; 0 and user pushes left mouse button and holds down, OnHoldDown event is triggered and Click is canceled (OnClick is not triggered).<br/><br/>
+Delay has no effect when Mode = ebmToggleBox<br/><br/>
+        </descr>
+      <seealso><link id="TCustomECSpeedBtn.Mode"/><link id="TCustomECSpeedBtn.Checked"/><link id="TCustomECSpeedBtn.OnChange"/><link id="TCustomECSpeedBtn.OnHoldDown"/><link id="TCustomECSpeedBtn.OnRelease"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.GlyphColor"><short>Color of built-in glyph.</short>
+      <seealso><link id="TCustomECSpeedBtn.GlyphDesign"/><link id="TCustomECSpeedBtn.GlyphDesignChecked"/><link id="TCustomECSpeedBtn.OnDrawGlyph"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.OnRelease"><short>Triggered when button changes its state from pushed back to normal.</short>
+      <seealso><link id="TCustomECSpeedBtn.Checked"/><link id="TCustomECSpeedBtn.Delay"/><link id="TCustomECSpeedBtn.Mode"/><link id="TCustomECSpeedBtn.OnChange"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.OnChange"><short>Triggered when <link id="TCustomECSpeedBtn.Checked">Checked</link> property is changed.</short><descr>Property Checked changes only when button is in delay-mode (Delay &gt; 0) or as a togglebox (Delay &lt; 0).</descr>
+      <seealso><link id="TCustomECSpeedBtn.Checked"/><link id="TCustomECSpeedBtn.Delay"/><link id="TCustomECSpeedBtn.Mode"/><link id="TCustomECSpeedBtn.OnRelease"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.OnDrawGlyph"><short>Event triggered before glyph is painted to internal image (bitmap) of button. This enables to draw user-defined glyph.</short><descr>The OnDrawGlyph has the highest precedence. The second is TCustomECSpeedBtn.ImageIndex (if image exists in Images). The last is built-in glyph.</descr>
+      <seealso><link id="TCustomECSpeedBtn.GlyphColor"/><link id="TCustomECSpeedBtn.GlyphDesign"/><link id="TCustomECSpeedBtn.GlyphDesignChecked"/><link id="TCustomECSpeedBtn.ImageIndex"/><link id="TCustomECSpeedBtn.ImageIndexChecked"/><link id="TCustomECSpeedBtn.Images"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.GlyphDesign"><short>Selects built-in glyph for Checked = False.</short><descr>This glyph is displayed when:<br/>
+Normal button (Delay = 0) is in any state (normal, pushed, highlighted or disabled)<br/> 
+ToggleBox (Delay &lt; 0) is unchecked (all states except pushed).<br/> 
+Delay button (Delay &gt; 0) is unchecked (all states except pushed).</descr>
+      <seealso><link id="TCustomECSpeedBtn.GlyphColor"/><link id="TCustomECSpeedBtn.GlyphDesignChecked"/><link id="TCustomECSpeedBtn.OnDrawGlyph"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.GlyphDesignChecked"><short>Selects built-in glyph for Checked = True.</short><descr>This glyph is displayed when:<br/>
+Normal button (Delay = 0) - never<br/> 
+ToggleBox (Delay &lt; 0) is checked (pushed state).<br/> 
+Delay button (Delay &gt; 0) is checked (pushed state).</descr>
+      <seealso><link id="TCustomECSpeedBtn.GlyphColor"/><link id="TCustomECSpeedBtn.GlyphDesign"/><link id="TCustomECSpeedBtn.OnDrawGlyph"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.Images"><short>Image list. ImageIndex and ImageIndexChecked properties points to this list.</short>
+      <seealso><link id="TCustomECSpeedBtn.ImageIndex"/><link id="TCustomECSpeedBtn.ImageIndexChecked"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.Layout"><short>Alignment of the image.</short>
+      <seealso><link id="TCustomECSpeedBtn.GlyphColor"/><link id="TCustomECSpeedBtn.GlyphDesign"/><link id="TCustomECSpeedBtn.GlyphDesignChecked"/><link id="TCustomECSpeedBtn.ImageIndex"/><link id="TCustomECSpeedBtn.ImageIndexChecked"/><link id="TCustomECSpeedBtn.Images"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.Spacing"><short>Distance between glyph (or image) and Caption (if both exist). Spacing may mean horizontal or vertical, depends on Layout.</short>
+      </element><element name="TCustomECSpeedBtn.ImageIndex"><short>Index of image from list (Images) for Checked = False.</short><descr>This image is displayed when:<br/>
+Normal button (Delay = 0) is in any state (normal, pushed, highlighted or disabled)<br/>
+ 
+ToggleBox (Delay &lt; 0) is unchecked (all states except pushed).<br/>
+ 
+Delay button (Delay &gt; 0) is unchecked (all states except pushed).</descr>
+      <seealso><link id="TCustomECSpeedBtn.ImageIndexChecked"/><link id="TCustomECSpeedBtn.Images"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.ImageIndexChecked"><short>Index of image from list (Images) for Checked = True.</short><descr>This image is displayed when:<br/>
+Normal button (Delay = 0) - never<br/> 
+ToggleBox (Delay &lt; 0) is checked (pushed state).<br/> 
+Delay button (Delay &gt; 0) is checked (pushed state).</descr>
+      <seealso><link id="TCustomECSpeedBtn.ImageIndex"/><link id="TCustomECSpeedBtn.Images"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.Margin"><short>Margin around image and Caption. Applies only when AutoSize = True.</short>
+      </element><element name="TBaseECEditBtn.Button"><short>Subclass. Button associated to line-edit.</short>
+      <seealso><link id="TBaseECEditBtn.WidthInclBtn"/>
+        </seealso>
+      </element><element name="TBaseECEditBtn.Indent"><short>Indent [pixels] of buttons. Distance between line-edit and button.</short>
+      <seealso><link id="TBaseECEditBtn.WidthInclBtn"/>
+        </seealso>
+      </element><element name="TBaseECEditBtn.WidthInclBtn"><short>Width including button width. Common property "Width" gives width of edit only. WidthInclBtns gives width including Button and Indent.</short>
+      <seealso><link id="TBaseECEditBtn.FAnyButton"/><link id="TBaseECEditBtn.Indent"/><link id="TBaseECEditBtn.SetRealBoundRect"/><link id="TBaseECEditBtn.SetRealBounds"/>
+        </seealso>
+      </element><element name="TBaseECEditBtn.Options"><short>See <link id="TEBOption"/>.</short>
+      </element><element name="TECColorBtn.CustomColor"><short>Selected color. User can select color via associated ColorDialog or type-in the color code to line-edit.</short>
+      <seealso><link id="TECColorBtn.ColorLayout"/><link id="TECColorBtn.OnCustomColorChanged"/>
+        </seealso>
+      </element><element name="TECColorBtn.ColorLayout"><short>Format of <link id="TECColorBtn.CustomColor">CustomColor</link>.</short>
+      <seealso><link id="TECColorBtn.CustomColor"/><link id="TECColorBtn.Prefix"/>
+        </seealso>
+      </element><element name="TECColorBtn.Prefix"><short>Prefix of the color code. Default is $. Can be #, nothing or anything else.</short>
+      <seealso><link id="TECColorBtn.ColorLayout"/>
+        </seealso>
+      </element><element name="TECColorBtn.OnCustomColorChanged"><short>Triggered when CuctomColor is changed.</short>
+      <seealso><link id="TECColorBtn.CustomColor"/>
+        </seealso>
+      </element><element name="TBaseECComboBtn.Button"><short>Subclass. Button associated to combobox.</short>
+      <seealso><link id="TBaseECComboBtn.WidthInclBtn"/>
+        </seealso>
+      </element><element name="TBaseECComboBtn.Options"><short>See <link id="TEBOption"/>.</short>
+      </element><element name="TBaseECComboBtn.Indent"><short>Indent [pixels] of buttons. Distance between combobox and button.</short>
+      <seealso><link id="TBaseECComboBtn.WidthInclBtn"/>
+        </seealso>
+      </element><element name="TBaseECComboBtn.WidthInclBtn"><short>Width including button width. Common property "Width" gives width of combobox only. WidthInclBtns gives width including Button and Indent.</short>
+      <seealso><link id="TBaseECComboBtn.FAnyButton"/><link id="TBaseECComboBtn.Indent"/><link id="TBaseECComboBtn.SetRealBoundRect"/><link id="TBaseECComboBtn.SetRealBounds"/>
+        </seealso>
+      </element>
+    <short>Visual components TECSpeedBtn, TECEditBtn, TECColorBtn and TBaseECComboBtn.</short>
+    <element name="TCustomECSpeedBtn.GroupIndex"><short>Speed buttons can be grouped and behave like a radio group.</short><seealso><link id="TCustomECSpeedBtn.AllowAllUp"/><link id="TCustomECSpeedBtn.Checked"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.AllowAllUp"><short>Determines whether speed buttons grouped to radio group can be all deselected.</short><seealso><link id="TCustomECSpeedBtn.Checked"/><link id="TCustomECSpeedBtn.GroupIndex"/>
+        </seealso>
+      </element>
+    <element name="TCustomECSpeedBtn.EndUpdate"><short>Decreases UpdateCount. When UpdateCount = 0 calls Invalidate.</short><seealso><link id="TCustomECSpeedBtn.BeginUpdate"/><link id="TCustomECSpeedBtn.UpdateCount"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.BeginUpdate"><short>Increases <var>UpdateCount</var>. It reduces number of internal redraws when more than one visual property (color, glyph ...) is changed at a time.</short><seealso><link id="TCustomECSpeedBtn.EndUpdate"/><link id="TCustomECSpeedBtn.UpdateCount"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.UpdateCount"><short>Counter of updates. UpdateCount &gt; 0 means that component is being updated.</short><seealso><link id="TCustomECSpeedBtn.BeginUpdate"/><link id="TCustomECSpeedBtn.EndUpdate"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.BtnBitmaps"><short>Array of images representing button in various states.</short><descr>When button is enabled, this array contains bitmaps with highlighted, enabled, pushed and pushed-highlighted images.
+When button is disabled, this array contains bitmaps with disabled andpushed-disabled images only.
+It reduces overhead, since 4 or only 2 bitmaps are allocated, instead of 6.</descr>
+      </element>
+    <element name="TECSpeedBtnActionLinkClass"><short>Class needed for linking with TAction.</short>
+      </element><element name="TOnDrawGlyph"><short>Event method. Allows custom-drawn content of speed-buttons. Additional parameter is State.</short>
+      </element><element name="TItemOrder"><short>Order of items of TBaseECComboBtn.</short>
+      </element><element name="TItemOrder.eioFixed"><short>Fixed order. New items are added to the end.</short>
+      </element><element name="TItemOrder.eioHistory"><short>New items are added to the beginning and duplicities are removed.</short>
+      </element><element name="TItemOrder.eioSorted"><short>Items are sorted alphabetically.</short>
+      </element><element name="TECEditBtnSpacing"><short>Class modifying border spacing, so TBaseECEditBtn and descendants can be correctly aligned to the right.</short>
+      </element><element name="TECComboBtnSpacing"><short>Class modifying border spacing, so TBaseECComboBtn and descendants can be correctly aligned to the right.</short>
+      </element>
+    <element name="TCustomECSpeedBtnPlus"><short>Base class for buttons intended to be associated with TEdit or TCombo.</short>
+      </element><element name="TBaseECEditBtn.SetRealBoundRect"><short>Sets bounds rectangle including associated button.</short>
+      </element><element name="TBaseECEditBtn.SetRealBounds"><short>Sets bounds including associated button.</short>
+      </element><element name="TBaseECEditBtn.FAnyButton"><short>Associated button. Note that button is not instantiated in this class.</short>
+      </element><element name="TECSpeedBtnColor"><short>Visual component. A button designed to be associated to TECColorBtn or TECColorCombo.</short><descr><var>TECSpeedBtnColor</var> makes properties <b>published</b> only.</descr>
+      </element>
+    <element name="TECColorBtn.Button"><short>Associated button.</short>
+      </element><element name="TBaseECComboBtn.FAnyButton"><short>Associated button. Note that button is not instantiated in this class.</short>
+      </element><element name="TBaseECComboBtn.MaxCount"><short>Maximal count of Items.</short>
+      </element><element name="TBaseECComboBtn.ItemOrder"><short>Denotes order of items.</short><seealso><link id="TBaseECComboBtn.MaxCount"/>
+        </seealso>
+      </element><element name="TBaseECComboBtn.AddItemLimit"><short>Adds item to the end of Items.</short><descr>If count of items exceeds MaxCount, removes items from the beginning. Assumes ItemOrder = eioFixed.</descr>
+      </element><element name="TBaseECComboBtn.AddItemHistory"><short>Adds item to the begining,</short><descr>Removes duplicates. If count of items exceeds MaxCount, removes items from the end. Assumes ItemOrder = eioHistory and TStringList(Items).Duplicates = False.</descr>
+      </element><element name="TBaseECComboBtn.Add"><short>Adds item. The way adding depends on the ItemOrder.</short><seealso><link id="TBaseECComboBtn.ItemOrder"/>
+        </seealso>
+      </element><element name="TBaseECComboBtn.SetRealBoundRect"><short>Sets bounds rectangle including associated button.</short>
+      </element><element name="TBaseECComboBtn.SetRealBounds"><short>Sets bounds including associated button.</short>
+      </element><element name="TECComboBtn"><short>Visual component. A combobox with associated button.</short><descr><var>TECComboBtn</var> makes properties <b>published</b> and instantiates button (<var>TECSpeedBtnPlus</var>).</descr>
+      </element><element name="TECColorCombo"><short>Visual component for selecting color. Combobox contains colors in various formats and associated button triggers color dialog.</short><descr><var>TECColorCombo</var> makes properties <b>published</b> and instantiates button (<var>TECSpeedBtnColor</var>).<br/>
+Color of the glyph on the button corresponds with the color selected in the combobox.<br/>
+Property <var>Text</var> is not published. If <var>Text</var> is changed via code <var>Validate</var> must be called to validate the change.</descr>
+      </element><element name="TECColorCombo.OnCustomColorChanged"><short>Triggered when CuctomColor is changed.</short><seealso><link id="TECColorCombo.ColorLayout"/><link id="TECColorCombo.CustomColor"/>
+        </seealso>
+      </element><element name="TECColorCombo.Prefix"><short>Prefix of the color code. Default is $. Can be #, nothing or anything else.</short><seealso><link id="TECColorCombo.ColorLayout"/>
+        </seealso>
+      </element><element name="TECColorCombo.ItemOrder"/><element name="TECColorCombo.ColorLayout"><short>Format of <link id="TECColorBtn.CustomColor">CustomColor</link>.</short><seealso><link id="TECColorCombo.CustomColor"/><link id="TECColorCombo.Prefix"/><link id="TECColorCombo.OnCustomColorChanged"/>
+        </seealso>
+      </element><element name="TECColorCombo.CustomColor"><short>Selected color. User can select color via associated ColorDialog.</short><seealso><link id="TECColorCombo.ColorLayout"/><link id="TECColorCombo.OnCustomColorChanged"/>
+        </seealso>
+      </element><element name="TECColorCombo.Button"><short>Associated button.</short>
+      </element>
+    <element name="TCustomECSpeedBtn.OnHoldDown"><short>Triggered when button is held down for a certain time.</short><descr>Mode must be ebmSpeedBtn.<br/>
+Delay must be &gt; 0.<br/>
+If all conditions are fulfilled and OnHoldDown is triggered then Click is canceled and OnClick is not triggered. If needed, use OnMouseUp insted.</descr><seealso><link id="TCustomECSpeedBtn.Delay"/><link id="TCustomECSpeedBtn.Mode"/>
+        </seealso>
+      </element><element name="TCustomECSpeedBtn.Mode"><short>Mode of the button.</short><descr>ebmSpeedBtn: like TSpeedBtn with OnHoldDown event<br/>
+ebmToggleBtn: like TToggleBox<br/>
+ebmDelayBtn: like TSpeedBtn with delayed release and OnRelease event</descr><seealso><link id="TCustomECSpeedBtn.Delay"/><link id="TCustomECSpeedBtn.Checked"/><link id="TCustomECSpeedBtn.OnChange"/><link id="TCustomECSpeedBtn.OnHoldDown"/><link id="TCustomECSpeedBtn.OnRelease"/>
+        </seealso>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>

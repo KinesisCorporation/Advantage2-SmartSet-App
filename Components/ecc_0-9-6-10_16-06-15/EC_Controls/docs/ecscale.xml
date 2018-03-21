@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="eccontrols"><module name="ECScale"><element name="TCustomECScale"><descr>You can use this class as a subclass for your own visual components.</descr>
+      <short>Base class for TECScale and TECRulerScale. No abstract methods, no published properties.</short>
+      </element><element name="TCustomECScale.Correction">
+      <short>Correction of the scale values.</short><descr><var>TECScale</var> is based on double-precision values. Sometimes, exact calculation may result to a scale 0,001..100 and tick 0 would not be displayed. In this case can be <var>Correction</var> set to 0,01 and tick 0 will be displayed although the ruler or the slider where this scale is placed on can never reach this value.<br/>
+So the <var>Correction</var> is here mainly because of design.</descr>
+      </element><element name="TCustomECScale.DateTimeFormat"><short>Format of values. For ValueFormat = esvfDate or esvfTime only.</short>
+      <seealso><link id="TCustomECScale.ValueFormat"/>
+        </seealso>
+      </element><element name="TCustomECScale.Digits"><short>Number of digits. Depends on <b>ValueFormat</b>.</short><descr>case <var>ValueFormat</var> of
+  <i>esvfAutoRound</i>: numbers of decimal places (i.e. 10,000 for <var>Digits</var> = 3)
+  <i>esvfFixedRound</i>: numbers of decimal places (i.e. 10,000 for <var>Digits</var> = 3)
+  <i>esvfSmartRound</i>: numbers of decimal places (i.e. 10,50 for <var>Digits</var> = 3)
+  <i>esvfExponential</i>: number of digits of exponent (i.e. 1,00E+001 for <var>Digits</var> = 3)
+  <i>esvfHexadecimal</i>: numbers of digits (i.e. 00A for <var>Digits</var> = 3)
+  <i>esvfMarkHexadec</i>: numbers of digits (i.e. $00A for <var>Digits</var> = 3)
+  <i>esvfOctal</i>: numbers of digits (i.e. 036 for <var>Digits</var> = 3)
+  <i>esvfBinary</i>: numbers of digits (i.e. 1100100 for <var>Digits</var> = 7)
+  <i>esvfDate</i>: does not affect
+  <i>esvfTime</i>: does not affect
+  <i>esvfText</i>: does not affect</descr>
+      <seealso><link id="TCustomECScale.ValueFormat"/>
+        </seealso>
+      </element><element name="TCustomECScale.FontOrientation"><short>Orientation of values (0-3600, 900 ~ 90 degrees)</short>
+      </element><element name="TCustomECScale.LogarithmBase"><short>Only for ScaleType = estLogarithmic.</short>
+      <seealso><link id="TCustomECScale.ScaleType"/>
+        </seealso>
+      </element><element name="TCustomECScale.ScaleType"><short>Scale can be <i>estLinear</i> or <i>estLogarithmic</i>
+        </short>
+      <seealso><link id="TCustomECScale.LogarithmBase"/>
+        </seealso>
+      </element><element name="TCustomECScale.Text"><short>Text can be used instead of values. Values are then indexes of TStringList.</short>
+      </element><element name="TCustomECScale.TickAlign"><short>Alignment of the ticks. Can be <i>etaOuter</i>, <i>etaInner</i>, <i>etaCenter</i>
+        </short>
+      <seealso><link id="TCustomECScale.TickColor"/><link id="TCustomECScale.TickDesign"/><link id="TCustomECScale.TickIndent"/><link id="TCustomECScale.TickLength"/><link id="TCustomECScale.TickLongValue"/><link id="TCustomECScale.TickMiddleValue"/><link id="TCustomECScale.TickShortValue"/><link id="TCustomECScale.TickVisible"/>
+        </seealso>
+      </element><element name="TCustomECScale.TickColor"><short>Color of the ticks. clDefault is clBtnText. Only for TickDesing = etdSimple or etdThick.</short>
+      <seealso><link id="TCustomECScale.TickAlign"/><link id="TCustomECScale.TickDesign"/><link id="TCustomECScale.TickIndent"/><link id="TCustomECScale.TickLength"/><link id="TCustomECScale.TickLongValue"/><link id="TCustomECScale.TickMiddleValue"/><link id="TCustomECScale.TickShortValue"/><link id="TCustomECScale.TickVisible"/>
+        </seealso>
+      </element><element name="TCustomECScale.TickDesign"><short>Design of ticks. Can be: <i>etdSimple</i>, <i>etdThick</i>, <i>etd3DLowered</i>, <i>etd3DRaised</i>
+        </short>
+      <seealso><link id="TCustomECScale.TickAlign"/><link id="TCustomECScale.TickColor"/><link id="TCustomECScale.TickIndent"/><link id="TCustomECScale.TickLength"/><link id="TCustomECScale.TickLongValue"/><link id="TCustomECScale.TickMiddleValue"/><link id="TCustomECScale.TickShortValue"/><link id="TCustomECScale.TickVisible"/>
+        </seealso>
+      </element><element name="TCustomECScale.TickIndent"><short>Indent of ticks. Distance of ticks from the edge of component or from the groove of ECSlider.</short>
+      <seealso><link id="TCustomECScale.TickAlign"/><link id="TCustomECScale.TickColor"/><link id="TCustomECScale.TickDesign"/><link id="TCustomECScale.TickLength"/><link id="TCustomECScale.TickLongValue"/><link id="TCustomECScale.TickMiddleValue"/><link id="TCustomECScale.TickShortValue"/><link id="TCustomECScale.TickVisible"/>
+        </seealso>
+      </element><element name="TCustomECScale.TickLength"><short>Length of the long ticks. Medium ticks are 0.7 of this value. Short ticks are 0.5 of this value.</short>
+      <seealso><link id="TCustomECScale.TickAlign"/><link id="TCustomECScale.TickColor"/><link id="TCustomECScale.TickDesign"/><link id="TCustomECScale.TickIndent"/><link id="TCustomECScale.TickLongValue"/><link id="TCustomECScale.TickMiddleValue"/><link id="TCustomECScale.TickShortValue"/><link id="TCustomECScale.TickVisible"/>
+        </seealso>
+      </element><element name="TCustomECScale.TickLongValue"><short>Common divisor for long ticks. Only long ticks can have value. Default is 10. For range 0..100 will exist long ticks 0, 10, 20, ... 90, 100.</short>
+      <seealso><link id="TCustomECScale.TickAlign"/><link id="TCustomECScale.TickColor"/><link id="TCustomECScale.TickDesign"/><link id="TCustomECScale.TickIndent"/><link id="TCustomECScale.TickLength"/><link id="TCustomECScale.TickMiddleValue"/><link id="TCustomECScale.TickShortValue"/><link id="TCustomECScale.TickVisible"/>
+        </seealso>
+      </element><element name="TCustomECScale.TickMiddleValue"><short>Common divisor for middle ticks. Default is 5.</short>
+      <seealso><link id="TCustomECScale.TickAlign"/><link id="TCustomECScale.TickColor"/><link id="TCustomECScale.TickDesign"/><link id="TCustomECScale.TickIndent"/><link id="TCustomECScale.TickLength"/><link id="TCustomECScale.TickLongValue"/><link id="TCustomECScale.TickShortValue"/><link id="TCustomECScale.TickVisible"/>
+        </seealso>
+      </element><element name="TCustomECScale.TickShortValue"><short>Common divisor for short ticks. Default is 1.</short>
+      <seealso><link id="TCustomECScale.TickAlign"/><link id="TCustomECScale.TickColor"/><link id="TCustomECScale.TickDesign"/><link id="TCustomECScale.TickIndent"/><link id="TCustomECScale.TickLength"/><link id="TCustomECScale.TickLongValue"/><link id="TCustomECScale.TickMiddleValue"/><link id="TCustomECScale.TickVisible"/>
+        </seealso>
+      </element><element name="TCustomECScale.TickVisible"><short>Visibility of ticks  (short, middle, long).</short>
+      <seealso><link id="TCustomECScale.TickAlign"/><link id="TCustomECScale.TickColor"/><link id="TCustomECScale.TickDesign"/><link id="TCustomECScale.TickIndent"/><link id="TCustomECScale.TickLength"/><link id="TCustomECScale.TickLongValue"/><link id="TCustomECScale.TickMiddleValue"/><link id="TCustomECScale.TickShortValue"/>
+        </seealso>
+      </element><element name="TCustomECScale.ValueDisplay"><short>Displaying of the values.</short>
+      <seealso><link id="TCustomECScale.ValueFormat"/><link id="TCustomECScale.ValueIndent"/><link id="TCustomECScale.ValueShift"/><link id="TCustomECScale.ValueVisible"/>
+        </seealso>
+      </element>
+    <element name="TValueDisplay.evdNormal"><short>Value is centered to tick (horizontaly in case of horizontal scale).</short>
+      </element><element name="TValueDisplay.evdTopLeft"><short>Values are aligned to the left from tick (in case of horizontal scale).</short>
+      </element><element name="TValueDisplay.evdBottomRight"><short>Values are aligned to the right from tick (in case of horizontal scale).</short>
+      </element><element name="TValueDisplay.evdTopLeftInside"><short>Values are aligned to the left from tick (in case of horizontal scale).</short>
+      </element><element name="TValueDisplay.evdBttmRightInside"><short>Values are aligned to the right from tick (in case of horizontal scale).</short>
+      </element><element name="TValueDisplay.evdCompactTopLeft"><short>Behaves like evdTopLeftInside in case of horizontal scale. In case of vertical scale are values separated to digits and diplayed as a column.</short>
+      </element><element name="TValueDisplay.evdCompactBttmRight"><short>Behaves like evdBttmRightInside in case of horizontal scale. In case of vertical scale are values separated to digits and diplayed as a column.</short>
+      </element><element name="TValueDisplay"><short>Enumeration denoting displaying values of the scale.</short><descr>Position of the values also influe:<br/>
+ 
+ValueIndent: distance form tick (vertical in case of horizontal scale)<br/>
+ 
+ValueShift: distance ( -/+) from centered position (horizontal in case of horizontal scale)</descr><seealso><link id="TCustomECScale.ValueIndent"/><link id="TCustomECScale.ValueShift"/>
+        </seealso><example file="examples/tvaluedisplay.txt"/>
+      </element>
+    <element name="TCustomECScale.ValueIndent"><short>Distance between ticks and values.</short><seealso><link id="TCustomECScale.ValueDisplay"/><link id="TCustomECScale.ValueFormat"/><link id="TCustomECScale.ValueShift"/><link id="TCustomECScale.ValueVisible"/>
+        </seealso>
+      </element><element name="TCustomECScale.ValueShift"><short>Shift (in pixels) from the acccurate position.</short><seealso><link id="TCustomECScale.ValueDisplay"/><link id="TCustomECScale.ValueFormat"/><link id="TCustomECScale.ValueIndent"/><link id="TCustomECScale.ValueVisible"/>
+        </seealso>
+      </element><element name="TScaleType"><short>Enumeration denoting type of a scale.</short>
+      </element><element name="TECScale"><short>Class is used as a subclass of TECSlider, TECProgressBar and TECPositionBar or third party visual components.</short>
+      <descr><var>TECScale</var> makes properties <b>published</b> only.</descr>
+      </element><element name="TTickAlign"><short>Enumeration denoting aligning of the ticks. etaInner means aligning to the groove of a slider or to the edge of a ruler.</short>
+      </element><element name="TTickSize"><short>Enumeration denoting length of the tick. Private type.</short>
+      </element><element name="TTickMetrics"><short>Record containing position and size of the tick. Private type.</short>
+      </element><element name="TTicksVisible"><short>Enumeration denoting visibility of the ticks (short, middle, long).</short>
+      </element><element name="TScaleValueFormat"><short>Enumeration denoting format of the values.</short>
+      </element><element name="TScaleValueFormat.esvfAutoRound"><short>Automatic round.</short>
+      </element><element name="TScaleValueFormat.esvfFixedRound"><short>Fixed number of decimal places.</short>
+      </element><element name="TScaleValueFormat.esvfSmartRound"><short>Advanced rounding.</short>
+      </element><element name="TScaleValueFormat.esvfMarkHexadec"><short>Hexadecimal numbers with $ prefix.</short>
+      </element><element name="TScaleValueFormat.esvfOctal"><short>Octal numbers.</short>
+      </element><element name="TScaleValueFormat.esvfBinary"><short>Binary numbers.</short>
+      </element><element name="TScaleValueFormat.esvfDate"><short>Date.</short>
+      </element><element name="TScaleValueFormat.esvfTime"><short>Time.</short>
+      </element><element name="TScaleValueFormat.esvfHexadecimal"><short>Hexadecimal numbers.</short>
+      </element><element name="TScaleValueFormat.esvfExponential"><short>Decimal numbers with exponent.</short>
+      </element><element name="TCustomECScale.OnPrepareValue"><short>Triggered before the value is painted. Enables user-defined formating.</short><seealso><link id="TCustomECScale.ValueFormat"/>
+        </seealso>
+      </element><element name="TCustomECScale.ValueVisible"><short>Visibility of values (none, bound, regular, all).</short>
+      <seealso><link id="TCustomECScale.ValueDisplay"/><link id="TCustomECScale.ValueFormat"/><link id="TCustomECScale.ValueIndent"/><link id="TCustomECScale.ValueShift"/>
+        </seealso>
+      </element><element name="TCustomECScale.ValueFormat"><short>Format of values (round, hexadecimal, date, time, ... ).</short><seealso><link id="TCustomECScale.DateTimeFormat"/><link id="TCustomECScale.Digits"/><link id="TCustomECScale.OnPrepareValue"/><link id="TCustomECScale.ValueDisplay"/><link id="TCustomECScale.ValueIndent"/><link id="TCustomECScale.ValueShift"/><link id="TCustomECScale.ValueVisible"/>
+        </seealso>
+      </element><element name="TCustomECScale.GetStringMax"><short>Returns string representation of maximum (Max). Applies correct formatting.</short>
+      </element><element name="TCustomECScale.GetStringMin"><short>Returns string representation of minimum (Min). Applies correct formatting.</short>
+      </element><element name="TCustomECScale.GetPreferredWidth"><short>Returns preferred width (or height) needed to draw a scale. Width for vertical scales, height for horizontal.</short>
+      </element><element name="TCustomECScale.GetStringPosition"><short>Returns string representation of current position. Applies correct formatting.</short>
+      </element><element name="TCustomECScale.SetScaleBounds"><short>Sets bounds of the scale.</short><descr>This method must be called before GetPreferredWidth(), CalcTickPosAndValues() and Draw().</descr>
+      </element><element name="TCustomECScale.CalcTickPosAndValues"><short>Calculates positions of ticks and values. Must be called before Draw().</short>
+      </element><element name="TCustomECScale.Draw"><short>Draws the scale on canvas. CalcTickPosAndValues() must be called before.</short>
+      </element>
+    <short>Class TECScale. Not a component but can draw itself to any canvas.</short>
+    <element name="TCustomECScale.BeginUpdate"><short>Increases <var>UpdateCount</var>. Helps to reduce repaints when more than one design property is changed at a time.</short><seealso><link id="TCustomECScale.EndUpdate"/><link id="TCustomECScale.UpdateCount"/>
+        </seealso>
+      </element><element name="TCustomECScale.EndUpdate"><short>Decreases <var>UpdateCount</var>.</short><seealso><link id="TCustomECScale.BeginUpdate"/><link id="TCustomECScale.UpdateCount"/>
+        </seealso>
+      </element><element name="TCustomECScale.UpdateCount"><short>Update counter. Repaint via Redraw or RecalcRedraw is possible only if UpdateCount = 0.</short><seealso><link id="TCustomECScale.BeginUpdate"/><link id="TCustomECScale.EndUpdate"/>
+        </seealso>
+      </element>
+    <element name="TCustomECScale.Max"><short>Maximum of the scale.</short>
+      </element><element name="TCustomECScale.Min"><short>Minimum of the scale.</short>
+      </element><element name="TCustomECScale.GetPreferredSize"><short>Returns the minimal required size (width or height) [pixels] that TECScale needs to be fully displayed.</short>
+      </element><element name="TCustomECScale.GetPreferredValuesHeight"><short>Returns the minimal required height [pixels] that values of TECScale need to be fully displayed.</short>
+      </element><element name="TCustomECScale.GetPreferredValuesWidth"><short>Returns the minimal required width [pixels] that values of TECScale need to be fully displayed.</short>
+      </element><element name="TCustomECScale.GetTextSize"><short>Measures size (width or height) [pixels] that the string AStrVal will occupy on the canvas ACanvas.</short>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="eccontrols"><module name="ECImageMenu"><element name="TECImageMenu"><short>Visual component. Vertical menu with images. Similar component is frequently used in KDE4 applications.</short>
+      <descr><var>TECImageMenu</var> makes properties <b>published</b> only.<br/><br/><var>TECImageMenu</var> can have focus and can be reached by Tab key (when <var>TabStop</var> = True, which is default).<br/><var>TECImageMenu</var> can be controlled by mouse, by keyboard or by code.<br/><br/>
+Mouse:<br/><br/>
+Simply left-click on menu item.<br/>
+Middle-click or right-click selects an item but does not click.<br/>
+Mouse wheel moves the selection but does not click.<br/><br/>
+Keyboard (menu must be focused):<br/><br/>
+Space nad Enter: click on the selected item.<br/>
+Acceleration key (Alt + Key) selects and clicks the relevant item.<br/>
+Arrow Up, Arrow Down, Page Up, Page Down, Home and End: moves the selection but does not click.<br/>
+        </descr><seealso><link id="TImageMenuItem"/><link id="TImageMenuItems"/>
+        </seealso>
+      </element><element name="TCustomECImageMenu"><short>Base class for TECImageMenu. No published properties, no abstract methods.</short>
+      </element><element name="TImageMenuItem"><short>Menu item. Menu is collection of these items.</short>
+      </element><element name="TImageMenuItem.Caption"><short>Caption of menu item. Usually displayed with larger, bold font.</short>
+      <descr>Captions support acceleration keys. Ampersand will display underlined character and Alt+[character] will select and click relevant menu item.</descr>
+      </element><element name="TImageMenuItem.Description"><short>Description of menu item. Usually displayed with smaller font.</short>
+      </element><element name="TImageMenuItem.ImageIndex"><short>Index of image. Owner (TCustomECImageMenu) contains link to ImageList (property Images).</short>
+      </element><element name="TImageMenuItems"><short>Collection of menu items. Subclass for TECImageMenu.</short>
+      </element><element name="TCustomECImageMenu.Alternate"><short>Determines whether odd and even menu items are drawn with different (lighter and darker) background.</short>
+      </element><element name="TCustomECImageMenu.CaptionAlign"><short>Alignment of the menu Captions and Descriptions.</short><descr>When <var>Layout</var> is eopLeft or eopRight:<br/>
+Any negative value: <var>Caption</var> and <var>Description</var> are aligned to image<br/>
+0: <var>Caption</var> and <var>Description</var> are centered between image and border<br/>
+Any positive value: <var>Caption</var> and <var>Description</var> are aligned to border (to the opposite side of the image)<br/><br/>
+When <var>Layout</var> is eopTop or eopBottom:<br/>
+0: <var>Caption</var> and <var>Description</var> are centered above or below the image<br/>
+Positive or negative values: <var>Caption</var> and <var>Description</var> are shifted from centered position by <var>abs(CaptionAlign)</var> [pixels]</descr>
+      <seealso><link id="TCustomECImageMenu.Layout"/>
+        </seealso>
+      </element><element name="TCustomECImageMenu.CaptionFontOptions"><short>Font options of menu captions. Captions are usually displayed with larger, bold font while descriptions are displayed with smaller font.</short>
+      </element><element name="TCustomECImageMenu.Images"><short>Menu images are taken from this image list.</short>
+      </element><element name="TCustomECImageMenu.Layout"><short>Alignment of the image.</short>
+      <seealso><link id="TCustomECImageMenu.CaptionAlign"/>
+        </seealso>
+      </element><element name="TCustomECImageMenu.MenuItems"><short>Subclass containing menu items.</short>
+      </element><element name="TCustomECImageMenu.Spacing"><short>Spacing around images and captions.</short>
+      </element>
+    <short>Visual component TECImageMenu.</short><element name="TImageMenuItems.Items"><short>Collection of menu items.</short>
+      </element><element name="TImageMenuItems.Add"><short>Adds new menu item to collection.</short>
+      </element>
+    <element name="TCustomECImageMenu.EndUpdate"><short>Decreases UpdateCount.</short><descr>When UpdateCount is decreased to 0 then calls RecalcInvalidate.<br/>
+        </descr><seealso><link id="TCustomECImageMenu.BeginUpdate"/><link id="TCustomECImageMenu.UpdateCount"/>
+        </seealso>
+      </element><element name="TCustomECImageMenu.BeginUpdate"><short>Increses UpdateCount. It reduces number of internal redraws when more than one visual property (color, bevel ...) is changed at a time.</short><seealso><link id="TCustomECImageMenu.EndUpdate"/><link id="TCustomECImageMenu.UpdateCount"/>
+        </seealso>
+      </element><element name="TCustomECImageMenu.UpdateCount"><short>Counter of updates. UpdateCount &gt; 0 means that component is being updated.</short><seealso><link id="TCustomECImageMenu.BeginUpdate"/><link id="TCustomECImageMenu.EndUpdate"/>
+        </seealso>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>

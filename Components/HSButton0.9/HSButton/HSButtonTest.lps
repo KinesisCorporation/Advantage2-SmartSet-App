@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="40">
+      <Unit0>
+        <Filename Value="HSButtonTest.dpr"/>
+        <IsPartOfProject Value="True"/>
+        <CursorPos Y="3"/>
+        <UsageCount Value="51"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="testformu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="TestFormu"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="51"/>
+        <CursorPos X="48" Y="57"/>
+        <UsageCount Value="51"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="HSButtons.pas"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="468"/>
+        <CursorPos X="21" Y="489"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\..\lazarus\fpc\2.6.2\source\packages\fcl-res\src\bitmapresource.pp"/>
+        <TopLine Value="228"/>
+        <CursorPos Y="249"/>
+        <UsageCount Value="6"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\..\lazarus\fpc\2.6.2\source\packages\fcl-image\src\bmpcomn.pp"/>
+        <UnitName Value="BMPcomn"/>
+        <TopLine Value="103"/>
+        <CursorPos Y="118"/>
+        <UsageCount Value="6"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\..\lazarus\fpc\2.6.2\source\packages\fcl-image\src\fpimage.pp"/>
+        <UnitName Value="FPimage"/>
+        <TopLine Value="81"/>
+        <CursorPos X="3" Y="93"/>
+        <UsageCount Value="8"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\..\lazarus\lcl\graphics.pp"/>
+        <UnitName Value="Graphics"/>
+        <TopLine Value="1287"/>
+        <CursorPos X="15" Y="1299"/>
+        <UsageCount Value="19"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\..\lazarus\lcl\graphtype.pp"/>
+        <UnitName Value="GraphType"/>
+        <TopLine Value="191"/>
+        <CursorPos X="26" Y="202"/>
+        <UsageCount Value="16"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="..\..\lazarus\lcl\intfgraphics.pas"/>
+        <UnitName Value="IntfGraphics"/>
+        <TopLine Value="249"/>
+        <CursorPos X="15" Y="259"/>
+        <UsageCount Value="12"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="..\..\lazarus\fpc\2.6.2\source\rtl\inc\objpash.inc"/>
+        <TopLine Value="178"/>
+        <CursorPos X="23" Y="192"/>
+        <UsageCount Value="16"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="..\..\lazarus\fpc\2.6.2\source\rtl\win\wininc\struct.inc"/>
+        <TopLine Value="317"/>
+        <CursorPos X="11" Y="327"/>
+        <UsageCount Value="16"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="HSSpeedButton.pas"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="11" Y="25"/>
+        <UsageCount Value="23"/>
+        <Bookmarks Count="1">
+          <Item0 X="6" Y="531"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="..\..\lazarus\fpc\2.6.2\source\rtl\win\messages.pp"/>
+        <CursorPos X="5" Y="11"/>
+        <UsageCount Value="22"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="..\..\lazarus\fpc\2.6.2\source\rtl\win\wininc\messages.inc"/>
+        <TopLine Value="1837"/>
+        <CursorPos X="12" Y="1855"/>
+        <UsageCount Value="7"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="..\..\lazarus\fpc\2.6.2\source\rtl\win32\windows.pp"/>
+        <UsageCount Value="22"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="..\..\lazarus\lcl\controls.pp"/>
+        <UnitName Value="Controls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2132"/>
+        <CursorPos X="15" Y="2132"/>
+        <UsageCount Value="22"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="..\..\lazarus\lcl\lmessages.pp"/>
+        <UnitName Value="LMessages"/>
+        <TopLine Value="245"/>
+        <CursorPos X="3" Y="255"/>
+        <UsageCount Value="7"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="HSButton.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="163"/>
+        <CursorPos X="24" Y="31"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="HSStaticText.pas"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="11" Y="25"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="..\..\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3627"/>
+        <CursorPos Y="3640"/>
+        <UsageCount Value="14"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="..\..\lazarus\lcl\include\rasterimage.inc"/>
+        <TopLine Value="436"/>
+        <CursorPos X="10" Y="447"/>
+        <UsageCount Value="13"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="..\..\lazarus\lcl\include\custombitmap.inc"/>
+        <TopLine Value="66"/>
+        <CursorPos X="3" Y="68"/>
+        <UsageCount Value="13"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="..\..\lazarus\fpc\2.6.2\source\rtl\objpas\classes\classesh.inc"/>
+        <TopLine Value="843"/>
+        <CursorPos X="14" Y="856"/>
+        <UsageCount Value="17"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="..\..\lazarus\fpc\2.6.2\source\rtl\objpas\classes\classes.inc"/>
+        <TopLine Value="113"/>
+        <CursorPos X="3" Y="115"/>
+        <UsageCount Value="8"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="..\..\lazarus\fpc\2.6.2\source\rtl\win\tthread.inc"/>
+        <TopLine Value="87"/>
+        <CursorPos X="3" Y="89"/>
+        <UsageCount Value="10"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="..\..\lazarus\fpc\2.6.2\source\rtl\win\wininc\func.inc"/>
+        <TopLine Value="134"/>
+        <CursorPos X="10" Y="145"/>
+        <UsageCount Value="10"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="..\..\lazarus\fpc\2.6.2\source\rtl\win\wininc\defines.inc"/>
+        <TopLine Value="1075"/>
+        <CursorPos X="6" Y="1086"/>
+        <UsageCount Value="8"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="..\..\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <TopLine Value="1089"/>
+        <CursorPos Y="1099"/>
+        <UsageCount Value="9"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="..\..\lazarus\lcl\customtimer.pas"/>
+        <UnitName Value="CustomTimer"/>
+        <TopLine Value="120"/>
+        <CursorPos X="3" Y="130"/>
+        <UsageCount Value="9"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="..\..\lazarus\lcl\extctrls.pp"/>
+        <UnitName Value="ExtCtrls"/>
+        <TopLine Value="476"/>
+        <CursorPos X="16" Y="486"/>
+        <UsageCount Value="11"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="..\..\lazarus\lcl\include\graphiccontrol.inc"/>
+        <TopLine Value="21"/>
+        <CursorPos X="3" Y="30"/>
+        <UsageCount Value="13"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="..\..\lazarus\lcl\include\customimage.inc"/>
+        <TopLine Value="99"/>
+        <CursorPos X="48" Y="121"/>
+        <UsageCount Value="11"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="..\..\lazarus\lcl\include\canvas.inc"/>
+        <TopLine Value="46"/>
+        <CursorPos X="16" Y="54"/>
+        <UsageCount Value="10"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="..\..\lazarus\lcl\include\graphic.inc"/>
+        <TopLine Value="228"/>
+        <CursorPos X="3" Y="246"/>
+        <UsageCount Value="10"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="..\..\lazarus\lcl\include\lclintfh.inc"/>
+        <TopLine Value="111"/>
+        <CursorPos X="10" Y="124"/>
+        <UsageCount Value="10"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="..\..\lazarus\lcl\include\intfbaselcl.inc"/>
+        <TopLine Value="652"/>
+        <CursorPos X="3" Y="675"/>
+        <UsageCount Value="10"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="..\..\lazarus\fpc\2.6.2\source\rtl\objpas\classes\streams.inc"/>
+        <TopLine Value="87"/>
+        <CursorPos X="7" Y="96"/>
+        <UsageCount Value="10"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="C:\lazarus\lcl\lmessages.pp"/>
+        <UnitName Value="LMessages"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="C:\lazarus\lcl\controls.pp"/>
+        <UnitName Value="Controls"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="2227"/>
+        <CursorPos X="3" Y="2248"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="C:\lazarus\lcl\interfaces\win32\interfaces.pp"/>
+        <UnitName Value="Interfaces"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit39>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="HSButtons.pas"/>
+        <Caret Line="335" Column="77" TopLine="314"/>
+      </Position1>
+      <Position2>
+        <Filename Value="HSButtons.pas"/>
+        <Caret Line="341" Column="21" TopLine="320"/>
+      </Position2>
+      <Position3>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="13" Column="29"/>
+      </Position3>
+      <Position4>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="28" Column="108" TopLine="7"/>
+      </Position4>
+      <Position5>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="212" Column="39" TopLine="193"/>
+      </Position5>
+      <Position6>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="708" Column="4" TopLine="685"/>
+      </Position6>
+      <Position7>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="308" Column="10" TopLine="287"/>
+      </Position7>
+      <Position8>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="198" Column="43" TopLine="193"/>
+      </Position8>
+      <Position9>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="104" Column="23" TopLine="85"/>
+      </Position9>
+      <Position10>
+        <Filename Value="HSButton.pas"/>
+      </Position10>
+      <Position11>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="104" Column="23" TopLine="71"/>
+      </Position11>
+      <Position12>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="220" Column="29" TopLine="20"/>
+      </Position12>
+      <Position13>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="213" Column="36" TopLine="193"/>
+      </Position13>
+      <Position14>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="437" Column="42" TopLine="417"/>
+      </Position14>
+      <Position15>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="706" Column="27" TopLine="685"/>
+      </Position15>
+      <Position16>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="104" Column="23" TopLine="104"/>
+      </Position16>
+      <Position17>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="213" Column="37" TopLine="193"/>
+      </Position17>
+      <Position18>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="706" Column="28" TopLine="677"/>
+      </Position18>
+      <Position19>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="213" Column="36" TopLine="193"/>
+      </Position19>
+      <Position20>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="34" Column="29" TopLine="21"/>
+      </Position20>
+      <Position21>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="437" Column="42" TopLine="416"/>
+      </Position21>
+      <Position22>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="104" Column="25" TopLine="85"/>
+      </Position22>
+      <Position23>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="213" Column="42" TopLine="182"/>
+      </Position23>
+      <Position24>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="437" Column="48" TopLine="412"/>
+      </Position24>
+      <Position25>
+        <Filename Value="HSButton.pas"/>
+        <Caret Line="706" TopLine="684"/>
+      </Position25>
+      <Position26>
+        <Filename Value="HSButtonTest.dpr"/>
+        <Caret Line="3"/>
+      </Position26>
+      <Position27>
+        <Filename Value="HSSpeedButton.pas"/>
+        <Caret Line="481" Column="14" TopLine="55"/>
+      </Position27>
+      <Position28>
+        <Filename Value="HSSpeedButton.pas"/>
+        <Caret Line="367" Column="44" TopLine="127"/>
+      </Position28>
+      <Position29>
+        <Filename Value="HSStaticText.pas"/>
+        <Caret Line="410" Column="13" TopLine="397"/>
+      </Position29>
+      <Position30>
+        <Filename Value="HSStaticText.pas"/>
+        <Caret Line="160" Column="36" TopLine="141"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

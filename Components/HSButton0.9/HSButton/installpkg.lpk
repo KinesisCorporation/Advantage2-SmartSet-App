@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="installpkg"/>
+    <Type Value="RunAndDesignTime"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="."/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Version Release="1"/>
+    <Files Count="3">
+      <Item1>
+        <Filename Value="HSButton.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="HSButton"/>
+      </Item1>
+      <Item2>
+        <Filename Value="HSSpeedButton.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="HSSpeedButton"/>
+      </Item2>
+      <Item3>
+        <Filename Value="HSStaticText.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="HSStaticText"/>
+      </Item3>
+    </Files>
+    <RequiredPkgs Count="1">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

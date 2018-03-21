@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="15">
+      <Unit0>
+        <Filename Value="picker.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="35"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="pickerdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="pickerform"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="170"/>
+        <CursorPos X="10" Y="179"/>
+        <UsageCount Value="35"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="demomain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DemoMainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="DemoMain"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="30"/>
+        <CursorPos X="21" Y="20"/>
+        <UsageCount Value="35"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="../source/sliderbars.pas"/>
+        <UnitName Value="SliderBars"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="134"/>
+        <CursorPos Y="70"/>
+        <UsageCount Value="18"/>
+        <Bookmarks Count="3">
+          <Item0 X="14" Y="342" ID="1"/>
+          <Item1 Y="303" ID="2"/>
+          <Item2 X="25" Y="978" ID="9"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/include/control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2106"/>
+        <CursorPos Y="2123"/>
+        <UsageCount Value="13"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="pickerdlg.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="196"/>
+        <CursorPos X="26" Y="223"/>
+        <UsageCount Value="11"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="../package/registersliderbars.pas"/>
+        <UnitName Value="RegisterSliderbars"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/graphics.pp"/>
+        <UnitName Value="Graphics"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="252"/>
+        <CursorPos X="3" Y="269"/>
+        <UsageCount Value="13"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/include/customnotebook.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="953"/>
+        <CursorPos Y="971"/>
+        <UsageCount Value="11"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/include/wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5325"/>
+        <CursorPos Y="5342"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/controls.pp"/>
+        <UnitName Value="Controls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2991"/>
+        <CursorPos Y="3012"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/lclmessageglue.pas"/>
+        <UnitName Value="LCLMessageGlue"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="102"/>
+        <CursorPos Y="123"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/interfaces/gtk2/gtk2proc.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3612"/>
+        <CursorPos Y="3631"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/interfaces/gtk2/gtk2pagecontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="82"/>
+        <CursorPos Y="108"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="/usr/share/lazarus/1.4.4/lcl/include/spinedit.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="215"/>
+        <CursorPos Y="242"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit14>
+    </Units>
+    <JumpHistory Count="29" HistoryIndex="28">
+      <Position1>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="213" Column="30" TopLine="184"/>
+      </Position1>
+      <Position2>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="324" Column="30" TopLine="237"/>
+      </Position2>
+      <Position3>
+        <Filename Value="pickerdlg.pas"/>
+        <Caret Line="157" TopLine="145"/>
+      </Position3>
+      <Position4>
+        <Filename Value="pickerdlg.pas"/>
+        <Caret Line="160" TopLine="145"/>
+      </Position4>
+      <Position5>
+        <Filename Value="pickerdlg.pas"/>
+        <Caret Line="161" TopLine="145"/>
+      </Position5>
+      <Position6>
+        <Filename Value="pickerdlg.pas"/>
+        <Caret Line="162" TopLine="145"/>
+      </Position6>
+      <Position7>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="358" Column="49" TopLine="344"/>
+      </Position7>
+      <Position8>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="847" Column="29" TopLine="818"/>
+      </Position8>
+      <Position9>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="1088" Column="28" TopLine="1059"/>
+      </Position9>
+      <Position10>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="1097" TopLine="1090"/>
+      </Position10>
+      <Position11>
+        <Filename Value="pickerdlg.pas"/>
+        <Caret Line="171" TopLine="143"/>
+      </Position11>
+      <Position12>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="1097" TopLine="1090"/>
+      </Position12>
+      <Position13>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="1099" TopLine="1090"/>
+      </Position13>
+      <Position14>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="1123" TopLine="1095"/>
+      </Position14>
+      <Position15>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="1224" TopLine="1201"/>
+      </Position15>
+      <Position16>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="1226" TopLine="1201"/>
+      </Position16>
+      <Position17>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="1227" TopLine="1201"/>
+      </Position17>
+      <Position18>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="1228" TopLine="1201"/>
+      </Position18>
+      <Position19>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="1028" Column="41" TopLine="1010"/>
+      </Position19>
+      <Position20>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="1099" TopLine="1081"/>
+      </Position20>
+      <Position21>
+        <Filename Value="pickerdlg.pas"/>
+        <Caret Line="171" TopLine="143"/>
+      </Position21>
+      <Position22>
+        <Filename Value="pickerdlg.pas"/>
+        <Caret Line="178" TopLine="150"/>
+      </Position22>
+      <Position23>
+        <Filename Value="../source/sliderbars.pas"/>
+        <Caret Line="7" Column="57"/>
+      </Position23>
+      <Position24>
+        <Filename Value="pickerdlg.pas"/>
+        <Caret Line="180" Column="33" TopLine="164"/>
+      </Position24>
+      <Position25>
+        <Filename Value="pickerdlg.pas"/>
+        <Caret Line="96" TopLine="96"/>
+      </Position25>
+      <Position26>
+        <Filename Value="pickerdlg.pas"/>
+        <Caret Line="95" TopLine="95"/>
+      </Position26>
+      <Position27>
+        <Filename Value="pickerdlg.pas"/>
+        <Caret Line="96" TopLine="96"/>
+      </Position27>
+      <Position28>
+        <Filename Value="pickerdlg.pas"/>
+        <Caret Line="207" TopLine="172"/>
+      </Position28>
+      <Position29>
+        <Filename Value="pickerdlg.pas"/>
+        <Caret Line="206" TopLine="171"/>
+      </Position29>
+    </JumpHistory>
+  </ProjectSession>
+  <Debugging>
+    <Watches Count="6">
+      <Item1>
+        <Expression Value="result"/>
+      </Item1>
+      <Item2>
+        <Expression Value="AValue"/>
+      </Item2>
+      <Item3>
+        <Expression Value="self"/>
+      </Item3>
+      <Item4>
+        <Expression Value="FSelected"/>
+      </Item4>
+      <Item5>
+        <Expression Value="aColor"/>
+      </Item5>
+      <Item6>
+        <Expression Value="FPositionCut"/>
+      </Item6>
+    </Watches>
+  </Debugging>
+</CONFIG>

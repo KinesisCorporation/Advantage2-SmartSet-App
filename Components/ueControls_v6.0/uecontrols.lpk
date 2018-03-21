@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <Name Value="uEControls"/>
+    <Type Value="RunAndDesignTime"/>
+    <AddToProjectUsesSection Value="True"/>
+    <Author Value="Miguel A. Risco Castillo"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <SearchPaths>
+        <IncludeFiles Value="source"/>
+        <OtherUnitFiles Value="source"/>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Parsing>
+        <SyntaxOptions>
+          <UseAnsiStrings Value="False"/>
+        </SyntaxOptions>
+      </Parsing>
+      <Linking>
+        <Debugging>
+          <GenerateDebugInfo Value="False"/>
+        </Debugging>
+      </Linking>
+    </CompilerOptions>
+    <Description Value="Set of instrumentation controls for Lazarus IDE"/>
+    <License Value="  Copyright:
+  
+  This software may not be included into library collections and similar compilations
+  which are sold. If you want to distribute this code for money then contact me
+  first and ask for the permission of the author: Miguel A. Risco-Castillo
+  http://ue.accesus.com/uecontrols
+
+  FOR COMMERCIAL PURPOSES REQUEST THE APPROPRIATE LICENSE FROM THE AUTHOR.
+
+  THE COPYRIGHT NOTICES IN THE SOURCE CODE MAY NOT BE REMOVED OR MODIFIED.
+  IF YOU MODIFY AND/OR DISTRIBUTE THE CODE TO ANY THIRD PARTY THEN YOU MUST NOT
+  VEIL THE ORIGINAL AUTHOR. IT MUST ALWAYS BE CLEARLY IDENTIFIABLE.
+  
+  The above include the prohibition of to remove the about property of the controls,
+  which is only visible at design time. 
+
+  The contents of this file are subject in priority to the License in this header,
+  in the license.txt file (this) and the Mozilla Public License Version 1.1 (MPL);
+  you may not use this file except in compliance with these licenses. You may obtain
+  a copy of the MPL License at http://www.mozilla.org/MPL/MPL-1.1.html
+  
+  All derivated work included forks must follow the statements in this license.
+
+  Software distributed under the Licenses is distributed on an &quot;AS IS&quot; basis,
+  WITHOUT WARRANTY OF ANY KIND, either expressed or implied. See the Licenses for
+  the specific language governing rights and limitations under the Licenses. "/>
+    <Version Major="6" Release="8" Build="265"/>
+    <Files Count="12">
+      <Item1>
+        <Filename Value="source/uebase.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="uEBase"/>
+      </Item1>
+      <Item2>
+        <Filename Value="source/uebutton.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="uebutton"/>
+      </Item2>
+      <Item3>
+        <Filename Value="source/uecontrols.lrs"/>
+        <Type Value="LRS"/>
+      </Item3>
+      <Item4>
+        <Filename Value="source/uecontrolsreg.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="uecontrolsreg"/>
+      </Item4>
+      <Item5>
+        <Filename Value="source/uegauge.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="uEGauge"/>
+      </Item5>
+      <Item6>
+        <Filename Value="source/ueknob.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="uEKnob"/>
+      </Item6>
+      <Item7>
+        <Filename Value="source/ueled.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="ueled"/>
+      </Item7>
+      <Item8>
+        <Filename Value="source/uemultiturn.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="uEMultiTurn"/>
+      </Item8>
+      <Item9>
+        <Filename Value="source/uerotimage.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="uERotImage"/>
+      </Item9>
+      <Item10>
+        <Filename Value="source/ueselector.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="uESelector"/>
+      </Item10>
+      <Item11>
+        <Filename Value="source/uetileimage.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="uETileImage"/>
+      </Item11>
+      <Item12>
+        <Filename Value="source/uetilepanel.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="uETilePanel"/>
+      </Item12>
+    </Files>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="BGRABitmapPack"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+        <MinVersion Major="1" Valid="True"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <CustomOptions Value="-dUseCThreads"/>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IgnoreBinaries Value="False"/>
+    </PublishOptions>
+    <CustomOptions Items="ExternHelp" Version="2">
+      <_ExternHelp Items="Count"/>
+    </CustomOptions>
+  </Package>
+</CONFIG>

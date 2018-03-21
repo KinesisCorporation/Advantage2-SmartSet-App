@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="eccontrols"><module name="ECSwitch"><element name="TECSwitchKnob"><short>Visual subclass. Knob of the TECSwitch.</short>
+      </element><element name="TGlyphStyle"><short>Enumerated type denoting style of the glyphs on the groove of TECSwitch.</short>
+      </element><element name="TECSwitchActionLink"><short>Class needed for linking with TAction.</short>
+      </element><element name="TECSwitchActionLinkClass"><short>Class needed for linking with TAction.</short>
+      </element><element name="TCustomECSwitch"><short>Base class for TECSwitch. No abstract methods, no published properties.</short>
+      </element><element name="TECSwitch"><short>Visual component. A nice alternative to TCheckBox. Similar component is used in GTK3.</short>
+      <descr><var>TECSwitch</var> makes properties <b>published</b> only.<br/><br/><var>TECSwitch</var> can have focus and can be reached by Tab key (when <var>TabStop</var> = True, which is default).<br/><var>TECSwitch</var> can be controlled by mouse, by keyboard or by code.<br/><br/>
+Mouse:<br/><br/>
+Left-click on switch area (out of knob) will change the <var>State</var>*.<br/>
+Left-click on the knob and holding the left-mouse button down will capture mouse and knob can be moved even if the mouse-cursor leaves the area of the switch.<br/><br/>
+Keyboard (when switch is focused):<br/><br/>
+Space or Enter: changes the state*<br/><br/>
+Keyboard (switch doesn't have to be focused):<br/><br/>
+Acceleration key (Alt + Key) changes the state*.<br/><br/>
+*) <var>State</var> is always changed from checked to unchecked, from grayed to unchecked or from unchecked to checked.<br/><br/>
+Code:<br/><br/>
+Simply by assigning any <var>State</var> or <var>Checked</var> property:<br/><var>Checked</var> := True; //False<br/><var>State</var> := cbChecked; //cbGrayed, cbUnchecked<br/>
+        </descr>
+      </element><element name="TCustomECSwitch.AllowGrayed"><short>Denotes whether TCustomECSwitch/TECSwitch can be grayed, i.e. not checked nor unchecked.</short>
+      <seealso><link id="TCustomECSwitch.State"/>
+        </seealso>
+      </element><element name="TCustomECSwitch.CaptionPos"><short>Position of the Caption.</short>
+      </element><element name="TCustomECSwitch.Checked"><short>Denotes whether TECSwitch is On or Off. When State = cbGrayed, Checked is False.</short>
+      <seealso><link id="TCustomECSwitch.State"/><link id="TCustomECSwitch.OnChange"/>
+        </seealso>
+      </element><element name="TCustomECSwitch.GlyphStyle"><short>Selects style of small glyphs on the groove. Glyphs are built-in, they are stored in resources.</short>
+      </element><element name="TCustomECSwitch.GrooveCheckedClr"><short>Color of the groove of checked switch. clDefault is clActiveCaption.</short>
+      </element><element name="TCustomECSwitch.GrooveUncheckedClr"><short>Color of the groove of unchecked switch. clDefault is cl3DDkShadow.</short>
+      </element><element name="TCustomECSwitch.GrooveIndent"><short>Space (pixels) around groove.</short>
+      </element><element name="TCustomECSwitch.Knob"><short>Subclass.</short>
+      </element><element name="TCustomECSwitch.KnobIndent"><short>Space (pixels) around Knob.</short>
+      </element><element name="TCustomECSwitch.State"><short>State of the switch. Just like TCheckBox, it can be cbUnchecked, cbChecked and cbGrayed.</short>
+      <seealso><link id="TCustomECSwitch.Checked"/><link id="TCustomECSwitch.AllowGrayed"/>
+        </seealso>
+      </element><element name="TCustomECSwitch.SwitchColor"><short>Color of the component. Applies only when Style = eosPanel.</short>
+      </element><element name="TCustomECSwitch.SwitchHeight"><short>Height of the switch (does NOT include Caption).</short>
+      <seealso><link id="TCustomECSwitch.SwitchWidth"/>
+        </seealso>
+      </element><element name="TCustomECSwitch.SwitchWidth"><short>Width of the switch (does NOT include Caption).</short>
+      <seealso><link id="TCustomECSwitch.SwitchHeight"/>
+        </seealso>
+      </element><element name="TCustomECSwitch.OnChange"><short>Triggered when State property is changed.</short>
+      </element>
+    <short>Visual component TECSwitch.</short>
+    <element name="TCustomECSwitch.KnobHovered"><short>Determines whether the knob of a switch is hovered by mouse.</short>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>
