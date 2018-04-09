@@ -16,8 +16,7 @@
     </i18n>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
-      <MinorVersionNr Value="9"/>
-      <RevisionNr Value="4"/>
+      <MajorVersionNr Value="1"/>
       <StringTable CompanyName="Kinesis Corporation" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">

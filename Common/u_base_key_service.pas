@@ -2218,11 +2218,11 @@ begin
 
           //Add the co-triggers first
           if (aMacro.CoTrigger1 <> nil) then
-            lineText := '{' + aMacro.CoTrigger1.SaveValue + '}';
+            lineText := '{' + GetLayerPrefix(aMacro.CoTrigger1.SaveValue) + aMacro.CoTrigger1.SaveValue + '}';
           if (aMacro.CoTrigger2 <> nil) then
-            lineText := lineText + '{' + aMacro.CoTrigger2.SaveValue + '}';
+            lineText := lineText + '{' + GetLayerPrefix(aMacro.CoTrigger2.SaveValue) + aMacro.CoTrigger2.SaveValue + '}';
           if (aMacro.CoTrigger3 <> nil) then
-            lineText := lineText + '{' + aMacro.CoTrigger3.SaveValue + '}';
+            lineText := lineText + '{' + GetLayerPrefix(aMacro.CoTrigger3.SaveValue) + aMacro.CoTrigger3.SaveValue + '}';
 
           //Add the modified key
           lineText := lineText + '{' + GetLayerPrefix(aKbKey.OriginalKey.SaveValue) + aKbKey.OriginalKey.SaveValue + '}';
