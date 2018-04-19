@@ -18,12 +18,13 @@
         <ComponentName Value="FormMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="2017"/>
-        <CursorPos X="34" Y="2035"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="1130"/>
+        <CursorPos X="114" Y="1146"/>
         <UsageCount Value="200"/>
         <Bookmarks Count="2">
-          <Item0 X="5" Y="2630" ID="4"/>
-          <Item1 X="4" Y="2677" ID="3"/>
+          <Item0 X="5" Y="2633" ID="4"/>
+          <Item1 X="4" Y="2680" ID="3"/>
         </Bookmarks>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -32,8 +33,8 @@
         <Filename Value="..\Common\u_const.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="1100"/>
-        <CursorPos X="44" Y="1105"/>
+        <TopLine Value="326"/>
+        <CursorPos X="15" Y="338"/>
         <UsageCount Value="201"/>
         <Bookmarks Count="1">
           <Item0 X="5" Y="200" ID="2"/>
@@ -134,10 +135,9 @@
       <Unit12>
         <Filename Value="..\Common\u_base_key_service.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="1851"/>
-        <CursorPos Y="1870"/>
+        <TopLine Value="2138"/>
+        <CursorPos X="38" Y="1856"/>
         <UsageCount Value="64"/>
         <Bookmarks Count="1">
           <Item0 X="8" Y="2220" ID="1"/>
@@ -400,123 +400,121 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1801" TopLine="1787"/>
+        <Caret Line="1861" TopLine="1852"/>
       </Position1>
       <Position2>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1803" TopLine="1787"/>
+        <Caret Line="1863" TopLine="1852"/>
       </Position2>
       <Position3>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1804" TopLine="1799"/>
+        <Caret Line="1864" TopLine="1852"/>
       </Position3>
       <Position4>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1805" TopLine="1799"/>
+        <Caret Line="1865" TopLine="1852"/>
       </Position4>
       <Position5>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1808" TopLine="1799"/>
+        <Caret Line="1866" TopLine="1852"/>
       </Position5>
       <Position6>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1810" TopLine="1799"/>
+        <Caret Line="1867" TopLine="1852"/>
       </Position6>
       <Position7>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1811" TopLine="1799"/>
+        <Caret Line="1868" TopLine="1858"/>
       </Position7>
       <Position8>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1813" TopLine="1799"/>
+        <Caret Line="1870" TopLine="1858"/>
       </Position8>
       <Position9>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1858" TopLine="1852"/>
+        <Caret Line="1871" TopLine="1858"/>
       </Position9>
       <Position10>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1861" TopLine="1852"/>
+        <Caret Line="1872" TopLine="1858"/>
       </Position10>
       <Position11>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1863" TopLine="1852"/>
+        <Caret Line="1876" TopLine="1858"/>
       </Position11>
       <Position12>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1864" TopLine="1852"/>
+        <Caret Line="1878" TopLine="1867"/>
       </Position12>
       <Position13>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1865" TopLine="1852"/>
+        <Caret Line="1879" TopLine="1867"/>
       </Position13>
       <Position14>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1866" TopLine="1852"/>
+        <Caret Line="1881" TopLine="1867"/>
       </Position14>
       <Position15>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1867" TopLine="1852"/>
+        <Caret Line="1882" TopLine="1867"/>
       </Position15>
       <Position16>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1868" TopLine="1858"/>
+        <Caret Line="1863" TopLine="1851"/>
       </Position16>
       <Position17>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1870" TopLine="1858"/>
+        <Caret Line="1864" TopLine="1851"/>
       </Position17>
       <Position18>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1871" TopLine="1858"/>
+        <Caret Line="1865" TopLine="1851"/>
       </Position18>
       <Position19>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1872" TopLine="1858"/>
+        <Caret Line="1866" TopLine="1851"/>
       </Position19>
       <Position20>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1876" TopLine="1858"/>
+        <Caret Line="1867" TopLine="1851"/>
       </Position20>
       <Position21>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1878" TopLine="1867"/>
+        <Caret Line="1868" TopLine="1851"/>
       </Position21>
       <Position22>
-        <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1879" TopLine="1867"/>
+        <Filename Value="u_form_main.pas"/>
+        <Caret Line="2027" Column="34" TopLine="2017"/>
       </Position22>
       <Position23>
-        <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1881" TopLine="1867"/>
+        <Filename Value="u_form_main.pas"/>
+        <Caret Line="306" Column="32" TopLine="294"/>
       </Position23>
       <Position24>
-        <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1882" TopLine="1867"/>
+        <Filename Value="u_form_main.pas"/>
+        <Caret Line="1138" Column="30" TopLine="1130"/>
       </Position24>
       <Position25>
-        <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1863" TopLine="1851"/>
+        <Filename Value="u_form_main.pas"/>
+        <Caret Line="1137" Column="19" TopLine="1130"/>
       </Position25>
       <Position26>
-        <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1864" TopLine="1851"/>
+        <Filename Value="u_form_main.pas"/>
       </Position26>
       <Position27>
-        <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1865" TopLine="1851"/>
+        <Filename Value="u_form_main.pas"/>
+        <Caret Line="1144" Column="48" TopLine="1133"/>
       </Position27>
       <Position28>
-        <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1866" TopLine="1851"/>
+        <Filename Value="u_form_main.pas"/>
+        <Caret Line="1312" Column="84" TopLine="1300"/>
       </Position28>
       <Position29>
-        <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1867" TopLine="1851"/>
+        <Filename Value="u_form_main.pas"/>
+        <Caret Line="1343" Column="36" TopLine="1322"/>
       </Position29>
       <Position30>
-        <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1868" TopLine="1851"/>
+        <Filename Value="u_form_main.pas"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

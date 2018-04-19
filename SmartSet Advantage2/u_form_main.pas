@@ -1096,6 +1096,7 @@ end;
 procedure TFormMain.btnDoneMacroClick(Sender: TObject);
 var
   keyAssigned: string;
+  extraInfo: string;
 begin
   if ValidateBeforeDone then
   begin
@@ -1140,7 +1141,9 @@ begin
     //Show message for assigned macro
     if (keyAssigned <> '') then
     begin
-      ShowDialog('Macro', 'Macro assigned to ' + StringReplace(keyAssigned, #10, ' ', [rfReplaceAll]), mtInformation, [mbOK], DEFAULT_DIAG_HEIGHT,
+      if (activeLayer.LayerIndex = BOTLAYER_IDX) then
+        extraInfo := ' in the embedded layer';
+      ShowDialog('Macro', 'Macro assigned to ' + StringReplace(keyAssigned, #10, ' ', [rfReplaceAll]) + extraInfo, mtInformation, [mbOK], DEFAULT_DIAG_HEIGHT,
           backColor, fontColor);
     end;
   end;
