@@ -11,7 +11,7 @@ uses
   ECSwitch, ECSlider, HSSpeedButton, RichMemo, u_keys, userdialog, contnrs,
   u_form_about, u_form_new, u_form_tapandhold
   {$ifdef Win32},Windows, JwaWinUser{$endif}
-  {$ifdef Darwin}, MacOSAll, CarbonUtils, CarbonDef, CarbonProc{$endif};
+  {$ifdef Darwin}, MacOSAll{, CarbonUtils, CarbonDef, CarbonProc}{$endif};
 
 type
 
@@ -137,28 +137,34 @@ type
     imageList: TImageList;
     imgLogo: TImage;
     imgKinesis: TImage;
+    lblDisplaying: TLabel;
+    lblCoTrigger: TLabel;
+    lblGlobal4: TLabel;
+    lblGlobal6: TLabel;
+    lblGlobal8: TLabel;
+    lblStatus4: TLabel;
+    lblStatus3: TLabel;
+    lblStatus2: TLabel;
+    lblStatus1: TLabel;
+    lblPS4: TLabel;
+    lblPS6: TLabel;
+    lblPS8: TLabel;
+    lblGlobal2: TLabel;
+    lblPSGlobal: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
-    lblDisplaying: TStaticText;
+    lblPS0: TLabel;
     lblKeyClicks: TLabel;
     lblKeyTones: TLabel;
     lblMacro1: TLabel;
     lblMacro2: TLabel;
     lblMacro3: TLabel;
     lblPlaybackSpeed: TStaticText;
-    lblPS2: TStaticText;
-    lblPS4: TStaticText;
-    lblPS6: TStaticText;
-    lblPS8: TStaticText;
-    lblPSGlobal: TStaticText;
+    lblGlobal0: TLabel;
+    lblStatus0: TLabel;
     lblThumbKeys1: TStaticText;
     lblVDrive: TLabel;
-    lblGlobal0: TStaticText;
-    lblGlobal17: TStaticText;
-    lblGlobal18: TStaticText;
-    lblGlobal5: TStaticText;
-    lblGlobal9: TStaticText;
     lblGlobalMacroSpeed: TLabel;
     lblProgramming: TLabel;
     lblProgramming1: TLabel;
@@ -168,11 +174,6 @@ type
     lblLayer: TLabel;
     lblMacro: TLabel;
     lblSettings: TLabel;
-    lblStatus1: TStaticText;
-    lblStatus2: TStaticText;
-    lblStatus3: TStaticText;
-    lblStatus5: TStaticText;
-    lblStatus6: TStaticText;
     lblStatusReport: TLabel;
     lblTitle: TLabel;
     btnEsc: TPanelBtn;
@@ -291,7 +292,6 @@ type
     slPlaybackSpeed: TECSlider;
     slStatusReport: TECSlider;
     lblThumbKeys: TStaticText;
-    StaticText3: TStaticText;
     swKeyClicks: TECSwitch;
     swKeyTones: TECSwitch;
     swAutoVDrive: TECSwitch;
@@ -373,6 +373,8 @@ type
     remapCount: integer;
     macroCount: integer;
     tapHoldCount: integer;
+    defaultKeyFontName: string;
+    defaultKeyFontSize: integer;
 
     procedure SetConfigOS;
     procedure SetKeyboardHook;
@@ -805,17 +807,42 @@ begin
   SetFont(self, 'Segoe UI');
   //memoMacro.Color := clWhite;
   //memoConfigDefaultColor := clWhite;
+  defaultKeyFontName := 'Arial Unicode MS';
+  defaultKeyFontSize := 10;
   {$endif}
 
   //MacOS
   {$ifdef Darwin}
   self.AutoScroll := false; //No scroll bars OSX, does not work well
   self.KeyPreview := true; //traps key presses at form level
-  SetFont('Helvetica');
-  //memoConfigDefaultColor := $00F6F6F6;
-  //memoMacro.BorderStyle := bsSingle;
-  //lblInfoConfig2.Font.Size := 9;
-  //lblPedal.Font.Color := clActiveCaption;
+  SetFont(self, 'Tahoma Bold');
+  defaultKeyFontName := 'Arial Unicode MS';
+  defaultKeyFontSize := 10;
+  btnHelpIcon.Color := clWhite;
+  btnHelpIcon.HotTrackColor := clWhite;
+  btnHelpIcon.LightColor := clWhite;
+  btnHelpIcon.ShadowColor := clWhite;
+  btnHelpIcon.Left := btnClose.Left;
+  rgMacro1.Left := rgMacro1.Left + 18;
+  rgMacro2.Left := rgMacro2.Left + 18;
+  rgMacro3.Left := rgMacro3.Left + 18;
+  rgMacro1.Top := rgMacro1.Top - 2;
+  rgMacro2.Top := rgMacro2.Top - 2;
+  rgMacro3.Top := rgMacro3.Top - 2;
+
+  mnuToolsMacro.Visible:= false;
+  miMenu.Visible:= false;
+  miShutdown.Visible:= false;
+  miShutdownM.Visible:= false;
+  miWinM.Visible:= false;
+  miLastAppM.Visible := false;
+  miDesktopM.Visible := false;
+  miCtrlAltDelM.Visible := false;
+  mnuWebShortcutsMacro.Visible:= false;
+  miCalculator.Visible := false;
+  miCalculatorM.Visible:= false;
+  miInternationalKey.Visible := false;
+  miInternationalKeyM.Visible := false;
   {$endif}
 end;
 
@@ -2697,8 +2724,8 @@ begin
     if (container.Controls[i] is TPanelBtn) then
     begin
       pnlButton := (container.Controls[i] as TPanelBtn);
-      pnlButton.DefaultFontSize := pnlButton.Font.Size;
-      pnlButton.DefaultFontName := pnlButton.Font.Name;
+      pnlButton.DefaultFontSize := defaultKeyFontSize;
+      pnlButton.DefaultFontName := defaultKeyFontName;
       pnlButton.OnClick := @PnlButtonClick;
       pnlButton.OnMouseDown := @PnlButtonMouseDown;
       panelBtnList.Add(pnlButton);

@@ -8,7 +8,7 @@ unit u_key_service;
 interface
 
 uses
-  Classes, SysUtils, u_keys, LCLType, u_const, u_key_layer, JwaWinUser, u_base_key_service;
+  Classes, SysUtils, u_keys, LCLType, u_const, u_key_layer, u_base_key_service;
 
 type
   //KeyService contains all logic for key inputs

@@ -38,7 +38,7 @@ type
   public
     constructor Create;
     constructor Create(oOriginalKey: TKey; iIndex: integer; bCanEdit: boolean = true; bCanAssignMacro: boolean = true);
-    destructor Destroy; override;
+    //destructor Destroy; override;
     procedure ResetKey;
     procedure Assign(aKbKey: TKBKey; restoreType: TRestoreType);
     function MacroCount: integer;
@@ -273,21 +273,21 @@ begin
   FCanAssignMacro := bCanAssignMacro;
 end;
 
-destructor TKBKey.Destroy;
-begin
-  FreeAndNil(FMacro1);
-  FreeAndNil(FMacro2);
-  FreeAndNil(FMacro3);
-  if (FModifiedKey <> nil) then
-    FreeAndNil(FModifiedKey);
-  if (FOriginalKey <> nil) then
-    FreeAndNil(FOriginalKey);
-  if (FTapAction <> nil) then
-    FreeAndNil(FTapAction);
-  if (FHoldAction <> nil) then
-    FreeAndNil(FHoldAction);
-  inherited Destroy;
-end;
+//destructor TKBKey.Destroy;
+//begin
+//  FreeAndNil(FMacro1);
+//  FreeAndNil(FMacro2);
+//  FreeAndNil(FMacro3);
+//  if (FModifiedKey <> nil) then
+//    FreeAndNil(FModifiedKey);
+//  if (FOriginalKey <> nil) then
+//    FreeAndNil(FOriginalKey);
+//  if (FTapAction <> nil) then
+//    FreeAndNil(FTapAction);
+//  if (FHoldAction <> nil) then
+//    FreeAndNil(FHoldAction);
+//  inherited Destroy;
+//end;
 
 { TKBKeyList }
 

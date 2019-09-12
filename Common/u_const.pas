@@ -679,7 +679,7 @@ begin
   ConfigKeys := TKeyList.Create;
 
   smallFontSize := 8;
-  {$ifdef Darwin}smallFontSize := 10;{$endif}
+  //{$ifdef Darwin}smallFontSize := 8;{$endif}
 
   ConfigKeys.Clear;
   //Control keys
@@ -764,6 +764,8 @@ begin
   //end;
   ConfigKeys.Add(TKey.Create(VK_NUMLOCK, 'numlk', 'Num' + #10 + 'Lock'));
   ConfigKeys.Add(TKey.Create(VK_KP_NUMLCK, 'numlk', 'Num' + #10 + 'Lock'));
+  ConfigKeys.Add(TKey.Create(VK_APPS, 'menu', 'PC' + #10 + 'Menu'));
+  ConfigKeys.Add(TKey.Create(VK_KP_MENU, 'menu', 'PC' + #10 + 'Menu'));
   //Windows
   {$ifdef Win32}
 
@@ -779,8 +781,7 @@ begin
     ConfigKeys.Add(TKey.Create(VK_DELETE, 'del', 'Delete'))
   else
     ConfigKeys.Add(TKey.Create(VK_DELETE, 'delete', 'Delete'));
-  ConfigKeys.Add(TKey.Create(VK_APPS, 'menu', 'PC' + #10 + 'Menu'));
-  ConfigKeys.Add(TKey.Create(VK_KP_MENU, 'menu', 'PC' + #10 + 'Menu'));
+
   ConfigKeys.Add(TKey.Create(VK_MENU, 'alt', 'Alt'));
   //if (GApplication in [APPL_FSEDGE, APPL_FSPRO]) then
   //begin

@@ -20,8 +20,14 @@
       <MinorVersionNr Value="1"/>
       <StringTable CompanyName="Kinesis Corporation"/>
     </VersionInfo>
+    <MacroValues Count="1">
+      <Macro1 Name="LCLWidgetType" Value="cocoa"/>
+    </MacroValues>
     <BuildModes Count="1">
       <Item1 Name="Default" Default="True"/>
+      <SharedMatrixOptions Count="1">
+        <Item1 ID="948913733822" Modes="Default" Type="IDEMacro" MacroName="LCLWidgetType" Value="cocoa"/>
+      </SharedMatrixOptions>
     </BuildModes>
     <PublishOptions>
       <Version Value="2"/>
@@ -136,7 +142,7 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="Adv2 SmartSet App (Win)"/>
+      <Filename Value="Adv2 SmartSet App (Mac)"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
@@ -149,6 +155,7 @@
       </SyntaxOptions>
     </Parsing>
     <CodeGeneration>
+      <TargetCPU Value="x86_64"/>
       <Optimizations>
         <OptimizationLevel Value="0"/>
       </Optimizations>
@@ -156,6 +163,7 @@
     <Linking>
       <Debugging>
         <GenerateDebugInfo Value="False"/>
+        <DebugInfoType Value="dsDwarf3"/>
         <StripSymbols Value="True"/>
       </Debugging>
       <LinkSmart Value="True"/>

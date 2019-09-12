@@ -1,12 +1,6 @@
-[q]>[hyper]
-[r]>[c]
-[d]>[kp-insert]
-{f}>{s}{d}{f}{a}{s}{d}{f}{kp-insert}{a}{s}{d}{space}{a}{d}{kp-insert}{s}{f}{a}{d}{s}{space}{kp-insert}{f}{a}{s}
-[kp-q]>[meh]
+[3]>[a]
+[e]>[z]
+[r]>[v]
+[t]>[z]
+{lshift}{lctrl}{lalt}{d}>{a}{d}{s}{f}{a}{s}{d}{f}{s}{d}{f}{space}{s}{d}{f}{s}{a}{space}{s}{d}{space}{f}{s}{f}{shift}{shift}{-ctrl}{d}{+ctrl}
 [kp-w]>[b]
-[kp-e]>[a][t&h350][lshift]
-[kp-s]>[b]
-[kp-f]>[kp-insert]
-{kp-g}>{kp-insert}{kp-insert}{s}{d}{f}{a}{s}{d}{f}{f}{a}{s}
-[kp-insert]>[a]
-{kp-insert}>{kp-insert}{a}{a}{f}{a}{s}{d}{c}{kp-insert}{kp-insert}
