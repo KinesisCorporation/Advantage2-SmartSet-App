@@ -18,7 +18,7 @@ object FormMain: TFormMain
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
   Position = poScreenCenter
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '2.0.4.0'
   object pnlMain: TPanel
     Left = 0
     Height = 711
@@ -258,6 +258,7 @@ object FormMain: TFormMain
         Font.Quality = fqDraft
         Font.Style = [fsBold]
         ParentFont = False
+        ParentShowHint = False
         ShowHint = True
         TabOrder = 2
       end
@@ -277,6 +278,7 @@ object FormMain: TFormMain
         Font.Quality = fqDraft
         Font.Style = [fsBold]
         ParentFont = False
+        ParentShowHint = False
         ShowHint = True
         TabOrder = 6
       end
@@ -296,6 +298,7 @@ object FormMain: TFormMain
         Font.Quality = fqDraft
         Font.Style = [fsBold]
         ParentFont = False
+        ParentShowHint = False
         ShowHint = True
         TabOrder = 7
       end
@@ -315,6 +318,7 @@ object FormMain: TFormMain
         Font.Quality = fqDraft
         Font.Style = [fsBold]
         ParentFont = False
+        ParentShowHint = False
         ShowHint = True
         TabOrder = 8
       end
@@ -334,6 +338,7 @@ object FormMain: TFormMain
         Font.Quality = fqDraft
         Font.Style = [fsBold]
         ParentFont = False
+        ParentShowHint = False
         ShowHint = True
         TabOrder = 9
       end
@@ -440,6 +445,7 @@ object FormMain: TFormMain
         Font.Quality = fqDraft
         Font.Style = [fsBold]
         ParentFont = False
+        ParentShowHint = False
         ShowHint = True
         TabOrder = 10
       end
@@ -5532,6 +5538,7 @@ object FormMain: TFormMain
               TabOrder = 0
               TabStop = False
               WantReturns = False
+              ZoomFactor = 1
             end
             object lblMacro: TLabel
               Left = 8
@@ -5615,6 +5622,7 @@ object FormMain: TFormMain
               Font.Style = [fsBold]
               ParentFont = False
               ParentColor = False
+              ParentShowHint = False
               ShowHint = True
               TabOrder = 5
             end
@@ -5634,6 +5642,7 @@ object FormMain: TFormMain
               Font.Quality = fqDraft
               Font.Style = [fsBold]
               ParentFont = False
+              ParentShowHint = False
               ShowHint = True
               TabOrder = 6
             end
@@ -5698,6 +5707,7 @@ object FormMain: TFormMain
               Font.Quality = fqDraft
               Font.Style = [fsBold]
               ParentFont = False
+              ParentShowHint = False
               ShowHint = True
               TabOrder = 7
             end
@@ -5717,6 +5727,7 @@ object FormMain: TFormMain
               Font.Quality = fqDraft
               Font.Style = [fsBold]
               ParentFont = False
+              ParentShowHint = False
               ShowHint = True
               TabOrder = 8
             end
@@ -5736,6 +5747,7 @@ object FormMain: TFormMain
               Font.Quality = fqDraft
               Font.Style = [fsBold]
               ParentFont = False
+              ParentShowHint = False
               ShowHint = True
               TabOrder = 9
             end
@@ -5755,6 +5767,7 @@ object FormMain: TFormMain
               Font.Quality = fqDraft
               Font.Style = [fsBold]
               ParentFont = False
+              ParentShowHint = False
               ShowHint = True
               TabOrder = 10
             end
@@ -5774,6 +5787,7 @@ object FormMain: TFormMain
               Font.Quality = fqDraft
               Font.Style = [fsBold]
               ParentFont = False
+              ParentShowHint = False
               ShowHint = True
               TabOrder = 11
             end
@@ -5792,6 +5806,7 @@ object FormMain: TFormMain
               Font.Quality = fqDraft
               Font.Style = [fsBold]
               ParentFont = False
+              ParentShowHint = False
               ShowHint = True
               TabOrder = 12
             end
@@ -6477,6 +6492,21 @@ object FormMain: TFormMain
         Caption = 'Right Mouse Click'
         OnClick = miTokenKeyClick
       end
+    end
+    object MenuItem1: TMenuItem
+      Caption = 'Multimodifiers'
+      object miHyper: TMenuItem
+        Caption = 'Hyper'
+        OnClick = miTokenKeyClick
+      end
+      object miMeh: TMenuItem
+        Caption = 'Meh'
+        OnClick = miTokenKeyClick
+      end
+    end
+    object miTapHold: TMenuItem
+      Caption = 'Tap and Hold'
+      OnClick = miTokenKeyClick
     end
   end
   object pmTokensMacros: TPopupMenu

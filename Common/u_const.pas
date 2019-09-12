@@ -128,7 +128,7 @@ function ConvertToLayout(Key: Word): integer;
 function GetCurrentKeyoardLayout: string;
 function GetConfigKeys: TKeyList;
 function CanUseUnicode: boolean;
-function ConvertToInt(value: string): integer;
+function ConvertToInt(value: string; defaultVal: integer = -1): integer;
 function IsLeftShift(key: word): boolean;
 function IsLeftCtrl(key: word): boolean;
 function IsLeftAlt(key: word): boolean;
@@ -217,6 +217,9 @@ const
   VK_KP_ENTER2 = 10069;
   VK_KP_PERI = 10070;
   //FOR ADVANTAGE 2
+
+  VK_HYPER = 10071; //Multimodifier
+  VK_MEH = 10072; //Multimodifier
 
   MAPVK_VK_TO_VSC = 0;
   MAPVK_VSC_TO_VK = 1;
@@ -365,6 +368,11 @@ const
   MAX_KEYSTROKES_FS = 300;
   ADV2_2MB = '2MB';
   ADV2_4MB = '4MB';
+  MIN_TIMING_DELAY = 1;
+  MAX_TIMING_DELAY = 999;
+  TAP_AND_HOLD = 't&h';
+  DEFAULT_SPEED_TAP_HOLD = 250;
+  MAX_TAP_HOLD = 10;
 
 implementation
 
@@ -558,7 +566,7 @@ begin
 end;
 
 //Converts a string to Int, if error returns -1
-function ConvertToInt(value: string): integer;
+function ConvertToInt(value: string; defaultVal: integer = -1): integer;
 var
   tempVal, code: integer;
 begin
@@ -566,7 +574,7 @@ begin
   if (code = 0) then
     result := tempVal
   else
-    result := -1;
+    result := defaultVal;
 end;
 
 function IsLeftShift(key: word): boolean;
@@ -1086,6 +1094,8 @@ begin
   ConfigKeys.Add(TKey.Create(VK_KP_KPSHIFT, 'kpshft', 'Kp' + #10 + 'Shift', '', '', '', false, false, '', true, false, smallFontSize));
   ConfigKeys.Add(TKey.Create(VK_KP_ENTER1, 'kpenter1', 'Kp' + #10 + 'Enter'));
   ConfigKeys.Add(TKey.Create(VK_KP_ENTER2, 'kpenter2', 'Kp' + #10 + 'Enter'));
+  ConfigKeys.Add(TKey.Create(VK_HYPER, 'hyper', 'Hyper'));
+  ConfigKeys.Add(TKey.Create(VK_MEH, 'meh', 'Meh'));
 
   result := ConfigKeys;
 end;

@@ -1,2 +1,0 @@
-Model name: FS Pro
-Firmware version: 1.0.168.us (4MB), 09/26/2016

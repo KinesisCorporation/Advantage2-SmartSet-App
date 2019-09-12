@@ -17,7 +17,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <MajorVersionNr Value="1"/>
-      <RevisionNr Value="2"/>
+      <MinorVersionNr Value="1"/>
       <StringTable CompanyName="Kinesis Corporation"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -34,19 +34,19 @@
     </RunParams>
     <RequiredPackages Count="7">
       <Item1>
-        <PackageName Value="uEControls"/>
+        <PackageName Value="creosource"/>
       </Item1>
       <Item2>
-        <PackageName Value="eccontrols"/>
+        <PackageName Value="uEControls"/>
       </Item2>
       <Item3>
-        <PackageName Value="installpkg"/>
+        <PackageName Value="eccontrols"/>
       </Item3>
       <Item4>
-        <PackageName Value="richmemopackage"/>
+        <PackageName Value="installpkg"/>
       </Item4>
       <Item5>
-        <PackageName Value="panelbutton"/>
+        <PackageName Value="richmemopackage"/>
       </Item5>
       <Item6>
         <PackageName Value="RunTimeTypeInfoControls"/>
@@ -72,59 +72,61 @@
         <IsPartOfProject Value="True"/>
       </Unit2>
       <Unit3>
-        <Filename Value="..\Components\roundedtextpanel.pas"/>
+        <Filename Value="u_file_service.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="RoundedTextPanel"/>
       </Unit3>
       <Unit4>
-        <Filename Value="u_file_service.pas"/>
+        <Filename Value="u_key_service.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit4>
       <Unit5>
-        <Filename Value="u_key_service.pas"/>
+        <Filename Value="..\Common\u_key_layer.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit5>
       <Unit6>
-        <Filename Value="..\Common\u_key_layer.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit6>
-      <Unit7>
         <Filename Value="..\Common\u_keys.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="U_Keys"/>
-      </Unit7>
-      <Unit8>
+      </Unit6>
+      <Unit7>
         <Filename Value="..\Common\userdialog.lfm"/>
         <IsPartOfProject Value="True"/>
-      </Unit8>
-      <Unit9>
+      </Unit7>
+      <Unit8>
         <Filename Value="..\Common\userdialog.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormUserDialog"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UserDialog"/>
-      </Unit9>
-      <Unit10>
+      </Unit8>
+      <Unit9>
         <Filename Value="..\Common\customcaptionpanel.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="CustomCaptionPanel"/>
-      </Unit10>
-      <Unit11>
+      </Unit9>
+      <Unit10>
         <Filename Value="u_form_about.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormAbout"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-      </Unit11>
-      <Unit12>
+      </Unit10>
+      <Unit11>
         <Filename Value="..\Common\u_base_key_service.pas"/>
         <IsPartOfProject Value="True"/>
-      </Unit12>
-      <Unit13>
+      </Unit11>
+      <Unit12>
         <Filename Value="u_form_new.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormNew"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="u_form_tapandhold.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormTapAndHold"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit13>

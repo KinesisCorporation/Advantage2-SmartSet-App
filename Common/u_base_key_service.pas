@@ -85,6 +85,8 @@ type
     function CountKeystrokes(aKeyList: TKeyList): integer;
     procedure LoadConfigKeys;
     function GetModifierValues(aKey: TKey): string;
+    procedure SetTapAndHold(aKBKey: TKBKey; tapAction: integer;
+      holdAction: integer; delay: integer);
 
     property ActiveKbKey: TKBKey read FActiveKbKey write FActiveKbKey;
 
@@ -1777,6 +1779,7 @@ var
   posSep: integer;
   isSingleKey: boolean;
   isMacro: boolean;
+  isTapHold: boolean;
   isKeypadLayer: boolean;
   configText: string;
   valueText: string;
@@ -1785,6 +1788,7 @@ var
   aCoTriggers: TKeyList;
   activeMacro: TKeyList;
   vkException: integer;
+  tapHold: integer;
 begin
   lastKey := 0;
   aCoTriggers := TKeyList.Create;
@@ -1805,14 +1809,71 @@ begin
       posSep := Pos('>', currentLine);
       isSingleKey := Copy(currentLine, 1, 1) = SK_START;
       isMacro := Copy(currentLine, 1, 1) = MK_START;
+      isTapHold := isSingleKey and (Pos('[' + TAP_AND_HOLD, currentLine) > 0);
 
       //Check if it's a valid line
-      if (posSep <> 0) and (isSingleKey or isMacro) then
+      if (posSep <> 0) and (isSingleKey or isMacro or isTapHold) then
       begin
         configText := Copy(currentLine, 1, posSep - 1);
         valueText := Copy(currentLine, posSep + 1, Length(currentLine));
 
-        if (isSingleKey) then
+        if (isTapHold) then
+        begin
+          //Load configured key
+          keyStart := Pos(SK_START, configText);
+          keyEnd := Pos(SK_END, configText);
+          sKey := Copy(configText, keyStart + 1, keyEnd - 2);
+          isKeypadLayer := (Pos(KEYPAD_KEY, sKey) <> 0) or (KeyPadException(sKey));
+          if (isKeypadLayer) then
+          begin
+            layerIdx := BOTLAYER_IDX;
+            if (Pos(KEYPAD_KEY, sKey) <> 0) then
+              Delete(sKey, 1, length(KEYPAD_KEY)); //removes kp- text
+          end
+          else
+            layerIdx := TOPLAYER_IDX;
+          vkException := GetKeyPadException(sKey);
+          if (vkException > 0) then
+            aKey := FindKeyConfig(vkException)
+          else
+            aKey := FindKeyConfig(sKey);
+
+          //Gets key from layer
+          if aKey <> nil then
+            aKBKey := GetKBKey(aKey.Key, layerIdx);
+
+          if (aKBKey <> nil) then
+          begin
+            aKBKey.TapAndHold := true;
+            //Load values for tap and hold
+            for tapHold := 1 to 3 do
+            begin
+              keyStart := Pos(SK_START, valueText);
+              keyEnd := Pos(SK_END, valueText);
+              sKey := Copy(valueText, keyStart + 1, keyEnd - 2);
+              Delete(valueText, 1, keyEnd); //removes currentkey
+
+              //Sets modified key
+              if (tapHold = 1) or (tapHold = 3) then
+              begin
+                aKey := FindKeyConfig(sKey);
+                if aKey <> nil then
+                begin
+                  if (tapHold = 1) then
+                    aKBKey.TapAction := aKey.CopyKey
+                  else
+                    aKBKey.HoldAction := aKey.CopyKey;
+                end;
+              end
+              else
+              begin
+                sKey := Copy(sKey, Length(TAP_AND_HOLD) + 1, Length(sKey));
+                aKBKey.TimingDelay := ConvertToInt(sKey, DEFAULT_SPEED_TAP_HOLD);
+              end;
+            end;
+          end;
+        end
+        else if (isSingleKey) then
         begin
           //Load configured key
           keyStart := Pos(SK_START, configText);
@@ -2197,8 +2258,15 @@ begin
       lineText := '';
       aKbKey := aLayer.KBKeyList[kIdx];
 
+      //If key is tap and hold
+      if (aKbKey.TapAndHold) and (aKbKey.TapAction <> nil) and (aKbKey.HoldAction <> nil) then
+      begin
+        lineText := '[' + GetLayerPrefix(aKbKey.OriginalKey.SaveValue) + aKbKey.OriginalKey.SaveValue + ']>[' + aKbKey.TapAction.SaveValue + ']' +
+          '[' + TAP_AND_HOLD + IntToStr(aKbKey.TimingDelay) + ']' + '[' + aKbKey.HoldAction.SaveValue + ']';
+        layoutContent.Add(lineText);
+      end
       //If key is modified / remapped
-      if (aKbKey.IsModified) then
+      else if (aKbKey.IsModified) then
       begin
         lineText := '[' + GetLayerPrefix(aKbKey.OriginalKey.SaveValue) + aKbKey.OriginalKey.SaveValue + ']>[' + aKbKey.ModifiedKey.SaveValue + ']';
         layoutContent.Add(lineText);
@@ -2695,6 +2763,30 @@ begin
         if Pos(L_WIN_MOD, string(aKey.Modifiers)) <> 0 then
           Result := Result + FindKeyConfig(VK_LWIN).Value + '+';
     end;
+  end;
+end;
+
+procedure TBaseKeyService.SetTapAndHold(aKBKey: TKBKey; tapAction: integer;
+  holdAction: integer; delay: integer);
+var
+  aTapAction: TKey;
+  aHoldAction: TKey;
+begin
+  aTapAction := GetKeyConfig(tapAction);
+  aHoldAction := GetKeyConfig(holdAction);
+  if (aTapAction <> nil) and (aHoldAction <> nil) then
+  begin
+    aKBKey.TapAction := aTapAction;
+    aKBKey.HoldAction := aHoldAction;
+    aKBKey.TimingDelay := delay;
+    aKbKey.TapAndHold := true;
+  end
+  else
+  begin
+    aKBKey.TapAction := nil;
+    aKBKey.HoldAction := nil;
+    aKBKey.TimingDelay := 0;
+    aKbKey.TapAndHold := false;
   end;
 end;
 

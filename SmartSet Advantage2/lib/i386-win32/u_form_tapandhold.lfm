@@ -1,0 +1,166 @@
+object FormTapAndHold: TFormTapAndHold
+  Left = 573
+  Height = 181
+  Top = 333
+  Width = 409
+  Caption = 'Assign Tap and Hold Action'
+  ClientHeight = 181
+  ClientWidth = 409
+  Color = clWhite
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.0.4.0'
+  object btnDone: THSSpeedButton
+    Left = 233
+    Height = 32
+    Top = 137
+    Width = 80
+    Alignment = taCenter
+    Anchors = [akRight, akBottom]
+    Border = 1
+    Caption = 'Ok'
+    Color = 4012079
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    HotTrackColor = 6117455
+    HotTrackFont.CharSet = ANSI_CHARSET
+    HotTrackFont.Color = clWhite
+    HotTrackFont.Height = -12
+    HotTrackFont.Name = 'Tahoma'
+    HotTrackFont.Pitch = fpVariable
+    HotTrackFont.Quality = fqDraft
+    LightColor = 4012079
+    ParentFont = False
+    ShadowColor = 4012079
+    SlowDecease = sdEnterLeave
+    Smooth = 8
+    Style = bsModern
+    Index = -1
+    TransparentColor = clBlack
+    OnClick = btnDoneClick
+  end
+  object btnCancel: THSSpeedButton
+    Left = 321
+    Height = 32
+    Top = 137
+    Width = 80
+    Alignment = taCenter
+    Anchors = [akRight, akBottom]
+    Border = 1
+    Caption = 'Cancel'
+    Color = 4012079
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    HotTrackColor = 6117455
+    HotTrackFont.CharSet = ANSI_CHARSET
+    HotTrackFont.Color = clWhite
+    HotTrackFont.Height = -12
+    HotTrackFont.Name = 'Tahoma'
+    HotTrackFont.Pitch = fpVariable
+    HotTrackFont.Quality = fqDraft
+    LightColor = 4012079
+    ParentFont = False
+    ShadowColor = 4012079
+    SlowDecease = sdEnterLeave
+    Smooth = 8
+    Style = bsModern
+    Index = -1
+    TransparentColor = clBlack
+    OnClick = btnCancelClick
+  end
+  object lblDelay: TLabel
+    Left = 30
+    Height = 19
+    Hint = 'Designate the time interval used to differentiate between the Tap and Hold actions'
+    Top = 88
+    Width = 119
+    Caption = 'Delay (1-999ms)'
+    Font.Color = clBlack
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object lblHoldAction: TLabel
+    Left = 30
+    Height = 19
+    Hint = 'Designate the action sent when the key is held longer than the delay'
+    Top = 55
+    Width = 83
+    Caption = 'Hold Action'
+    Font.Color = clBlack
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object lblTapAction: TLabel
+    Left = 30
+    Height = 19
+    Hint = 'Designate the action sent when the key is tapped and released faster than the delay'
+    Top = 21
+    Width = 77
+    Caption = 'Tap Action'
+    Font.Color = clBlack
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object eTapAction: TEdit
+    Left = 238
+    Height = 27
+    Top = 18
+    Width = 136
+    Alignment = taCenter
+    AutoSelect = False
+    Font.Color = clWindowText
+    Font.Name = 'Tahoma'
+    OnKeyDown = eTapActionKeyDown
+    ParentFont = False
+    TabOrder = 0
+  end
+  object eHoldAction: TEdit
+    Left = 238
+    Height = 27
+    Top = 52
+    Width = 136
+    Alignment = taCenter
+    AutoSelect = False
+    Font.Color = clWindowText
+    Font.Name = 'Tahoma'
+    OnKeyDown = eHoldActionKeyDown
+    ParentFont = False
+    TabOrder = 1
+  end
+  object eTimingDelay: TEdit
+    Left = 238
+    Height = 27
+    Top = 85
+    Width = 136
+    Alignment = taCenter
+    AutoSelect = False
+    Font.Color = clWindowText
+    Font.Name = 'Tahoma'
+    MaxLength = 3
+    NumbersOnly = True
+    OnChange = eTimingDelayChange
+    OnKeyDown = eTimingDelayKeyDown
+    ParentFont = False
+    TabOrder = 2
+  end
+end

@@ -9,7 +9,7 @@ uses
   lcltype, Menus, ExtCtrls, Buttons, lclintf, ComCtrls, u_const, u_key_service,
   u_key_layer, u_file_service, PanelBtn, LabelBox, LineObj, ueled, uEKnob,
   ECSwitch, ECSlider, HSSpeedButton, RichMemo, u_keys, userdialog, contnrs,
-  u_form_about, u_form_new
+  u_form_about, u_form_new, u_form_tapandhold
   {$ifdef Win32},Windows, JwaWinUser{$endif}
   {$ifdef Darwin}, MacOSAll, CarbonUtils, CarbonDef, CarbonProc{$endif};
 
@@ -176,6 +176,10 @@ type
     lblStatusReport: TLabel;
     lblTitle: TLabel;
     btnEsc: TPanelBtn;
+    MenuItem1: TMenuItem;
+    miMeh: TMenuItem;
+    miHyper: TMenuItem;
+    miTapHold: TMenuItem;
     miBackM: TMenuItem;
     miForwardM: TMenuItem;
     miHomeM: TMenuItem;
@@ -368,6 +372,7 @@ type
     copiedMacro: TKeyList;
     remapCount: integer;
     macroCount: integer;
+    tapHoldCount: integer;
 
     procedure SetConfigOS;
     procedure SetKeyboardHook;
@@ -418,15 +423,17 @@ type
     procedure watchTutorialClick(Sender: TObject);
     function ValidateBeforeDone: boolean;
     procedure EnableMacroBox(value: boolean);
+    procedure OpenTapAndHold;
+    procedure openFirwareWebsite(Sender: TObject);
   public
     { public declarations }
+    keyService: TKeyService;
+    fileService: TFileService;
   end;
 
 
 var
   FormMain: TFormMain;
-  keyService: TKeyService;
-  fileService: TFileService;
   NeedInput: boolean;
   lastKeyDown: word;
   KBHook: HHook;
@@ -455,14 +462,16 @@ var
   scanCode: longint;
 begin
   //If we need keyboard input (ex: file prompt) allow key presses
-  if NeedInput then
+  if NeedInput or
+    ((FormTapAndHold <> nil) and FormTapAndHold.eTimingDelay.Focused) then
   begin
     Result := CallNextHookEx(WH_KEYBOARD, Code, wParam, lParam);
     exit;
   end;
 
-  //If entering speed, do nothing
-  if (not FormMain.Active) then
+  if (not FormMain.Active) and
+    not((FormTapAndHold <> nil) and FormTapAndHold.Active and
+    (FormTapAndHold.eTapAction.Focused or FormTapAndHold.eHoldAction.Focused)) then
     exit;
 
   currentKey := wParam;
@@ -513,7 +522,7 @@ begin
       begin
         //If key is different then last pressed key (hasn't been released yet)
         if currentKey <> lastKeyPressed then
-          SetKeyPress(currentKey, keyService.GetModifierText);
+          SetKeyPress(currentKey, FormMain.keyService.GetModifierText);
 
         //To prevent Windows from passing the keystrokes  to the target window, the Result value must  be a nonzero value.
         Result := 1;
@@ -524,7 +533,7 @@ begin
       else
       begin
         //Adds modifier to list of active modifiers
-        keyService.AddModifier(currentKey);
+        FormMain.keyService.AddModifier(currentKey);
       end;
     end
     else if (Transition = tsReleased) then //On key up
@@ -537,7 +546,7 @@ begin
       if ((currentKey = lastKeyDown) and IsModifier(currentKey)) or
         (currentKey in [VK_PRINT, VK_SNAPSHOT]) then
       begin
-        SetKeyPress(currentKey, keyService.GetModifierText);
+        SetKeyPress(currentKey, FormMain.keyService.GetModifierText);
 
         //To prevent Windows from passing the keystrokes  to the target window, the Result value must  be a nonzero value.
         Result := 1;
@@ -546,7 +555,7 @@ begin
       if IsModifier(currentKey) then
       begin
         //Removes modifier from list of active modifiers
-        keyService.RemoveModifier(currentKey);
+        FormMain.keyService.RemoveModifier(currentKey);
       end;
     end;
   end;
@@ -566,8 +575,7 @@ begin
     exit;
   end;
 
-  //If entering speed, do nothing
-  if (not FormMain.Active) then
+  if (not (Screen.ActiveForm.Name = self.Name)) then
     exit;
 
   currentKey := key;
@@ -627,7 +635,10 @@ end;
 //Adds key to list of keys and writes back to edit field
 procedure SetKeyPress(Key: word; Modifiers: string);
 begin
-  FormMain.SetModifiedKey(Key, Modifiers, FormMain.memoMacro.Focused);
+  if (FormTapAndHold <> nil) and (FormTapAndHold.Visible) then
+    FormTapAndHold.SetKeyPress(Key)
+  else
+    FormMain.SetModifiedKey(Key, Modifiers, FormMain.memoMacro.Focused);
 end;
 
 procedure TFormMain.FormCreate(Sender: TObject);
@@ -1238,13 +1249,16 @@ var
 begin
   remapCount := 0;
   macroCount := 0;
+  tapHoldCount := 0;
   for i := 0 to keyService.KBLayers.Count - 1 do
   begin
     aLayer := keyService.KBLayers[i];
     for j := 0 to aLayer.KBKeyList.Count - 1 do
     begin
       aKbKey := aLayer.KBKeyList[j];
-      if (aKbKey.IsModified) then
+      if (aKbKey.TapAndHold) then
+        inc(tapHoldCount)
+      else if (aKbKey.IsModified) then
         inc(remapCount);
 
       if (aKbKey.IsMacro) then
@@ -1597,6 +1611,7 @@ end;
 procedure TFormMain.miTokenKeyClick(Sender: TObject);
 var
   menuItem: TMenuItem;
+  customBtns: TCustomButtons;
 begin
   menuItem := sender as TMenuItem;
 
@@ -1655,7 +1670,28 @@ begin
   else if menuItem = miMiddleMouse then
     SetModifiedKey(VK_MOUSE_MIDDLE, '', false)
   else if menuItem = miRightMouse then
-    SetModifiedKey(VK_MOUSE_RIGHT, '', false);
+    SetModifiedKey(VK_MOUSE_RIGHT, '', false)
+  else if (menuItem = miHyper) or (menuItem = miMeh) then
+  begin
+    if (fileService.VersionBiggerEqual(1, 0, 516)) then
+    begin
+      if (menuItem = miHyper) then
+        SetModifiedKey(VK_HYPER, '', false)
+      else if (menuItem = miMeh) then
+        SetModifiedKey(VK_MEH, '', false);
+    end
+    else
+    begin
+      createCustomButton(customBtns, 'OK', 150, nil, bkOK);
+      createCustomButton(customBtns, 'Update Firmware', 150, @openFirwareWebsite);
+      ShowDialog('Multimodifiers', 'To utilize Multimodifiers, please download and install the latest firmware.',
+        mtWarning, [], DEFAULT_DIAG_HEIGHT, backColor, fontColor, customBtns);
+    end;
+  end
+  else if menuItem = miTapHold then
+  begin
+    OpenTapAndHold;
+  end;
 end;
 
 procedure TFormMain.memoMacroMouseUp(Sender: TObject; Button: TMouseButton;
@@ -1849,6 +1885,66 @@ begin
   bRAltMacro.Enabled := value;
   //jm todo tbSpeed.Enabled := value;
   slPlaybackSpeed.Enabled := value;
+end;
+
+procedure TFormMain.OpenTapAndHold;
+var
+  customBtns: TCustomButtons;
+  otherLayer: TKBLayer;
+  keyOtherLayer: TKBKey;
+begin
+  if (IsKeyLoaded) then
+  begin
+    if (fileService.VersionBiggerEqual(1, 0, 516)) then
+    begin
+      //Check key other layer
+      if (activeLayer.LayerIndex = TOPLAYER_IDX) then
+        otherLayer := keyService.GetLayer(BOTLAYER_IDX)
+      else
+        otherLayer := keyService.GetLayer(TOPLAYER_IDX);
+      keyOtherLayer := keyService.GetKbKeyByIndex(otherLayer, activeKbKey.Index);
+
+      if (keyOtherLayer <> nil) and (keyOtherLayer.TapAndHold) then
+        ShowDialog('Tap and Hold', 'You cannot assign a Tap and Hold Action to the same key in both layers.', mtWarning, [mbOk], DEFAULT_DIAG_HEIGHT, backColor, fontColor)
+      else if (activeKbKey.TapAndHold = false) and (tapHoldCount >= MAX_TAP_HOLD) then
+        ShowDialog('Tap and Hold', 'You have reached the maximum number of Tap and Hold actions for this Profile.', mtWarning, [mbOk], DEFAULT_DIAG_HEIGHT, backColor, fontColor)
+      else if (activeKbKey.IsMacro) then
+      begin
+        ShowDialog('Tap and Hold', 'You cannot assign a Tap and Hold Action to a macro trigger key.',
+          mtWarning, [mbOk], DEFAULT_DIAG_HEIGHT, backColor, fontColor);
+      end
+      else if (activeLayer.LayerIndex = TOPLAYER_IDX) and
+        (((activeKbKey.OriginalKey.Key >= VK_A) and (activeKbKey.OriginalKey.Key <= VK_Z)) or
+        ((activeKbKey.OriginalKey.Key >= VK_0) and (activeKbKey.OriginalKey.Key <= VK_9))) then
+      begin
+        ShowDialog('Tap and Hold', 'You cannot assign a Tap and Hold Action to these keys (A-Z, 0-9) on the Top Layer.',
+          mtWarning, [mbOk], DEFAULT_DIAG_HEIGHT, backColor, fontColor);
+      end
+      else
+      begin
+        if (ShowTapAndHold(activeKbKey.TapAction, activeKbKey.HoldAction, activeKbKey.TimingDelay, backColor, fontColor)) then
+        begin
+          KeyModified := true;
+          SetSaveState(ssModifed);
+          keyService.SetTapAndHold(activeKbKey, FormTapAndHold.tapAction, FormTapAndHold.holdAction, FormTapAndHold.timingDelay);
+          UpdatePnlButtonKey(activeKbKey, activePnlBtn);
+          RefreshRemapInfo;
+        end;
+      end;
+    end
+    else
+    begin
+      createCustomButton(customBtns, 'OK', 150, nil, bkOK);
+      createCustomButton(customBtns, 'Update Firmware', 150, @openFirwareWebsite);
+      ShowDialog('Tap and Hold', 'To utilize Tap and Hold Actions, please download and install the latest firmware.',
+        mtWarning, [], DEFAULT_DIAG_HEIGHT, backColor, fontColor, customBtns);
+    end;
+  end;
+end;
+
+procedure TFormMain.openFirwareWebsite(Sender: TObject);
+begin
+  OpenUrl('https://kinesis-ergo.com/support/advantage2/#firmware-updates');
 end;
 
 function TFormMain.GetKeyOtherLayer(keyIdx: integer): TKBKey;
@@ -2520,7 +2616,18 @@ begin
 
   if (kbKey <> nil) and (pnlButton <> nil) then
   begin
-    if (kbKey.IsModified) and (not kbKey.IsMacro) then
+    if (kbKey.TapAndHold) then
+    begin
+      pnlButton.Text := kbKey.TapAction.OtherDisplayText + #10 + kbKey.HoldAction.OtherDisplayText;
+      if (kbKey.TapAction.DisplaySize <> 0) then
+        fontSize := kbKey.TapAction.DisplaySize
+      else if (kbKey.HoldAction.DisplaySize <> 0) then
+        fontSize := kbKey.HoldAction.DisplaySize;
+      pnlButton.SetMainBorderColor(clSilver);
+      pnlButton.BorderWidth := 1;
+      pnlButton.SetFontColor(KINESIS_BLUE);
+    end
+    else if (kbKey.IsModified) and (not kbKey.IsMacro) then
     begin
       pnlButton.Text := kbKey.ModifiedKey.DisplayText;
       fontSize := kbKey.ModifiedKey.DisplaySize;
