@@ -30,7 +30,7 @@ uses
 
   Controls, Graphics, StdCtrls,
 
-  WSRichMemo,
+  RichMemo, WSRichMemo,
 
   CarbonDef, CarbonUtils,
   CarbonProc, CarbonEdits;
@@ -76,13 +76,22 @@ type
       var Params: TIntFontParams): Boolean; override;
     class procedure SetTextAttributes(const AWinControl: TWinControl; TextStart, TextLen: Integer;
       {Mask: TTextStyleMask;} const Params: TIntFontParams); override;
+    class procedure SetParaAlignment(const AWinControl: TWinControl; TextStart, TextLen: Integer;
+      const AAlign: TIntParaAlignment); override;
     class procedure SetHideSelection(const ACustomEdit: TCustomEdit; AHideSelection: Boolean); override;
     class procedure InDelText(const AWinControl: TWinControl; const TextUTF8: String; DstStart, DstLen: Integer); override;
     class function LoadRichText(const AWinControl: TWinControl; Src: TStream): Boolean; override;
     class function SaveRichText(const AWinControl: TWinControl; Dst: TStream): Boolean; override;
+
+    {$ifdef RMCARBONSELSTART}
+    class procedure SetSelStart(const ACustomEdit: TCustomEdit; NewStart: integer); override;
+    {$endif}
   end;
 
 implementation
+
+type
+  TIntCustomRichMemo = class(TCustomRichMemo);
 
 // Notes:
 
@@ -257,8 +266,13 @@ end;
 
 class function TCarbonWSCustomRichMemo.CreateHandle(const AWinControl: TWinControl;
   const AParams: TCreateParams): HWND;
+var
+  RE: TCarbonRichEdit;
 begin
-  Result := TLCLIntfHandle(TCarbonRichEdit.Create(AWinControl, AParams));
+  RE:=TCarbonRichEdit.Create(AWinControl, AParams);
+  Result := TLCLIntfHandle(RE);
+  Re.SetWordWrap(TCustomRichMemo(AWinControl).WordWrap);
+  Re.SetBorderVisible(TCustomRichMemo(AWinControl).BorderStyle=bsSingle);
 end;
 
 class function TCarbonWSCustomRichMemo.GetStyleRange(const AWinControl: TWinControl;
@@ -335,6 +349,14 @@ begin
   ParamsToTXNAttribs(Params, attr, Count, maccolor);
 
   memo.SetTypeAttributes(Count, Attr, TextStart, TextStart+TextLen);
+end;
+
+class procedure TCarbonWSCustomRichMemo.SetParaAlignment(
+  const AWinControl: TWinControl; TextStart, TextLen: Integer;
+  const AAlign: TIntParaAlignment);
+begin
+ { Doesn't seem to be possible. See this:
+  http://lists.apple.com/archives/carbon-dev/2005/Jun/msg01068.html }
 end;
 
 class procedure TCarbonWSCustomRichMemo.SetHideSelection(const ACustomEdit: TCustomEdit; AHideSelection: Boolean);
@@ -432,6 +454,22 @@ begin
     CFRelease(data);
   end;
 end;
+{$ifdef RMCARBONSELSTART}
+class procedure TCarbonWSCustomRichMemo.SetSelStart(
+  const ACustomEdit: TCustomEdit; NewStart: integer);
+var
+  edit : TCarbonRichEdit;
+  sl   : Integer;
+begin
+  edit := GetValidRichEdit(ACustomEdit);
+  if Assigned(edit) then begin
+    edit.SetSelStart(NewStart);
+    TXNShowSelection( HITextViewGetTXNObject(  edit.Widget ), false);
+
+    TIntCustomRichMemo(ACustomEdit).DoSelectionChange;
+  end;
+end;
+{$ENDIF}
 
 { TCarbonRichEdit }
 
@@ -492,6 +530,27 @@ begin
   CGContextFillRect(aContext, r);
 end;
 
+function CarbonRichEdit_ChangeSel(ANextHandler: EventHandlerCallRef;
+  AEvent: EventRef;
+  AWidget: TCarbonWidget): OSStatus; {$IFDEF darwin}mwpascal;{$ENDIF}
+var
+  sofs, eofs: TXNOffset;
+  sofs2, eofs2: TXNOffset;
+begin
+  // selection before
+  TXNGetSelection( HITextViewGetTXNObject(AWidget.Widget), sofs, eofs);
+
+  Result := CallNextEventHandler(ANextHandler, AEvent);
+
+  // selection after
+  TXNGetSelection( HITextViewGetTXNObject(AWidget.Widget), sofs2, eofs2);
+  // seems like something has changed!
+
+  // Sorry, for the direct access!
+  if (sofs<>sofs2) or (eofs<>eofs2) then
+    TIntCustomRichMemo( AWidget.LCLObject ).DoSelectionChange;
+end;
+
 function CarbonRichEdit_Draw(ANextHandler: EventHandlerCallRef;
   AEvent: EventRef;
   AWidget: TCarbonWidget): OSStatus; {$IFDEF darwin}mwpascal;{$ENDIF}
@@ -510,6 +569,7 @@ end;
 procedure TCarbonRichEdit.RegisterEvents;
 var
   TmpSpec: EventTypeSpec;
+  TmpSpecArr: array [0..2] of EventTypeSpec;
 begin
   inherited RegisterEvents;
 
@@ -520,6 +580,15 @@ begin
       RegisterEventHandler(@CarbonRichEdit_Draw),
       1, @TmpSpec, Pointer(Self), nil);
   end;
+
+  // It's unclear, if there's a better way for tracking change of selection
+  TmpSpecArr[0]:=MakeEventSpec(kEventClassKeyboard, kEventRawKeyRepeat); // by keyboard
+  TmpSpecArr[1]:=MakeEventSpec(kEventClassKeyboard, kEventRawKeyDown);
+  TmpSpecArr[2]:=MakeEventSpec(kEventClassControl, kEventControlTrack);  // by mouse
+
+  InstallControlEventHandler(Widget,
+    RegisterEventHandler(@CarbonRichEdit_ChangeSel),
+    3, @TmpSpecArr, Pointer(Self), nil);
 
   target :=HIViewGetEventTarget(Widget);
 end;

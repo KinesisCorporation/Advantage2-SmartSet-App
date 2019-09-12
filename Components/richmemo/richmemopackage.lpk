@@ -1,28 +1,34 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
-  <Package Version="3">
+  <Package Version="4">
     <PathDelim Value="\"/>
     <Name Value="richmemopackage"/>
+    <Type Value="RunAndDesignTime"/>
     <Author Value="Dmitry 'skalogryz' Boyarintsev"/>
     <CompilerOptions>
-      <Version Value="8"/>
+      <Version Value="11"/>
       <PathDelim Value="\"/>
       <SearchPaths>
-        <OtherUnitFiles Value="win32\;carbon\;gtk2\"/>
+        <IncludeFiles Value="cocoa;qt;qt5"/>
+        <OtherUnitFiles Value="win32;carbon;gtk2;cocoa;qt;qt5;ide"/>
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
+      <Parsing>
+        <SyntaxOptions>
+          <UseAnsiStrings Value="False"/>
+        </SyntaxOptions>
+      </Parsing>
       <Other>
         <CompilerMessages>
-          <IgnoredMessages idx4055="True" idx5024="True" idx5057="True" idx5060="True"/>
+          <IgnoredMessages idx5060="True" idx5057="True" idx5024="True" idx4055="True"/>
         </CompilerMessages>
-        <CompilerPath Value="$(CompPath)"/>
       </Other>
     </CompilerOptions>
     <Description Value="RichMemo control. Implements cross-platfrom RichEdit control.
 "/>
     <License Value="LGPL"/>
     <Version Major="1"/>
-    <Files Count="12">
+    <Files Count="20">
       <Item1>
         <Filename Value="wsrichmemo.pas"/>
         <AddToUsesPkgSection Value="False"/>
@@ -67,36 +73,75 @@
         <UnitName Value="gtk2richmemo"/>
       </Item9>
       <Item10>
-        <Filename Value="rtfparspre211.pp"/>
-        <AddToUsesPkgSection Value="False"/>
-        <UnitName Value="RTFParsPre211"/>
+        <Filename Value="richmemortf.pas"/>
+        <UnitName Value="RichMemoRTF"/>
       </Item10>
       <Item11>
-        <Filename Value="richmemortf.pas"/>
-        <AddToUsesPkgSection Value="False"/>
-        <UnitName Value="RichMemoRTF"/>
-      </Item11>
-      <Item12>
         <Filename Value="rtfdata.inc"/>
         <Type Value="Include"/>
+      </Item11>
+      <Item12>
+        <Filename Value="cocoa\cocoarichmemo.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="cocoarichmemo"/>
       </Item12>
+      <Item13>
+        <Filename Value="richmemoutils.pas"/>
+        <UnitName Value="RichMemoUtils"/>
+      </Item13>
+      <Item14>
+        <Filename Value="richmemohelpers.pas"/>
+        <UnitName Value="RichMemoHelpers"/>
+      </Item14>
+      <Item15>
+        <Filename Value="qt\qtrichmemo.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="qtrichmemo"/>
+      </Item15>
+      <Item16>
+        <Filename Value="rtfparspre211.pas"/>
+        <UnitName Value="RTFParsPre211"/>
+      </Item16>
+      <Item17>
+        <Filename Value="ide\rtfeditpropdialog.pas"/>
+        <UnitName Value="RtfEditPropDialog"/>
+      </Item17>
+      <Item18>
+        <Filename Value="ide\rtfeditpropdialog.lfm"/>
+        <Type Value="LFM"/>
+      </Item18>
+      <Item19>
+        <Filename Value="win32\win32richmemoole.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="Win32RichMemoOle"/>
+      </Item19>
+      <Item20>
+        <Filename Value="qt5\qt5richmemo.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="qt5richmemo"/>
+      </Item20>
     </Files>
-    <Type Value="RunAndDesignTime"/>
-    <RequiredPkgs Count="2">
+    <RequiredPkgs Count="3">
       <Item1>
-        <PackageName Value="LCL"/>
+        <PackageName Value="IDEIntf"/>
       </Item1>
       <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
+      <Item3>
         <PackageName Value="FCL"/>
         <MinVersion Major="1" Valid="True"/>
-      </Item2>
+      </Item3>
     </RequiredPkgs>
     <UsageOptions>
-      <UnitPath Value="$(PkgOutDir)\"/>
+      <UnitPath Value="$(PkgOutDir)"/>
     </UsageOptions>
     <PublishOptions>
       <Version Value="2"/>
       <IgnoreBinaries Value="False"/>
     </PublishOptions>
+    <CustomOptions Items="ExternHelp" Version="2">
+      <_ExternHelp Items="Count"/>
+    </CustomOptions>
   </Package>
 </CONFIG>

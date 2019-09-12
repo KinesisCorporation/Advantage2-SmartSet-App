@@ -1719,7 +1719,8 @@ begin
     (value = 'kpmin') or
     (value = 'kpplus') or
     (value = 'kpenter1') or (value = 'kpenter2') or
-    (value = 'kp.');
+    (value = 'kp.') or
+    (value = 'kp-insert');
 end;
 
 //Checks if value is a keypad exception (Adv2)
@@ -1754,6 +1755,7 @@ begin
     'kpenter1': result := VK_KP_ENTER1;
     'kpenter2': result := VK_KP_ENTER2;
     'kp.': result := VK_KP_PERI;
+    'insert': result := VK_INSERT;
     else
       result := -1;
   end;
@@ -1875,7 +1877,13 @@ begin
               layerIdx := TOPLAYER_IDX;
             Delete(configText, 1, keyEnd); //remove currentkey
 
-            aKey := FindKeyConfig(sKey);
+            //Finds key in config
+            vkException := GetKeyPadException(sKey);
+            if (vkException > 0) then
+              aKey := FindKeyConfig(vkException)
+            else
+              aKey := FindKeyConfig(sKey);
+
             if (aKey <> nil) then
             begin
               if (IsModifier(aKey.Key)) and (configText <> '') then
@@ -1912,7 +1920,6 @@ begin
             while (valueText <> '') do
             begin
               aKey := nil;
-              isKeypadLayer := Pos(KEYPAD_KEY, valueText) <> 0;
               keyStart := Pos(MK_START, valueText);
               keyEnd := Pos(MK_END, valueText);
               sKey := Copy(valueText, keyStart + 1, keyEnd - 2);
@@ -1924,7 +1931,7 @@ begin
                 keyState := ksNone;
               if keyState <> ksNone then
                 Delete(sKey, 1, 1); //removes - or +
-              if (isKeypadLayer) then
+              if (Pos(KEYPAD_KEY, sKey) <> 0) then
                 Delete(sKey, 1, length(KEYPAD_KEY)); //removes kp- text
               Delete(valueText, 1, keyEnd); //removes currentkey
 
@@ -1934,7 +1941,12 @@ begin
               end
               else
               begin
-                aKey := FindKeyConfig(sKey);
+                //Finds key in config
+                vkException := GetKeyPadException(sKey);
+                if (vkException > 0) then
+                  aKey := FindKeyConfig(vkException)
+                else
+                  aKey := FindKeyConfig(sKey);
 
                 //Checks for replacement key values (US English)
                 if aKey <> nil then

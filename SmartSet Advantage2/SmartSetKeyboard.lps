@@ -2,7 +2,7 @@
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
-    <Version Value="9"/>
+    <Version Value="11"/>
     <BuildModes Active="Default"/>
     <Units Count="46">
       <Unit0>
@@ -18,13 +18,11 @@
         <ComponentName Value="FormMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="1130"/>
-        <CursorPos X="114" Y="1146"/>
+        <TopLine Value="2273"/>
+        <CursorPos X="161" Y="2277"/>
         <UsageCount Value="200"/>
-        <Bookmarks Count="2">
+        <Bookmarks Count="1">
           <Item0 X="5" Y="2633" ID="4"/>
-          <Item1 X="4" Y="2680" ID="3"/>
         </Bookmarks>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -33,12 +31,9 @@
         <Filename Value="..\Common\u_const.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="326"/>
-        <CursorPos X="15" Y="338"/>
+        <TopLine Value="295"/>
+        <CursorPos X="3" Y="310"/>
         <UsageCount Value="201"/>
-        <Bookmarks Count="1">
-          <Item0 X="5" Y="200" ID="2"/>
-        </Bookmarks>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -54,8 +49,8 @@
         <Filename Value="u_file_service.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="335"/>
-        <CursorPos X="63" Y="204"/>
+        <TopLine Value="354"/>
+        <CursorPos X="52" Y="355"/>
         <UsageCount Value="200"/>
         <Bookmarks Count="1">
           <Item0 X="6" Y="367" ID="9"/>
@@ -128,19 +123,22 @@
         <EditorIndex Value="3"/>
         <TopLine Value="52"/>
         <CursorPos Y="85"/>
-        <UsageCount Value="146"/>
+        <UsageCount Value="153"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit11>
       <Unit12>
         <Filename Value="..\Common\u_base_key_service.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="2138"/>
-        <CursorPos X="38" Y="1856"/>
-        <UsageCount Value="64"/>
-        <Bookmarks Count="1">
-          <Item0 X="8" Y="2220" ID="1"/>
+        <TopLine Value="1782"/>
+        <CursorPos X="44" Y="1785"/>
+        <UsageCount Value="71"/>
+        <Bookmarks Count="3">
+          <Item0 X="32" Y="2203" ID="1"/>
+          <Item1 X="69" Y="1821" ID="2"/>
+          <Item2 X="46" Y="1851" ID="3"/>
         </Bookmarks>
         <Loaded Value="True"/>
       </Unit12>
@@ -150,10 +148,10 @@
         <ComponentName Value="FormNew"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="10"/>
         <TopLine Value="72"/>
         <CursorPos X="30" Y="84"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="48"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit13>
@@ -243,8 +241,8 @@
         <Filename Value="C:\lazarus\lcl\lcltype.pp"/>
         <UnitName Value="LCLType"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="609"/>
-        <CursorPos X="15" Y="631"/>
+        <TopLine Value="420"/>
+        <CursorPos X="3" Y="434"/>
         <UsageCount Value="10"/>
       </Unit25>
       <Unit26>
@@ -293,10 +291,11 @@
       <Unit32>
         <Filename Value="..\Common\versionsupport.pas"/>
         <UnitName Value="VersionSupport"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="211"/>
-        <CursorPos X="33" Y="232"/>
-        <UsageCount Value="5"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="229"/>
+        <CursorPos X="38" Y="232"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
       </Unit32>
       <Unit33>
         <Filename Value="C:\lazarus\lcl\interfaces\win32\win32winapi.inc"/>
@@ -400,126 +399,132 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1861" TopLine="1852"/>
+        <Caret Line="1869" TopLine="1852"/>
       </Position1>
       <Position2>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1863" TopLine="1852"/>
+        <Caret Line="1870" TopLine="1852"/>
       </Position2>
       <Position3>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1864" TopLine="1852"/>
+        <Caret Line="1877" TopLine="1853"/>
       </Position3>
       <Position4>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1865" TopLine="1852"/>
+        <Caret Line="1878" TopLine="1866"/>
       </Position4>
       <Position5>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1866" TopLine="1852"/>
+        <Caret Line="1881" TopLine="1866"/>
       </Position5>
       <Position6>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1867" TopLine="1852"/>
+        <Caret Line="1882" TopLine="1866"/>
       </Position6>
       <Position7>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1868" TopLine="1858"/>
+        <Caret Line="1885" TopLine="1866"/>
       </Position7>
       <Position8>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1870" TopLine="1858"/>
+        <Caret Line="1887" TopLine="1866"/>
       </Position8>
       <Position9>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1871" TopLine="1858"/>
+        <Caret Line="1889" TopLine="1878"/>
       </Position9>
       <Position10>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1872" TopLine="1858"/>
+        <Caret Line="1892" TopLine="1878"/>
       </Position10>
       <Position11>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1876" TopLine="1858"/>
+        <Caret Line="1897" TopLine="1890"/>
       </Position11>
       <Position12>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1878" TopLine="1867"/>
+        <Caret Line="1899" TopLine="1890"/>
       </Position12>
       <Position13>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1879" TopLine="1867"/>
+        <Caret Line="1900" TopLine="1890"/>
       </Position13>
       <Position14>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1881" TopLine="1867"/>
+        <Caret Line="1908" TopLine="1890"/>
       </Position14>
       <Position15>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1882" TopLine="1867"/>
+        <Caret Line="1910" TopLine="1890"/>
       </Position15>
       <Position16>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1863" TopLine="1851"/>
+        <Caret Line="1912" TopLine="1896"/>
       </Position16>
       <Position17>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1864" TopLine="1851"/>
+        <Caret Line="1914" TopLine="1896"/>
       </Position17>
       <Position18>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1865" TopLine="1851"/>
+        <Caret Line="1916" TopLine="1896"/>
       </Position18>
       <Position19>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1866" TopLine="1851"/>
+        <Caret Line="1920" TopLine="1905"/>
       </Position19>
       <Position20>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1867" TopLine="1851"/>
+        <Caret Line="1922" TopLine="1905"/>
       </Position20>
       <Position21>
         <Filename Value="..\Common\u_base_key_service.pas"/>
-        <Caret Line="1868" TopLine="1851"/>
+        <Caret Line="1923" TopLine="1905"/>
       </Position21>
       <Position22>
-        <Filename Value="u_form_main.pas"/>
-        <Caret Line="2027" Column="34" TopLine="2017"/>
+        <Filename Value="..\Common\u_base_key_service.pas"/>
+        <Caret Line="1924" TopLine="1914"/>
       </Position22>
       <Position23>
-        <Filename Value="u_form_main.pas"/>
-        <Caret Line="306" Column="32" TopLine="294"/>
+        <Filename Value="..\Common\u_base_key_service.pas"/>
+        <Caret Line="1925" TopLine="1914"/>
       </Position23>
       <Position24>
-        <Filename Value="u_form_main.pas"/>
-        <Caret Line="1138" Column="30" TopLine="1130"/>
+        <Filename Value="..\Common\u_base_key_service.pas"/>
+        <Caret Line="1926" TopLine="1914"/>
       </Position24>
       <Position25>
-        <Filename Value="u_form_main.pas"/>
-        <Caret Line="1137" Column="19" TopLine="1130"/>
+        <Filename Value="..\Common\u_base_key_service.pas"/>
+        <Caret Line="1928" TopLine="1914"/>
       </Position25>
       <Position26>
-        <Filename Value="u_form_main.pas"/>
+        <Filename Value="..\Common\u_base_key_service.pas"/>
+        <Caret Line="1931" TopLine="1914"/>
       </Position26>
       <Position27>
-        <Filename Value="u_form_main.pas"/>
-        <Caret Line="1144" Column="48" TopLine="1133"/>
+        <Filename Value="..\Common\u_base_key_service.pas"/>
+        <Caret Line="1932" TopLine="1914"/>
       </Position27>
       <Position28>
-        <Filename Value="u_form_main.pas"/>
-        <Caret Line="1312" Column="84" TopLine="1300"/>
+        <Filename Value="..\Common\u_base_key_service.pas"/>
+        <Caret Line="1934" TopLine="1920"/>
       </Position28>
       <Position29>
-        <Filename Value="u_form_main.pas"/>
-        <Caret Line="1343" Column="36" TopLine="1322"/>
+        <Filename Value="..\Common\u_base_key_service.pas"/>
+        <Caret Line="1935" TopLine="1920"/>
       </Position29>
       <Position30>
-        <Filename Value="u_form_main.pas"/>
+        <Filename Value="..\Common\u_base_key_service.pas"/>
+        <Caret Line="1934" Column="39" TopLine="1920"/>
       </Position30>
     </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode="default"/>
+    </RunParams>
   </ProjectSession>
   <Debugging>
-    <BreakPoints Count="2">
+    <BreakPoints Count="1">
       <Item1>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
@@ -527,13 +532,6 @@
         <Source Value="C:\lazarus\fpc\3.0.0\source\rtl\win\sysutils.pp"/>
         <Line Value="1172"/>
       </Item1>
-      <Item2>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="..\Common\u_base_key_service.pas"/>
-        <Line Value="1790"/>
-      </Item2>
     </BreakPoints>
     <Watches Count="2">
       <Item1>

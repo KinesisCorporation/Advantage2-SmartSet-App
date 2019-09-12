@@ -364,8 +364,8 @@ begin
   fileContent := TStringList.Create;
 
   //Create settings folder if it doesn't exist
-  if (not DirectoryExistsUTF8(GSettingsFilePath)) then
-    CreateDirUTF8(GSettingsFilePath);
+  if (not DirectoryExists(GSettingsFilePath)) then
+    CreateDir(GSettingsFilePath);
 
   sFilePath := GSettingsFilePath + APP_SETTINGS_FILE;
   if CheckIfFileExists(sFilePath) then

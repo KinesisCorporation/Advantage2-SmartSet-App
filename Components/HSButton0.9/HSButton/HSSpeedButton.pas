@@ -148,6 +148,7 @@ type
       property Index: integer read FIndex write FIndex;
       property TransparentColor: TColor read FTransparentColor write FTransparentColor default clFuchsia;
 
+      property OnPaint;
       property OnClick;
 //      property OnDblClick;
       property OnMouseDown;

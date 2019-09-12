@@ -119,7 +119,10 @@ const
     rtfIComment             = 34;
     rtfIVersion             = 35;
     rtfIDoccomm             = 36;
-    rtfMaxDestination       = 37    { highest dest + 1 };
+
+    rtfDefaultLanguage      = 37;
+
+    rtfMaxDestination       = 38    { highest dest + 1 };
 
   rtfFontFamily   = 4;
     rtfFFNil                = 0;
@@ -304,6 +307,8 @@ const
     rtfLeaderHyphen         = 38;
     rtfLeaderUnder          = 39;
     rtfLeaderThick          = 40;
+    //
+    rtfLanguage             = 41;
 
   rtfCharAttr     = 12;
     rtfPlain                = 0;
@@ -329,6 +334,7 @@ const
     rtfForeColor            = 20;
     rtfBackColor            = 21;
     rtfGray                 = 22;
+    rtfHighlight            = 23;
 
   rtfPictAttr     = 13;
     rtfMacQD                = 0;
@@ -463,7 +469,7 @@ type
   ---------------------------------------------------------------------}
 
 const
-  rtfKey : Array [0..281] of TRTFKey =
+  rtfKey : Array [0..284] of TRTFKey =
   (
     ( rtfKMajor: RTFSPECIALCHAR; rtfKMinor : rtfCURHEADPICT; rtfKStr  : 'chpict'; rtfKhash :        0),
     ( rtfKMajor: rtfSpecialChar; rtfKMinor:         rtfCurHeadDate; rtfKstr : 'chdate'; rtfkHash : 0),
@@ -527,6 +533,7 @@ const
     ( rtfKMajor: rtfCharAttr; rtfKMinor:    rtfForeColor; rtfKstr : 'cf'; rtfkHash : 0),
     ( rtfKMajor: rtfCharAttr; rtfKMinor:    rtfBackColor; rtfKstr : 'cb'; rtfkHash : 0),
     ( rtfKMajor: rtfCharAttr; rtfKMinor:    rtfGray; rtfKstr : 'gray'; rtfkHash : 0),
+    ( rtfKMajor: rtfCharAttr; rtfKMinor:    rtfHighlight; rtfKstr : 'highlight'; rtfkHash : 0),
 
     ( rtfKMajor: rtfParAttr; rtfKMinor:     rtfParDef; rtfKstr : 'pard'; rtfkHash : 0),
     ( rtfKMajor: rtfParAttr; rtfKMinor:     rtfStyleNum; rtfKstr : 's'; rtfkHash : 0),
@@ -569,6 +576,8 @@ const
     ( rtfKMajor: rtfParAttr; rtfKMinor:     rtfLeaderUnder; rtfKstr : 'tlul'; rtfkHash : 0),
     ( rtfKMajor: rtfParAttr; rtfKMinor:     rtfLeaderThick; rtfKstr : 'tlth'; rtfkHash : 0),
     ( rtfKMajor: rtfParAttr; rtfKMinor:     rtfBorderSpace; rtfKstr : 'brsp'; rtfkHash : 0),
+
+    ( rtfKMajor: rtfParAttr; rtfKMinor:     rtfLanguage; rtfKstr : 'lang'; rtfkHash : 0),
 
     ( rtfKMajor: rtfSectAttr; rtfKMinor:    rtfSectDef; rtfKstr : 'sectd'; rtfkHash : 0),
     ( rtfKMajor: rtfSectAttr; rtfKMinor:    rtfNoBreak; rtfKstr : 'sbknone'; rtfkHash : 0),
@@ -700,6 +709,8 @@ const
     ( rtfKMajor: rtfDestination; rtfKMinor:         rtfIComment; rtfKstr : 'comment'; rtfkHash : 0),
     ( rtfKMajor: rtfDestination; rtfKMinor:         rtfIVersion; rtfKstr : 'version'; rtfkHash : 0),
     ( rtfKMajor: rtfDestination; rtfKMinor:         rtfIDoccomm; rtfKstr : 'doccomm'; rtfkHash : 0),
+
+    ( rtfKMajor: rtfDestination; rtfKMinor:         rtfDefaultLanguage; rtfKstr : 'deflang'; rtfkHash : 0),
 
     ( rtfKMajor: rtfTOCAttr; rtfKMinor:     rtfTOCType; rtfKstr : 'tcf'; rtfkHash : 0),
     ( rtfKMajor: rtfTOCAttr; rtfKMinor:     rtfTOCLevel; rtfKstr : 'tcl'; rtfkHash : 0),

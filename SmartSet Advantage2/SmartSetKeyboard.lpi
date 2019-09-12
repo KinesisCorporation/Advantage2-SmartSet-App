@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="9"/>
+    <Version Value="11"/>
     <PathDelim Value="\"/>
     <General>
       <SessionStorage Value="InProjectDir"/>
@@ -17,8 +17,8 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <MajorVersionNr Value="1"/>
-      <RevisionNr Value="1"/>
-      <StringTable CompanyName="Kinesis Corporation" ProductVersion=""/>
+      <RevisionNr Value="2"/>
+      <StringTable CompanyName="Kinesis Corporation"/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="Default" Default="True"/>
@@ -27,11 +27,12 @@
       <Version Value="2"/>
     </PublishOptions>
     <RunParams>
-      <local>
-        <FormatVersion Value="1"/>
-      </local>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
     </RunParams>
-    <RequiredPackages Count="8">
+    <RequiredPackages Count="7">
       <Item1>
         <PackageName Value="uEControls"/>
       </Item1>
@@ -45,17 +46,14 @@
         <PackageName Value="richmemopackage"/>
       </Item4>
       <Item5>
-        <PackageName Value="line"/>
+        <PackageName Value="panelbutton"/>
       </Item5>
       <Item6>
-        <PackageName Value="panelbutton"/>
+        <PackageName Value="RunTimeTypeInfoControls"/>
       </Item6>
       <Item7>
-        <PackageName Value="RunTimeTypeInfoControls"/>
-      </Item7>
-      <Item8>
         <PackageName Value="LCL"/>
-      </Item8>
+      </Item7>
     </RequiredPackages>
     <Units Count="14">
       <Unit0>

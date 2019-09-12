@@ -1,21 +1,22 @@
-{ This file was automatically created by Lazarus. do not edit!
+{ This file was automatically created by Lazarus. Do not edit!
   This source is only used to compile and install the package.
  }
 
-unit richmemopackage; 
+unit richmemopackage;
 
 interface
 
 uses
-  RichMemoFactory, richmemoregister, LazarusPackageIntf;
+  RichMemoFactory, richmemoregister, RichMemoRTF, RichMemoUtils, 
+  RichMemoHelpers, RTFParsPre211, RtfEditPropDialog, LazarusPackageIntf;
 
 implementation
 
-procedure Register; 
+procedure Register;
 begin
-  RegisterUnit('richmemoregister', @richmemoregister.Register); 
-end; 
+  RegisterUnit('richmemoregister', @richmemoregister.Register);
+end;
 
 initialization
-  RegisterPackage('richmemopackage', @Register); 
+  RegisterPackage('richmemopackage', @Register);
 end.

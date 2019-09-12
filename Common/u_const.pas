@@ -700,6 +700,8 @@ begin
   ConfigKeys.Add(TKey.Create(VK_RSPACE, 'rspc', 'Space', 'rspc', ' ')); //User-Defined key for FSEdge
   if (GApplication in [APPL_FSEDGE, APPL_FSPRO]) then
     ConfigKeys.Add(TKey.Create(VK_INSERT, 'insert', 'Insert', 'ins'))
+  else if (GApplication in [APPL_ADV2]) then
+    ConfigKeys.Add(TKey.Create(VK_INSERT, 'insert', 'Insert', 'kp-insert'))
   else
     ConfigKeys.Add(TKey.Create(VK_INSERT, 'insert', 'Insert'));
   ConfigKeys.Add(TKey.Create(VK_HOME, 'home', 'Home'));

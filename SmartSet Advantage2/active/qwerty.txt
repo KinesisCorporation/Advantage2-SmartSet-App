@@ -1,0 +1,6 @@
+[d]>[kp-insert]
+{f}>{s}{d}{f}{a}{s}{d}{f}{kp-insert}{a}{s}{d}{space}{a}{d}{kp-insert}{s}{f}{a}{d}{s}{space}{kp-insert}{f}{a}{s}
+[kp-f]>[kp-insert]
+{kp-g}>{kp-insert}{kp-insert}{s}{d}{f}{a}{s}{d}{f}{f}{a}{s}
+[kp-insert]>[a]
+{kp-insert}>{kp-insert}{a}{a}{f}{a}{s}{d}{c}{kp-insert}{kp-insert}
