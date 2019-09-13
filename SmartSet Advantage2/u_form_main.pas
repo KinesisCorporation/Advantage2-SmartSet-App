@@ -574,11 +574,15 @@ begin
   //If we need keyboard input (ex: file prompt) allow key presses
   if NeedInput then
   begin
+    ShowMessage('NeedInput');
     exit;
   end;
 
-  if (not (Screen.ActiveForm.Name = self.Name)) then
-    exit;
+//  if (not (Screen.ActiveForm.Name = self.Name)) then
+//  begin
+//    ShowMessage(Screen.ActiveForm.Name);
+//    exit;
+//  end;
 
   currentKey := key;
 
@@ -779,8 +783,9 @@ begin
       fileService.SetAppIntroMsg(true);
       fileService.SaveAppSettings;
     end;
+    infoMessageShown := true;
+    Activate;
   end;
-  infoMessageShown := true;
 end;
 
 procedure TFormMain.pnlTitleMouseDown(Sender: TObject; Button: TMouseButton;

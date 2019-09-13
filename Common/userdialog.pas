@@ -22,6 +22,7 @@ type
     pnlImage: TPanel;
     pnlBottom: TPanel;
     pnlClient: TPanel;
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure lblCheckBoxClick(Sender: TObject);
   private
@@ -153,6 +154,7 @@ begin
   if LastDialog <> nil then
   begin
     LastDialog.Close;
+    LastDialog := nil;
   end;
 end;
 
@@ -168,6 +170,12 @@ begin
   {$ifdef Darwin}
   SetFont(self, 'Helvetica');
   {$endif}
+end;
+
+procedure TFormUserDialog.FormClose(Sender: TObject;
+  var CloseAction: TCloseAction);
+begin
+  //CloseAction:= caFree;
 end;
 
 procedure TFormUserDialog.lblCheckBoxClick(Sender: TObject);
