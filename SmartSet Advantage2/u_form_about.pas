@@ -55,16 +55,18 @@ begin
 end;
 
 procedure TFormAbout.btnReadManualClick(Sender: TObject);
-var
-  filePath: string;
 begin
-  filePath := GApplicationPath + '\' + USER_MANUAL_ADV2;
-  {$ifdef Darwin}filePath := GApplicationPath + '/' + USER_MANUAL_ADV2;{$endif}
-
-  if FileExists(filePath) then
-    OpenDocument(filePath)
-  else
-    ShowDialog('Help file', 'Help file not found!', mtError, [mbOK], DEFAULT_DIAG_HEIGHT, KINESIS_DARK_GRAY_FS, clWhite);
+  OpenUrl(ADV2_MANUAL);
+//var
+//  filePath: string;
+//begin
+//  filePath := GApplicationPath + '\' + USER_MANUAL_ADV2;
+//  {$ifdef Darwin}filePath := GApplicationPath + '/' + USER_MANUAL_ADV2;{$endif}
+//
+//  if FileExists(filePath) then
+//    OpenDocument(filePath)
+//  else
+//    ShowDialog('Help file', 'Help file not found!', mtError, [mbOK], DEFAULT_DIAG_HEIGHT, KINESIS_DARK_GRAY_FS, clWhite);
 end;
 
 procedure TFormAbout.btnWatchTutorialClick(Sender: TObject);

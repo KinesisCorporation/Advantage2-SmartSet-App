@@ -363,6 +363,7 @@ const
   FSEDGE_TUTORIAL = 'https://www.youtube.com/playlist?list=PLJql6LYXw-uOcHFihFhnZhJGb854SRy7Z';
   FSPRO_TUTORIAL = 'https://www.youtube.com/playlist?list=PLcsFMh_3_h0Z7Gx0T5N7TTzceorPHXJr5';
   ADV2_TUTORIAL = 'https://www.youtube.com/playlist?list=PLcsFMh_3_h0aNmELoR6kakcNf7AInoEfW';
+  ADV2_MANUAL = 'https://kinesis-ergo.com/support/advantage2/#manuals';
   MODEL_NAME_FSPRO = 'FS PRO';
   MODEL_NAME_FSEDGE = 'FS EDGE';
   MAX_KEYSTROKES_FS = 300;
